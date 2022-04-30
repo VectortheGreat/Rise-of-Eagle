@@ -1,0 +1,18 @@
+version="1.33.3"
+tags={
+	"Alternative History"
+	"Events"
+	"Expansion"
+	"Gameplay"
+	"Loading Screen"
+	"Map"
+	"Military"
+	"Missions And Decisions"
+	"National Ideas"
+	"New Nations"
+	"Religion"
+	"Sound"
+	"Trade"
+}
+name="Rise of The Eagle"
+supported_version="1.33.3"
