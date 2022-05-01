@@ -1,18 +1,17 @@
-#316 - Izmit
 
-owner = BYZ
-controller = BYZ
+
+owner = PFY
+controller = PFY
 culture = turkish
 religion = sunni
-capital = "Izmit"
+capital = " "
 trade_goods = gold
-hre = no
-base_tax = 1
-base_production = 31
-base_manpower = 31
+hre = yes
+base_tax = 3
+base_production = 3
+base_manpower = 3
 is_city = yes
-fort_15th = yes
-add_core = BYZ
+add_core = PFY
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

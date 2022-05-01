@@ -1,0 +1,1 @@
+PFY	= "countries/Playerfocus.txt"
