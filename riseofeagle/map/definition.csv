@@ -4949,7 +4949,7 @@ province;red;green;blue;x;x
 4948;139;224;48;Chesme;x
 4949;230;139;174;Söke;x
 4950;190;243;53;Sarayköy;x
-4951;201;126;210;Denizli;x
+4951;201;126;210;Karacasu;x
 4952;216;206;133;Milas;x
 4953;108;8;95;Marmaris;x
 4954;75;80;33;Samos;x
@@ -4988,13 +4988,13 @@ province;red;green;blue;x;x
 4987;178;50;76;Cherkesh;x
 4988;190;11;145;Kirikkale;x
 4989;151;211;163;Kapadokya;x
-4990;149;127;127;Nevsehr;x
+4990;149;127;127;Nigde;x
 4991;120;250;171;Mentesh;x
 4992;28;115;115;Gemerik;x
 4993;244;75;153;Chorum;x
 4994;32;109;134;Ordu;x
 4995;123;81;185;Albistan;x
-4996;146;247;68;Arabkir;x
+4996;146;247;68;Ilic;x
 4997;197;24;196;Kahta;x
 4998;65;109;125;Karahissar;x
 4999;141;153;236;Elazig;x
@@ -5021,7 +5021,7 @@ province;red;green;blue;x;x
 5020;72;147;239;Elis;x
 5021;25;58;203;Parga;x
 5022;86;61;89;Acarnania;x
-5023;122;106;191;Sivas;x
+5023;122;106;191;Gölova;x
 5024;70;154;175;Demotika;x
 5025;139;192;113;Burgas;x
 5026;176;203;8;Varna;x
@@ -5033,23 +5033,23 @@ province;red;green;blue;x;x
 5032;16;233;165;Stara Zagora;x
 5033;66;76;100;Philippopolis;x
 5034;193;48;242;Pazardzhik;x
-5035;249;202;152;Sophia;x
-5036;132;117;103;Skopje;x
+5035;249;202;152;Berkovitsa;x
+5036;132;117;103;Istip;x
 5037;252;77;137;Prilip;x
 5038;69;0;52;Ochrida;x
 5039;229;79;20;Korca;x
 5040;228;71;87;Gjirokastra;x
-5041;24;39;15;Vlora;x
+5041;24;39;15;Delvino;x
 5042;69;76;15;Elbasani;x
-5043;86;177;165;Tulcea;x
+5043;86;177;165;Sulina;x
 5044;183;129;25;Kalarash;x
 5045;114;216;99;Braila;x
 5046;128;212;31;Ployesti;x
 5047;16;86;67;Bucharest;x
 5048;114;39;51;Caracal;x
-5049;13;71;239;Tirgoshil;x
-5050;197;11;58;Timisoara;x
-5051;22;76;19;Vidin;x
+5049;13;71;239;Sulina;x
+5050;197;11;58;Mehedinti;x
+5051;22;76;19;Belogradchik;x
 5052;150;108;241;Paracin;x
 5053;126;2;114;Selino;x
 5054;85;9;49;Kerch;x
@@ -5068,4 +5068,5 @@ province;red;green;blue;x;x
 5067;141;11;91;Tur Abdin;x
 5068;54;202;125;Nizip;x
 5069;8;17;59;Zakho;x
-5070;96;74;221;Kars;x
+5070;96;74;221;Ardahan;x
+5071;223;31;54;Kastoria;x

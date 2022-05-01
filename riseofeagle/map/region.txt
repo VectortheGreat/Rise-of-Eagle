@@ -261,6 +261,7 @@ crimea_region = {
 		zaporizhia_area
 		yedisan_area
 		azov_area
+		kerch_area
 	}
 }
 
@@ -282,6 +283,35 @@ balkan_region = {
 	}
 }
 
+south_balkan_region = {
+	areas = {
+		macedonia_area
+		northern_greece_area
+		morea_area
+		albania_area
+		skopje_area
+		trikala_area
+		athens_area
+		northepirus_area
+		berat_area
+	}
+}
+
+east_balkan_region = {
+	areas = {
+		bulgaria_area
+		thrace_area
+		silistria_area
+		gelibolu_area
+		edirne_area
+		varna_area
+		nigbolu_area
+		buzau_area
+		oltenia_area
+		wallachia_area
+	}
+}
+
 carpathia_region = {
 	areas = {
 		transdanubia_area
@@ -289,7 +319,6 @@ carpathia_region = {
 		slovakia_area
 		transylvania_area
 		southern_transylvania_area
-		wallachia_area
 		moldavia_area
 	}
 }
@@ -348,15 +377,34 @@ anatolia_region = {
 		hudavendigar_area
 		aydin_area
 		karaman_area
-		rum_area
 		kastamonu_area
+		ankara_area
+		aegean_archipelago_area
+		germiyan_area
+		akdeniz_area
+		konya_area
+		denizli_area
+		marmaris_area
+		kocaeli_area
+		saruhan_area
+	}
+}
+
+east_anatolia_region = {
+	areas = {
+		rum_area
 		erzurum_area
 		north_kurdistan_area
 		dulkadir_area
 		cukurova_area
-		ankara_area
-		aegean_archipelago_area
-		germiyan_area
+		diyarbakir_area
+		westkurdistan_area
+		erzincan_area
+		trabzon_area
+		kayseri_area
+		chorum_area
+		sinop_area
+		antioch_area
 	}
 }
 
