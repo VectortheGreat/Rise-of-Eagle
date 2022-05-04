@@ -144,7 +144,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "imperialdiet_label"
-			position = { x = 494 y = 386 }
+			position = { x = 494 y = 433 }
 			format = centre
 			textureFile = ""
 			font = "vic_18"
@@ -191,7 +191,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "left_branch_label"
-			position = { x = 390 y = 253 }
+			position = { x = 390 y = 286 }
 			format = centre
 			textureFile = ""
 			font = "vic_18"
@@ -203,7 +203,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "right_branch_label"
-			position = { x = 618 y = 253 }
+			position = { x = 618 y = 286 }
 			format = centre
 			textureFile = ""
 			font = "vic_18"
@@ -215,7 +215,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "freecity_label"
-			position = { x = 344 y = 522 }
+			position = { x = 344 y = 568 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 4 y = 4}
@@ -226,7 +226,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "members_label"
-			position = { x = 560 y = 522 }
+			position = { x = 560 y = 568		 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 4 y = 4}
@@ -310,7 +310,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "incident_label"
-				position = { x = 361 y = 421 }
+				position = { x = 361 y = 464 }
 				textureFile = ""
 				font = "vic_18"
 				borderSize = {x = 4 y = 0}
@@ -330,7 +330,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "no_incidents_label"
-				position = { x = 361 y = 451 }
+				position = { x = 361 y = 495 }
 				textureFile = ""
 				font = "vic_22s"
 				borderSize = {x = 4 y = 0}
@@ -342,7 +342,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "past_incidents_label"
-				position = { x = 626 y = 421 }
+				position = { x = 626 y = 468 }
 				textureFile = ""
 				font = "vic_18"
 				borderSize = {x = 4 y = 0}
@@ -354,7 +354,7 @@ guiTypes = {
 
 			listboxType = {
 				name = "previous_incidents_container"
-				position = { x = 629 y = 439 }
+				position = { x = 629 y = 485 }
 				size = { x = 130 y = 70 }
 				scrollbartype = "standardlistbox_slider"
 			}
@@ -363,23 +363,23 @@ guiTypes = {
 				name = "reform_container_mainline"
 				position = { x = 360 y = 189 }
 				size = { width = 434 height = 60 }
-				slotsize = { width = 59 height = 41 }
+				slotsize = { width = 59 height = 39 }
 				max_slots_horizontal = 7
 				format = "UPPER_LEFT"
 			}
 			gridBoxType = {
 				name = "reform_container_left_branch"
-				position = { x = 362 y = 277 }
-				size = { width = 186 height = 124 }
-				slotsize = { width = 59 height = 41 }
+				position = { x = 362 y = 305 }
+				size = { width = 186 height = 115 }
+				slotsize = { width = 59 height = 38 }
 				max_slots_horizontal = 3
 				format = "UPPER_LEFT"
 			}
 			gridBoxType = {
 				name = "reform_container_right_branch"
-				position = { x = 593 y = 277 }
+				position = { x = 593 y = 305 }
 				size = { width = 186 height = 124 }
-				slotsize = { width = 59 height = 41 }
+				slotsize = { width = 59 height = 38 }
 				max_slots_horizontal = 3
 				format = "UPPER_LEFT"
 			}
@@ -422,7 +422,7 @@ guiTypes = {
 
 		smoothListboxType = {
 			name = "hre_free_cities"
-			position = { x=354 y =562 }
+			position = { x=354 y =610 }
 			backGround=""
 			size = { x=110 y=110 }
 			Orientation = "UPPER_LEFT"
@@ -479,7 +479,7 @@ guiTypes = {
 
 		guiButtonType = {
 			name = "close_button"
-			position = { x=620 y =686}
+			position = { x=620 y =722}
 			quadTextureSprite ="button_type_1"
 			tooltip = ""
 			tooltipText =""
@@ -504,7 +504,7 @@ guiTypes = {
 
 		guiButtonType = {
 			name = "dismantel_button"
-			position = { x= 417 y = 686}
+			position = { x= 417 y = 722}
 			quadTextureSprite ="button_type_1"
 			buttonText = "HRE_DISMANTLE"
 			buttonFont = "vic_18"
@@ -512,7 +512,7 @@ guiTypes = {
 
 		guiButtonType = {
 			name = "leave_button"
-			position = { x= 119 y = 686}
+			position = { x= 119 y = 722}
 			quadTextureSprite ="button_type_1"
 			buttonText = "HRE_LEAVE"
 			buttonFont = "vic_18"
@@ -520,7 +520,7 @@ guiTypes = {
 
 		guiButtonType = {
 			name = "join_button"
-			position = { x= 119 y = 686}
+			position = { x= 119 y = 722}
 			quadTextureSprite ="button_type_1"
 			buttonText = "HRE_JOIN"
 			buttonFont = "vic_18"
@@ -528,7 +528,7 @@ guiTypes = {
 
 		guiButtonType = {
 			name = "add_all_button"
-			position = { x= 268 y = 686}
+			position = { x= 268 y = 722}
 			quadTextureSprite ="button_type_1"
 			buttonText = "HRE_ADD_ALL"
 			buttonFont = "vic_18"
@@ -722,7 +722,7 @@ guiTypes = {
 		{
 			name ="member_shield"
 			quadTextureSprite = "GFX_shield_small"
-			position = { x= 6 y = 0 }
+			position = { x= 6 y = 25 }
 			tooltip = ""
 			tooltipText =""
 			delayedTooltipText = ""
@@ -755,7 +755,7 @@ guiTypes = {
 
 		guiButtonType = {
 			name = "select_button"
-			position = { x = 0 y  = 0 }
+			position = { x = 0 y  = 42 }
 			quadTextureSprite = "GFX_imperial_diet_incident_0"
 			tooltip = ""
 			tooltipText = ""
@@ -775,7 +775,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "support"
-			position = { x = 8 y = 34}
+			position = { x = 8 y = 73}
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 4 y = 4}
@@ -799,7 +799,7 @@ guiTypes = {
 
 		iconType = {
 			name = "incident_icon"
-			position = { x=0 y=2 }
+			position = { x=0 y=50 }
 			spriteType ="GFX_imperial_past_incident_button"
 		}
 
