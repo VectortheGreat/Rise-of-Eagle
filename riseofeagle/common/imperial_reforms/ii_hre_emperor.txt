@@ -1,0 +1,185 @@
+emperor_reichsreform = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		
+	}
+	gui_container = mainline
+}
+
+emperor_reichsreform = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		
+	}
+	gui_container = mainline
+}
+
+emperor_reichsreform = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		
+	}
+	gui_container = mainline
+}
+
+emperor_reichsreform = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		
+	}
+	gui_container = mainline
+}
+
+emperor_reichsreform = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		
+	}
+	gui_container = mainline
+}
+
+emperor_reichsreform = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		
+	}
+	gui_container = mainline
+}
+
+emperor_reichsreform = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		
+	}
+	gui_container = mainline
+}
+
+emperor_reichskrieg = {	#decentralization
+	empire = hre
+	required_reform = emperor_perpetual_diet
+	disabled_by = emperor_hofgericht
+	gui_container = left_branch
+
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		
+	}
+}
+
+emperor_reichskrieg = {	#decentralization
+	empire = hre
+	required_reform = emperor_perpetual_diet
+	disabled_by = emperor_hofgericht
+	gui_container = left_branch
+
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		
+	}
+}
+
+emperor_reichskrieg = {	#decentralization
+	empire = hre
+	required_reform = emperor_perpetual_diet
+	disabled_by = emperor_hofgericht
+	gui_container = left_branch
+
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		
+	}
+}
+
+emperor_reichskrieg = {	#decentralization
+	empire = hre
+	required_reform = emperor_perpetual_diet
+	disabled_by = emperor_hofgericht
+	gui_container = left_branch
+
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		
+	}
+}
+
+
+emperor_privilegia_de_non_appelando = { 	#centralization
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		core_creation = -0.10
+	}
+	required_reform = emperor_perpetual_diet
+	disabled_by = emperor_reichstag_collegia
+	gui_container = right_branch
+}
+
+emperor_privilegia_de_non_appelando = { 	#centralization
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		core_creation = -0.10
+	}
+	required_reform = emperor_perpetual_diet
+	disabled_by = emperor_reichstag_collegia
+	gui_container = right_branch
+}
+
+emperor_privilegia_de_non_appelando = { 	#centralization
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		core_creation = -0.10
+	}
+	required_reform = emperor_perpetual_diet
+	disabled_by = emperor_reichstag_collegia
+	gui_container = right_branch
+}
+
+emperor_privilegia_de_non_appelando = { 	#centralization
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		core_creation = -0.10
+	}
+	required_reform = emperor_perpetual_diet
+	disabled_by = emperor_reichstag_collegia
+	gui_container = right_branch
+}
