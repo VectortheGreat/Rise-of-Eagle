@@ -301,7 +301,7 @@ guiTypes = {
 		{
 			name ="diplomatic_actions_icon"
 			spriteType = "GFX_more_dip_actions_icon"
-			position = { x= 160 y = 202 }
+			position = { x= 164 y = 202 }
 			Orientation = "UPPER_LEFT"
 		}
 
@@ -422,7 +422,7 @@ guiTypes = {
 
 		smoothListboxType = {
 			name = "hre_free_cities"
-			position = { x=354 y =610 }
+			position = { x=354 y =600 }
 			backGround=""
 			size = { x=110 y=110 }
 			Orientation = "UPPER_LEFT"

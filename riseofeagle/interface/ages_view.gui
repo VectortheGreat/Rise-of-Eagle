@@ -275,7 +275,7 @@ guiTypes = {
 		listboxType = 
 		{
 			name ="objectives"
-			position = { x = 10 y = 280 }
+			position = { x = 10 y = 232 }
 			backGround=""
 			size = { x=700 y =560}
 			Orientation = "UPPER_LEFT"
@@ -332,13 +332,13 @@ guiTypes = {
 		{
 			name ="icon"
 			spriteType = "GFX_idea_unknown"
-			position = { x= 8ยง y = 4 }
+			position = { x= 8ยง y = 0 }
 			Orientation = "UPPER_LEFT"
 		}
 
 		instantTextBoxType = {
 			name = "name"
-			position = { x = 64 y = 2 }
+			position = { x = 64 y = 0 }
 			font = "vic_22"
 			borderSize = {x = 0 y = 0}
 			text = "name"	
@@ -350,7 +350,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "desc"
-			position = { x = 64 y = 20 }
+			position = { x = 64 y = 17 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
 			text = "desc"	
@@ -364,7 +364,7 @@ guiTypes = {
 		{
 			name ="progress"
 			spriteType = "achievement_progress"
-			position = { x= 469 y = 34 }
+			position = { x= 469 y = 27 }
 			Orientation = "UPPER_LEFT"
 			
 		}
@@ -373,7 +373,7 @@ guiTypes = {
 		{
 			name ="progress_overlay"
 			spriteType = "GFX_achievement_progress_frame"
-			position = { x= 454 y = 29 }
+			position = { x= 454 y = 22 }
 			Orientation = "UPPER_LEFT"
 			
 		}
@@ -381,7 +381,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "progress_text"
-			position = { x = 470 y = 8 }
+			position = { x = 470 y = 2 }
 			font = "vic_22"
 			borderSize = {x = 0 y = 0}
 			text = "7/14"	
