@@ -434,7 +434,7 @@ guiTypes = {
 
 		smoothListboxType = {
 			name = "hre_members"
-			position = { x=491 y =562 }
+			position = { x=491 y =600 }
 			backGround=""
 			size = { x=262 y=116 }
 			Orientation = "UPPER_LEFT"
@@ -722,7 +722,7 @@ guiTypes = {
 		{
 			name ="member_shield"
 			quadTextureSprite = "GFX_shield_small"
-			position = { x= 6 y = 25 }
+			position = { x= 6 y = 0 }
 			tooltip = ""
 			tooltipText =""
 			delayedTooltipText = ""
@@ -799,7 +799,7 @@ guiTypes = {
 
 		iconType = {
 			name = "incident_icon"
-			position = { x=0 y=50 }
+			position = { x=0 y=0 }
 			spriteType ="GFX_imperial_past_incident_button"
 		}
 
