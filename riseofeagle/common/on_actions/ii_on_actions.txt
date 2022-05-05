@@ -76,7 +76,4 @@ on_startup = {
 
 	### MOD ###
 
-	set_hre_religion = sunni
-	set_hre_religion_treaty = yes
-	
 }
