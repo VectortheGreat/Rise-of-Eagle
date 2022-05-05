@@ -1,0 +1,92 @@
+1-Gebze
+2-Bilecik
+3-Osmanlı
+4-Biga
+5-Saruhan
+6-Aydınids / Sugla
+7-Cesme	---
+8-Chios	---
+9-Lesbos	---
+10-Gökçe Ada	---
+11-Samos	---
+12-Nikaria	---
+13-Milas
+14-Söke
+15-Menteşe /Marmaris
+16-Burdur
+17-Teke / Antalya
+18-Usak
+19- ----
+19-Kütahya
+20-Bigadis
+21-Gediz
+22-Hamidids
+23-Karahisar
+24-Ankara
+25-Eskisehir
+26-Bolu
+27-Timonion (Kastamonu)
+28-Bartin
+29-Chorum
+30-Sinop
+31-Amasya
+32-Sivas
+33-Kayseri
+34-Konya
+35-Kulekoi
+36-Karaman
+37-Ahis
+38-Megarsos
+39-Tarsus
+40-Adana
+41-Famagusta
+42-Payas
+43-Iskenderun
+44-Jebel Aqra
+45-Antep
+46-Dulkadir
+47-Erzincan
+48-Diyarbekir
+49-Mardin
+50-Hisn Kayfa
+51-Erzurum
+52-Bitlis
+53-Van
+54-Trabzon
+55-Abhazya
+56-Maykop
+57-Giray
+58-Azov
+59-Kerch
+60-Constantinople
+61-Burgas
+62-Gallipoli
+63-Enos
+64-Selanik
+65-Larissa
+66-Arta
+67-Morea
+69-Patras
+70-Corfu
+71-Janina
+72-Delvino
+73-Durres
+74-Kruje
+75-Skopje
+76-Trgovista
+77-Kosova
+78-Belgrad
+79-Sofia
+80-Vidin
+81-Nikopol
+82-Lom
+83-Varna
+84-Kavarna
+85-Silistra
+86-Sulina
+87-Bucharest
+89-Ployesti
+90-Caracal
+91-Sulina
+92-Girid
+93-Negro Ponte

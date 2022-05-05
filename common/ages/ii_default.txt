@@ -1,0 +1,346 @@
+age_of_discovery = {
+	start = 1400
+	
+	can_start = {
+		always = yes
+	}
+	
+	religious_conflicts = yes
+	papacy = 1.0
+	
+
+	objectives = {
+		obj_hre_1 = {
+			is_part_of_hre = yes
+			has_country_flag = dontforgettorenameit
+		}
+	}		
+	
+
+	
+	
+	
+	abilities = {
+		ab_country_1 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_2 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_3 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_4 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_5 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+	}
+}
+
+age_of_reformation = {
+	start = 1530
+	
+	can_start = {
+		is_religion_enabled = protestant
+	}
+	
+	
+	religious_conflicts = yes
+	papacy = 1.25
+	
+	objectives = {
+		obj_hre_2 = {
+			is_part_of_hre = yes
+			has_country_flag = dontforgettorenameit
+		}
+	}	
+	
+	
+	abilities = {
+		ab_country_6 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_7 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_8 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_9 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_10 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		
+	
+	}
+}
+
+
+
+
+age_of_absolutism = {
+	start = 1620
+	
+	can_start = {
+		is_institution_enabled = global_trade
+	}
+	
+	papacy = 1.5
+	
+	absolutism = {
+		harsh_treatment = 1
+		stability = 1
+		decrease_autonomy_command = 1
+		strengthen_government = 2
+		
+		increase_autonomy_command = -2
+		debase_currency = -1
+		execute_rebel_acceptance_command = -10
+		seat_in_parliament = -3
+		war_exhaustion = -1
+	}
+	
+	
+	
+	objectives = {
+		obj_hre_3 = {
+			is_part_of_hre = yes
+			has_country_flag = dontforgettorenameit
+		}
+	}	
+	
+	
+	
+	
+	abilities = {
+		ab_country_11 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_12 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_13 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_14 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_15 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		
+	}
+}
+
+age_of_revolutions = {
+	start = 1710
+	
+	can_start = {
+		is_institution_enabled = enlightenment
+	}
+	
+	papacy = 2.0
+	absolutism = {
+		harsh_treatment = 1
+		stability = 1
+		decrease_autonomy_command = 1
+		strengthen_government = 2
+		
+		increase_autonomy_command = -2
+		debase_currency = -1
+		execute_rebel_acceptance_command = -10
+		seat_in_parliament = -3
+		war_exhaustion = -1
+	}
+	
+	
+	objectives = {
+		obj_hre_4 = {
+			is_part_of_hre = yes
+			has_country_flag = dontforgettorenameit
+		}
+	}
+
+	abilities = {
+		ab_country_16 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_17 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_18 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_19 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		ab_country_20 = {
+			allow = {
+				tag = TUR
+			}
+			modifier = {
+				siege_ability = 0.33
+			}
+			ai_will_do = {
+				factor = 100
+			}
+		}
+		
+	}
+}

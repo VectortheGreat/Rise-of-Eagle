@@ -1,18 +1,16 @@
-#The Eastern Knights
+graphical_culture = muslimgfx
 
-graphical_culture = westerngfx
-
-color = { 10 10 10 }
+color = { 1  1  1 }
 
 historical_idea_groups = {
-	humanist_ideas
-	trade_ideas
-	offensive_ideas
-	administrative_ideas
 	quantity_ideas
-	influence_ideas
-	quality_ideas
 	innovativeness_ideas
+	quality_ideas
+	administrative_ideas
+	trade_ideas
+	influence_ideas
+	innovativeness_ideas
+	diplomatic_ideas
 }
 
 historical_units = {
@@ -36,40 +34,38 @@ historical_units = {
 }
 
 monarch_names = {
-	"Mehmed #2" = 80
-	"Mustafa #0" = 80
-	"Murad #1" = 60
-	"Ahmed #0" = 60
-	"Selim #0" = 60
+	"Iskender #7" = 30
+	"Kutay #5" = 30
+	"Gökhan #10" = 20
+	"Saltuk #4" = 20
+	"Selçuk #1" = 20
+	"Tugrul #4" = 20
+	"Alp Arslan #0" = 15
+	"Alptigin #2" = 15
+	"Aydogan #9" = 10
+	"Çagri #0" = 10
+	"Berkan #0" = 10
+	"Demir #0" = 10
+	"Mehmed #2" = 30
+	"Mustafa #0" = 30
+	"Murad #1" = 30
+	"Ahmed #0" = 30
+	"Selim #0" = 30
 	"Osman #1" = 40
-	"Mahmud #0" = 40
-	"Süleyman #0" = 40
-	"Bayezid #0" = 20
-	"Orhan #1" = 20
-	"Abdülaziz #0" = 10
-	"Abdülhamid #0" = 10
+	"Mahmud #0" = 10
+	"Süleyman #0" = 10
+	"Bayezid #0" = 10
+	"Orhan #1" = 10
 	"Ibrahim #0" = 10
-	"Abdülmecid #0" = 10
-	"Abdullah #0" = 1
 	"Cem #0" = 1
-	"Cihangir #0" = 1
-	"Alaaddin #0" = 1
 	"Isa #0" = 1
 	"Musa #0" = 1
 	"Ömer #0" = 1
-	"Seyfeddin #0" = 1
 	"Yakub #0" = 1
 	"Yusuf #0" = 1
 	"Giyaseddin #0" = 0
-	"Numan #0" = 0
-	"Abdurrahman #0" = 0
 	"Ali #0" = 0
-	"Davud #0" = 0
-	"Hasan #0" = 0
-	"Hüseyin #0" = 0
 	"Ishak #0" = 0
-	"Kamer #0" = 0
-	"Kasim #0" = 0
 	"Korkud #0" = 0
 	"Emin #0" = 0
 	"Iskender #0" = 0
@@ -77,8 +73,6 @@ monarch_names = {
 	"Said #0" = 0
 	"Hamid #0" = 0
 	"Ertugrul #0" = 0
-	"Izzeddin #0" = 0
-	"Nizameddin #0" = 0
 	"Sinan #0" = 0
 	"Ferhad #0" = 0
 	"Salih #0" = 0
@@ -89,13 +83,25 @@ monarch_names = {
 	"Harun #0" = 0
 	"Cemal #0" = 0
 	"Inal #0" = 0
-	"Celaleddin #0" = 0
 	"Ilyas #0" = 0
-	"Hayreddin #0" = 0
 	"Dursun #0" = 0
 	"Ramazan #0" = 0
 	"Receb #0" = 0
-
+	
+	
+	"Bensu #1" = -20
+	"Eylül #1" = -20
+	"Ceylan #1" = -20
+	"Ece #1" = -20
+	"Nagihan #1" = -15
+	"Gökçe #1" = -15
+	"Gözde #1" = -15
+	"Hazal #1" = -15
+	"Sevilay #1" = -10
+	"Çiçek #1" = -10
+	"Çilen #1" = -10
+	"Dilek #1" = -10
+	"Yildiz #1" = -10
 	"Hadice #0" = -1
 	"Safiye #0" = -1
 	"Zeynep #0" = -1
@@ -115,6 +121,14 @@ monarch_names = {
 }
 
 leader_names = {
+	Çagri Çaka "Alp Arslan" "Alp Yurek" Alptigin Artuk Ayaz 
+	Aydin Aydogan Aydogdu Aytekin Böru Bahadir Balaban Basbuga Batuhan Baturay Baybars 
+	Baytas Belek Berkan Berkiyaruk Bozan Bugra Burak Demir Dogan Dogukan Dukak Erdem Ertekin Ertugrul Gunduz
+	Iskender Alexander Kurboga Kara Karatay Kaya Kaytun 
+	Kiliç Korkut Kutalmis Kutay Kutlug Meliksah Mengucek
+	Söbuk Sökmen Sönmez Saltuk 
+	Saruca Savtekin Selçuk Sencer Tanrivermis Tekin Timurtas Togay 
+	Togtekin Toktamis Tolun Toruntay Tugrul Tunga Turgut Turhan Tutus Uluç Umur Yakut Yaman Yinal 
 	Abaza Alemdar Amasyali Ayas
 	Bali Bayram Bey Boshnak
 	Cezzar Çelebi Cerrah Çerkes Civan Çuhadar
