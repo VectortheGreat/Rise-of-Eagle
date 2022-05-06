@@ -1,17 +1,17 @@
 
 
-owner = RUM
-controller = RUM
-culture = turkish
-religion = sunni
+owner = KAV
+controller = KAV
+culture = bulgarian
+religion = orthodox
 capital = " "
-trade_goods = gold
+trade_goods = naval_supplies
 hre = yes
 base_tax = 3
-base_production = 3
+base_production = 4
 base_manpower = 3
 is_city = yes
-add_core = RUM
+add_core = KAV
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

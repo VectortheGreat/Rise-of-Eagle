@@ -1,17 +1,17 @@
 
 
-owner = RUM
-controller = RUM
-culture = turkish
-religion = sunni
+owner = ADR
+controller = ADR
+culture = bulgarian
+religion = orthodox
 capital = " "
-trade_goods = gold
+trade_goods = copper
 hre = yes
-base_tax = 3
-base_production = 3
-base_manpower = 3
+base_tax = 2
+base_production = 2
+base_manpower = 1
 is_city = yes
-add_core = RUM
+add_core = ADR
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

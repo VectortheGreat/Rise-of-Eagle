@@ -1,17 +1,17 @@
 
 
-owner = RUM
-controller = RUM
-culture = turkish
-religion = sunni
+owner = SKJ
+controller = SKJ
+culture = bulgarian
+religion = orthodox
 capital = " "
-trade_goods = gold
+trade_goods = cloth
 hre = yes
-base_tax = 3
-base_production = 3
+base_tax = 2
+base_production = 1
 base_manpower = 3
 is_city = yes
-add_core = RUM
+add_core = SKJ
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

@@ -1,17 +1,17 @@
 
 
-owner = RUM
-controller = RUM
-culture = turkish
+owner = PYS
+controller = PYS
+culture = syrian
 religion = sunni
 capital = " "
-trade_goods = gold
+trade_goods = wool
 hre = yes
-base_tax = 3
+base_tax = 4
 base_production = 3
 base_manpower = 3
 is_city = yes
-add_core = RUM
+add_core = PYS
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

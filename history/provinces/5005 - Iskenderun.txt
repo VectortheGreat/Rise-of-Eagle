@@ -1,17 +1,17 @@
 
 
-owner = RUM
-controller = RUM
-culture = turkish
+owner = IKD
+controller = IKD
+culture = syrian
 religion = sunni
 capital = " "
-trade_goods = gold
+trade_goods = silk
 hre = yes
 base_tax = 3
-base_production = 3
-base_manpower = 3
+base_production = 4
+base_manpower = 4
 is_city = yes
-add_core = RUM
+add_core = IKD
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim
