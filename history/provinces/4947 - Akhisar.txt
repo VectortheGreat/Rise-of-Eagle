@@ -1,17 +1,17 @@
 
 
-owner = RUM
-controller = RUM
+owner = AYN
+controller = AYN
 culture = turkish
 religion = sunni
 capital = " "
-trade_goods = gold
+trade_goods = livestock
 hre = yes
-base_tax = 3
-base_production = 3
-base_manpower = 3
+base_tax = 2
+base_production = 1
+base_manpower = 2
 is_city = yes
-add_core = RUM
+add_core = AYN
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

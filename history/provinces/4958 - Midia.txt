@@ -1,7 +1,7 @@
 
 
-owner = RUM
-controller = RUM
+owner = BYZ
+controller = BYZ
 culture = turkish
 religion = sunni
 capital = " "
@@ -11,7 +11,7 @@ base_tax = 3
 base_production = 3
 base_manpower = 3
 is_city = yes
-add_core = RUM
+add_core = BYZ
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

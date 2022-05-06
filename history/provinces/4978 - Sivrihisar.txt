@@ -1,17 +1,17 @@
 
 
-owner = RUM
-controller = RUM
+owner = ESK
+controller = ESK
 culture = turkish
 religion = sunni
 capital = " "
-trade_goods = gold
+trade_goods = gol
 hre = yes
-base_tax = 3
-base_production = 3
-base_manpower = 3
+base_tax = 2
+base_production = 4
+base_manpower = 2
 is_city = yes
-add_core = RUM
+add_core = ESK
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim
