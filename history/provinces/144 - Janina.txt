@@ -1,7 +1,7 @@
 #144 - Epiros
 
-owner = JAI
-controller = JAI
+owner = JAY
+controller = JAY
 culture = greek
 religion = orthodox
 capital = "Ioannina"

@@ -2,8 +2,8 @@
 latent_trade_goods = {
 	coal
 }
-owner = GEZ
-controller = GEZ
+owner = GEB
+controller = GEB
 culture = turkish
 religion = sunni
 capital = "Izmit"
@@ -14,7 +14,7 @@ base_production = 5
 base_manpower = 3
 is_city = yes
 fort_15th = yes
-add_core = GEZ
+add_core = GEB
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

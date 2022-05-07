@@ -1,7 +1,7 @@
 
 
-owner = SES
-controller = SES
+owner = GAI
+controller = GAI
 culture = greek
 religion = orthodox
 capital = " "
@@ -11,7 +11,7 @@ base_tax = 3
 base_production = 2
 base_manpower = 3
 is_city = yes
-add_core = SES
+add_core = GAI
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

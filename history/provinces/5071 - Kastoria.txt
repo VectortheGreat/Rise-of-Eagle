@@ -1,7 +1,7 @@
 
 
-owner = DEM
-controller = DEM
+owner = JAY
+controller = JAY
 culture = greek
 religion = orthodox
 capital = " "
@@ -11,7 +11,7 @@ base_tax = 2
 base_production = 1
 base_manpower = 2
 is_city = yes
-add_core = DEM
+add_core = JAY
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim
