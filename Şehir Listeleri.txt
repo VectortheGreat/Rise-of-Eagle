@@ -25,7 +25,7 @@
 24-Ankara
 25-Eskisehir
 26-Bolu
-27-Timonion (Kastamonu)
+27-Timonion
 28-Bartin
 29-Chorum
 30-Sinop
