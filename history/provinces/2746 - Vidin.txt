@@ -1,18 +1,17 @@
 #2746 - Vidin
 
-owner = TUR
-controller = TUR
+owner = VID
+controller = VID
 culture = bulgarian
 religion = orthodox
 capital = "Vidin"
 trade_goods = grain
-hre = no
-base_tax = 2
+hre = yes
+base_tax = 3
 base_production = 3
-base_manpower = 1
+base_manpower = 3
 is_city = yes
-add_core = TUR
-add_core = BUL
+add_core = VID
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

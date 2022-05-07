@@ -4,18 +4,18 @@ latent_trade_goods = {
 	coal
 }
 
-owner = CRI
-controller = CRI
+owner = AZO
+controller = AZO
 culture = crimean
 religion = sunni
-hre = no
-base_tax = 3
+hre = yes
+base_tax = 4
 base_production = 3
 trade_goods = livestock
 base_manpower = 2
 capital = "Tyn"
 is_city = yes
-add_core = CRI
+add_core = AZO
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

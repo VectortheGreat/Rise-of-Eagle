@@ -1,17 +1,17 @@
 
 
-owner = BYZ
-controller = BYZ
-culture = turkish
-religion = sunni
+owner = BYS
+controller = BYS
+culture = greek
+religion = orthodox
 capital = " "
-trade_goods = gold
+trade_goods = cloth
 hre = yes
-base_tax = 3
+base_tax = 4
 base_production = 3
 base_manpower = 3
 is_city = yes
-add_core = BYZ
+add_core = BYS
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

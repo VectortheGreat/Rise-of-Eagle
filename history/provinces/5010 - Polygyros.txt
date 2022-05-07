@@ -1,4 +1,6 @@
-
+latent_trade_goods = {
+	coal
+}
 
 owner = CHF
 controller = CHF

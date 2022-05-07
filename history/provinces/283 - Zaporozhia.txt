@@ -1,18 +1,17 @@
 #283 - Zaporozhia
 
-owner = CRI
-controller = CRI
+owner = RUM
+controller = RUM
 culture = crimean
 religion = sunni
-hre = no
+hre = yes
 base_tax = 1
 base_production = 1
 trade_goods = livestock
 base_manpower = 2
 capital = "Sich"
 is_city = yes
-add_core = CRI
-add_core = ZAZ
+add_core = RUM
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim
