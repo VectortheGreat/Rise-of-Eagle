@@ -4,3 +4,30 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
+capital = 5013
+add_army_professionalism = 0.1
+
+1444.1.1 = {
+	monarch = {
+		name = "Dionysus"
+		dynasty = Gounaropoulos
+		birth_date = 1314.1.1
+		adm = 2
+		dip = 1
+		mil = 3
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Aikaterine"
+		monarch_name = "Gounaropoulos"
+		dynasty = "Aaron"
+		birth_date = 1434.1.1
+		claim = 100
+		female = yes
+		adm = 4
+		dip = 4
+		mil = 1
+	}
+}

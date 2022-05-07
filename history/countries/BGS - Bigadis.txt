@@ -1,7 +1,20 @@
-government = monarchy
-add_government_reform = autocracy_reform
+government = republic
+add_government_reform = free_city
 government_rank = 1
 primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+capital = 4960
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Selim"
+		adm = 4
+		dip = 3
+		mil = 1
+		regent = yes
+		birth_date = 1418.1.1
+	}
+}

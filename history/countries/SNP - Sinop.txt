@@ -5,3 +5,29 @@ primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+capital = 328
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Aytekin"
+		dynasty = Doganoglu
+		birth_date = 1403.1.1
+		adm = 4
+		dip = 0
+		mil = 6
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Kasim"
+		monarch_name = "Kasim"
+		dynasty = "Doganoglu"
+		birth_date = 1429.1.1
+		claim = 90
+		adm = 1
+		dip = 1
+		mil = 4
+	}
+}

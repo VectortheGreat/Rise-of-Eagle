@@ -4,3 +4,29 @@ government_rank = 1
 technology_group = eastern
 primary_culture = bulgarian
 religion = orthodox
+capital = 1764
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Vladislav"
+		dynasty = Krum
+		birth_date = 1413.1.1
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Kocelj"
+		monarch_name = "Kocelj"
+		dynasty = "Krum"
+		birth_date = 1444.1.1
+		claim = 85
+		adm = 6
+		dip = 4
+		mil = 2
+	}
+}

@@ -4,3 +4,16 @@ government_rank = 1
 primary_culture = albanian
 religion = catholic
 technology_group = eastern
+capital = 5041
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Pal"
+		dynasty = Zrinski
+		birth_date = 1422.1.1
+		adm = 5
+		dip = 2
+		mil = 2
+	}
+}

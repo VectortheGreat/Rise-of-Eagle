@@ -5,3 +5,29 @@ primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+capital = 4949
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Kara Ali"
+		dynasty = Sökeoglu
+		birth_date = 1380.1.1
+		adm = 3
+		dip = 2
+		mil = 6
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Iskender"
+		monarch_name = "Iskender II"
+		dynasty = "Sökeoglu"
+		birth_date = 1400.1.1
+		claim = 90
+		adm = 5
+		dip = 1
+		mil = 3
+	}
+}

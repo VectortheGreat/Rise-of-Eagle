@@ -4,3 +4,31 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
+capital = 149
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Adrianos"
+		dynasty = Kolovos
+		birth_date = 1404.1.1
+		adm = 4
+		dip = 5
+		mil = 1
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = kind_hearted_personality
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Prokopios"
+		monarch_name = "Prokopios"
+		dynasty = "Kolovos"
+		birth_date = 1438.1.1
+		claim = 85
+		adm = 2
+		dip = 2
+		mil = 5
+	}
+}

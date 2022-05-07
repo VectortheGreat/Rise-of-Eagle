@@ -5,3 +5,29 @@ primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+capital = 2299
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Demir"
+		dynasty = Ismailoglu
+		birth_date = 1388.1.1
+		adm = 3
+		dip = 4
+		mil = 6
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Osman"
+		monarch_name = "Osman"
+		dynasty = "Ismailoglu"
+		birth_date = 1413.1.1
+		claim = 88
+		adm = 6
+		dip = 4
+		mil = 1
+	}
+}

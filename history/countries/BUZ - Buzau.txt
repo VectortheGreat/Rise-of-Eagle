@@ -4,3 +4,29 @@ government_rank = 1
 primary_culture = romanian
 religion = orthodox
 technology_group = eastern
+capital = 2998
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Simeon"
+		dynasty = Vacarescu
+		birth_date = 1413.1.1
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Costin"
+		monarch_name = "Costin"
+		dynasty = "Vacarescu"
+		birth_date = 1444.1.1
+		claim = 85
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+}

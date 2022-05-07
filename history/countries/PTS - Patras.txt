@@ -4,3 +4,30 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
+capital = 5019
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Himerios"
+		dynasty = Pantechnes
+		birth_date = 1405.1.1
+		adm = 0
+		dip = 2
+		mil = 1
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Juliana"
+		monarch_name = "Juliana"
+		dynasty = "Pantechnes"
+		birth_date = 1429.1.1
+		claim = 85
+		female = yes
+		adm = 4
+		dip = 3
+		mil = 2
+	}
+}

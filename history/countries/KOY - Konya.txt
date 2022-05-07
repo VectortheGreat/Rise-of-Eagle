@@ -6,3 +6,28 @@ religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
 capital = 323
+add_army_professionalism = 0.15
+
+1444.1.1 = {
+	monarch = {
+		name = "Alp Arslan IV"	#Too peaceful
+		dynasty = Selcukglu
+		birth_date = 1395.1.1
+		adm = 1
+		dip = 5
+		mil = 1
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Giyaseddin"
+		monarch_name = "Giyaseddin V Büyük"	#Giyaseddin V Chad
+		dynasty = "Selcukoglu"
+		birth_date = 1426.1.1
+		claim = 85
+		adm = 5
+		dip = 2
+		mil = 6
+	}
+}

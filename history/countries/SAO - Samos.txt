@@ -4,3 +4,29 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
+capital = 4954
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "George"
+		dynasty = Kyritzios
+		birth_date = 14105.1.1
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Himerios"
+		monarch_name = "Himerios"
+		dynasty = "Kyritzios"
+		birth_date = 1439.1.1
+		claim = 85
+		adm = 3
+		dip = 2
+		mil = 4
+	}
+}

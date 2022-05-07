@@ -4,29 +4,29 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
-capital = 5043
+capital = 2348
 add_army_professionalism = 0.05
 
 1444.1.1 = {
 	monarch = {
-		name = "William"
-		dynasty = Conachi
-		birth_date = 1412.1.1
-		adm = 2
-		dip = 2
-		mil = 5
+		name = "Bardas"
+		dynasty = Boilas
+		birth_date = 1394.1.1
+		adm = 3
+		dip = 0
+		mil = 2
 	}
 }
 
 1444.1.1 = {
 	heir = {
-		name = "Teodosiu"
-		monarch_name = "Teodosiu"
-		dynasty = "Conachi"
-		birth_date = 1433.1.1
+		name = "Diogenes"
+		monarch_name = "Diogenes"
+		dynasty = "Aaron"
+		birth_date = 1411.1.1
 		claim = 85
-		adm = 3
-		dip = 1
-		mil = 5
+		adm = 0
+		dip = 3
+		mil = 2
 	}
 }

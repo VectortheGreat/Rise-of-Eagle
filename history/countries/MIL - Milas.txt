@@ -5,3 +5,29 @@ primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+capital = 4952
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Mahmud"
+		dynasty = Muradoglu
+		birth_date = 1380.1.1
+		adm = 0
+		dip = 1
+		mil = 3
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Ertugrul"
+		monarch_name = "Ertugrul II"
+		dynasty = "Harunoglu"
+		birth_date = 1400.1.1
+		claim = 100
+		adm = 3
+		dip = 2
+		mil = 4
+	}
+}

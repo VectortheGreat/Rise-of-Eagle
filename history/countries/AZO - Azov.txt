@@ -4,3 +4,29 @@ technology_group = nomad_group
 religion = sunni
 primary_culture = crimean
 religious_school = hanafi_school
+capital = 286
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Devlet"
+		dynasty = Kirimal
+		birth_date = 1410.1.1
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Fetih"
+		monarch_name = "Fetih"
+		dynasty = "Kirimal"
+		birth_date = 1433.1.1
+		claim = 85
+		adm = 6
+		dip = 2
+		mil = 4
+	}
+}

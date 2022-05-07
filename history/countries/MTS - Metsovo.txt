@@ -4,3 +4,29 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
+capital = 1853
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Eusebios"
+		dynasty = Amiropoulos
+		birth_date = 1411.1.1
+		adm = 5
+		dip = 3
+		mil = 3
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Iason"
+		monarch_name = "Iason"
+		dynasty = "Amiropoulos"
+		birth_date = 1432.1.1
+		claim = 60
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}

@@ -5,3 +5,28 @@ primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Yakub"
+		dynasty = Haliloglu
+		birth_date = 1404.1.1
+		adm = 6
+		dip = 2
+		mil = 3
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Ali"
+		monarch_name = "Ali"
+		dynasty = "Haliloglu"
+		birth_date = 1435.1.1
+		claim = 60
+		adm = 5
+		dip = 2
+		mil = 3
+	}
+}

@@ -1,7 +1,19 @@
-government = monarchy
-add_government_reform = autocracy_reform
+government = republic
+add_government_reform = venice_merchants_reform
 government_rank = 1
 primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+capital = 4988
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Mustafa"
+		birth_date = 1414.1.1
+		adm = 5
+		dip = 4
+		mil = 3
+	}
+}

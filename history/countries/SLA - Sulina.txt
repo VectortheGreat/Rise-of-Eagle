@@ -2,5 +2,31 @@ government = monarchy
 add_government_reform = feudalism_reform
 government_rank = 1
 technology_group = eastern
-primary_culture = bulgarian
+primary_culture = romanian
 religion = orthodox
+capital = 5043
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Marin"
+		dynasty = Hâjdau
+		birth_date = 1402.1.1
+		adm = 4
+		dip = 4
+		mil = 2
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Veaceslav"
+		monarch_name = "Veaceslav"
+		dynasty = "Hâjdau"
+		birth_date = 1429.1.1
+		claim = 85
+		adm = 1
+		dip = 4
+		mil = 5
+	}
+}

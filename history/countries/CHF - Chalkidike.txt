@@ -4,3 +4,17 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
+capital = 148
+add_army_professionalism = 0.1
+
+1444.1.1 = {
+	monarch = {
+		name = "Alexandra"
+		dynasty = Gabras
+		female = yes
+		birth_date = 1422.1.1
+		adm = 5
+		dip = 3
+		mil = 3
+	}
+}

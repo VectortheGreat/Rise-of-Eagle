@@ -4,3 +4,29 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
+capital = 5009
+add_army_professionalism = 0.1
+
+1444.1.1 = {
+	monarch = {
+		name = "Helias"
+		dynasty = Palaiologos
+		birth_date = 14105.1.1
+		adm = 4
+		dip = 2
+		mil = 3
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Basileios"
+		monarch_name = "Basileios IV"
+		dynasty = "Palaiologos"
+		birth_date = 1430.1.1
+		claim = 85
+		adm = 5
+		dip = 2
+		mil = 6
+	}
+}

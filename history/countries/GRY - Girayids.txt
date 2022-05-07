@@ -4,3 +4,29 @@ technology_group = nomad_group
 religion = sunni
 primary_culture = crimean
 religious_school = hanafi_school
+capital = 5058
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Mubarek"
+		dynasty = Giray
+		birth_date = 1389.1.1
+		adm = 2
+		dip = 0
+		mil = 2
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Qaplan"
+		monarch_name = "Qaplan"
+		dynasty = "Giray"
+		birth_date = 1422.1.1
+		claim = 60
+		adm = 4
+		dip = 2
+		mil = 6
+	}
+}

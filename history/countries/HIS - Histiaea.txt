@@ -4,3 +4,29 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
+capital = 5016
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Eirenaios"
+		dynasty = Monomachos
+		birth_date = 1427.1.1
+		adm = 5
+		dip = 6
+		mil = 1
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Eudoxios"
+		monarch_name = "Eudoxios"
+		dynasty = "Monomachos"
+		birth_date = 1444.1.1
+		claim = 85
+		adm = 3
+		dip = 3
+		mil = 5
+	}
+}

@@ -3,3 +3,29 @@ add_government_reform = feudalism_reform
 primary_culture = serbian
 religion = orthodox
 technology_group = eastern
+capital = 1766
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Lazar"
+		dynasty = Brakovic
+		birth_date = 1403.1.1
+		adm = 3
+		dip = 6
+		mil = 4
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Petar"
+		monarch_name = "Petar"
+		dynasty = "Brakovic"
+		birth_date = 1424.1.1
+		claim = 85
+		adm = 3
+		dip = 0
+		mil = 2
+	}
+}

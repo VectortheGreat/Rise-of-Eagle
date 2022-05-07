@@ -5,3 +5,28 @@ primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+add_army_professionalism = 0.1
+capital = 331
+1444.1.1 = {
+	monarch = {
+		name = "Saltuk"
+		dynasty = Oguzoglu
+		birth_date = 1422.1.1
+		adm = 4
+		dip = 1
+		mil = 4
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Gökhan"
+		monarch_name = "Gökhan"
+		dynasty = "Oguzoglu"
+		birth_date = 1440.1.1
+		claim = 88
+		adm = 5
+		dip = 3
+		mil = 3
+	}
+}

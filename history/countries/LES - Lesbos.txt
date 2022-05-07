@@ -4,3 +4,16 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
+capital = 4700
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Athanasius"
+		dynasty = Agallon
+		birth_date = 1421.1.1
+		adm = 5
+		dip = 5
+		mil = 5
+	}
+}

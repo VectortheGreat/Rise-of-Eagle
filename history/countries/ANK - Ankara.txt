@@ -7,3 +7,28 @@ technology_group = ottoman
 religious_school = hanafi_school
 elector = yes
 capital = 326
+add_army_professionalism = 0.1
+
+1444.1.1 = {
+	monarch = {
+		name = "Süleyman"
+		dynasty = Kubatoglu
+		birth_date = 1410.1.1
+		adm = 2
+		dip = 4
+		mil = 3
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Kubat"
+		monarch_name = "Kubat IV"
+		dynasty = "Kubatoglu"
+		birth_date = 1438.1.1
+		claim = 100
+		adm = 6
+		dip = 2
+		mil = 4
+	}
+}

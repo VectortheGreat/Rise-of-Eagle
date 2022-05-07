@@ -5,3 +5,28 @@ primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+add_army_professionalism = 0.05
+capital = 4993
+1444.1.1 = {
+	monarch = {
+		name = "Cem"
+		dynasty = Ishakoglu
+		birth_date = 1400.1.1
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Ishak"
+		monarch_name = "Ishak III"
+		dynasty = "Ishakoglu"
+		birth_date = 1433.1.1
+		claim = 88
+		adm = 5
+		dip = 2
+		mil = 4
+	}
+}

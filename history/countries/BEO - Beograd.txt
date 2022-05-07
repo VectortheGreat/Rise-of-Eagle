@@ -3,3 +3,29 @@ add_government_reform = feudalism_reform
 primary_culture = serbian
 religion = orthodox
 technology_group = eastern
+capital = 141
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Stefan"
+		dynasty = Nemanjic
+		birth_date = 1413.1.1
+		adm = 5
+		dip = 3
+		mil = 4
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Josif"
+		monarch_name = "Josif"
+		dynasty = "Nemanjic"
+		birth_date = 1437.1.1
+		claim = 85
+		adm = 1
+		dip = 2
+		mil = 4
+	}
+}

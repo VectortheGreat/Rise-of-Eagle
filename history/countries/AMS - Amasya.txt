@@ -5,3 +5,28 @@ primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+add_army_professionalism = 0.05
+capital = 2304
+1444.1.1 = {
+	monarch = {
+		name = "Murat"
+		dynasty = Haciemiroglu
+		birth_date = 1420.1.1
+		adm = 3
+		dip = 1
+		mil = 3
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Cem"
+		monarch_name = "Cem"
+		dynasty = "Haciemiroglu"
+		birth_date = 1440.1.1
+		claim = 80
+		adm = 5
+		dip = 2
+		mil = 3
+	}
+}

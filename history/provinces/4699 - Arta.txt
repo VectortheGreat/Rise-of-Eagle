@@ -1,5 +1,5 @@
-owner = EPI
-controller = EPI
+owner = ART
+controller = ART
 culture = greek
 religion = orthodox
 capital = "Arta"
@@ -9,7 +9,7 @@ base_tax = 3
 base_production = 2
 base_manpower = 1
 is_city = yes
-add_core = EPI
+add_core = ART
 discovered_by = KAZ
 discovered_by = CRI
 discovered_by = GOL

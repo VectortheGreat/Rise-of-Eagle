@@ -5,3 +5,28 @@ primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+add_army_professionalism = 0.05
+capital = 2298
+1444.1.1 = {
+	monarch = {
+		name = "Alaeddin"
+		dynasty = Tekeoglu
+		birth_date = 1399.1.1
+		adm = 4
+		dip = 1
+		mil = 3
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Salih"
+		monarch_name = "Salih"
+		dynasty = "Tekeoglu"
+		birth_date = 1419.1.1
+		claim = 70
+		adm = 4
+		dip = 3
+		mil = 2
+	}
+}

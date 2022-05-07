@@ -5,3 +5,28 @@ primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+add_army_professionalism = 0.05
+capital = 4961
+1444.1.1 = {
+	monarch = {
+		name = "Sinan"
+		dynasty = Hasanoglu
+		birth_date = 1380.1.1
+		adm = 5
+		dip = 6
+		mil = 4
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Ferhad"
+		monarch_name = "Ferhad"
+		dynasty = "Hasanoglu"
+		birth_date = 1405.1.1
+		claim = 90
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

@@ -1,0 +1,32 @@
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 1
+primary_culture = albanian
+religion = catholic
+technology_group = eastern
+
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Rrok"
+		dynasty = Kosovic
+		birth_date = 1406.1.1
+		adm = 5
+		dip = 1
+		mil = 6
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Kostandin"
+		monarch_name = "Kostandin"
+		dynasty = "Kosovic"
+		birth_date = 1422.1.1
+		claim = 90
+		adm = 4
+		dip = 3
+		mil = 5
+	}
+}

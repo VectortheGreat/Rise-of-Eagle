@@ -5,3 +5,29 @@ primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
+capital = 329
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Recep II"
+		dynasty = Recepoglu
+		birth_date = 1390.1.1
+		adm = 4
+		dip = 3
+		mil = 1
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Çaka"
+		monarch_name = "Çaka"
+		dynasty = "Recepoglu"
+		birth_date = 1411.1.1
+		claim = 90
+		adm = 4
+		dip = 1
+		mil = 4
+	}
+}

@@ -4,3 +4,29 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
+capital = 5054
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Alexander"
+		dynasty = Ptochos
+		birth_date = 1499.1.1
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Bartolomeus"
+		monarch_name = "Bartolomeus"
+		dynasty = "Ptochos"
+		birth_date = 1422.1.1
+		claim = 85
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}

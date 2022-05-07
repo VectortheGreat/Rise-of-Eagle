@@ -4,3 +4,16 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
+capital = 4779
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Manuel"
+		dynasty = Kottounios
+		birth_date = 1430.1.1
+		adm = 4
+		dip = 4
+		mil = 1
+	}
+}

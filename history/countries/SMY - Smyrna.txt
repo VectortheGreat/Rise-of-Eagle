@@ -7,3 +7,28 @@ technology_group = ottoman
 religious_school = hanafi_school
 elector = yes
 capital = 318
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Kemal"
+		dynasty = Çakaoglu
+		birth_date = 1400.1.1
+		adm = 2
+		dip = 1
+		mil = 6
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Turgut"
+		monarch_name = "Turgut"
+		dynasty = "Çakaoglu"
+		birth_date = 1422.1.1
+		claim = 90
+		adm = 3
+		dip = 1
+		mil = 5
+	}
+}

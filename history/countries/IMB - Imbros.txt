@@ -4,3 +4,29 @@ technology_group = eastern
 primary_culture = greek
 religion = orthodox
 government_rank = 1
+capital = 4956
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Akakios"
+		dynasty = Kottounios
+		birth_date = 1388.1.1
+		adm = 6
+		dip = 2
+		mil = 5
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Aineias"
+		monarch_name = "Aineias"
+		dynasty = "Kottounios"
+		birth_date = 1414.1.1
+		claim = 85
+		adm = 0
+		dip = 2
+		mil = 3
+	}
+}
