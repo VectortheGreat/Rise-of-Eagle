@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = romanian
+religion = orthodox
+technology_group = eastern
+capital = 5049
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Teodosiu"
+		dynasty = "Vacarescu"
+		birth_date = 1425.1.1
+		adm = 4
+		dip = 2
+		mil = 1
+	}
+}

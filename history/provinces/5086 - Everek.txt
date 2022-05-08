@@ -1,0 +1,23 @@
+#141 - Serbia
+
+owner = KYS
+controller = KYS
+culture = turkish
+religion = sunni
+capital = " "
+trade_goods = gems
+hre = yes
+base_tax = 2
+base_production = 3
+base_manpower = 1
+is_city = yes
+add_core = KYS
+discovered_by = KAZ
+discovered_by = CRI
+discovered_by = GOL
+discovered_by = AST
+discovered_by = QAS
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman

@@ -1,0 +1,22 @@
+#146 - Athens
+
+owner = MTS
+controller = MTS
+culture = greek
+religion = orthodox
+capital = " "
+trade_goods = wine
+hre = yes
+base_tax = 3
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = MTS
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = western
+discovered_by = nomad_group
+extra_cost = 8
+center_of_trade = 1
+
