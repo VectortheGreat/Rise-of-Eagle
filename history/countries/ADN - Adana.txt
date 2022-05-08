@@ -27,6 +27,7 @@ add_army_professionalism = 0.05
 		monarch_name = "Sultanzâde Murat"
 		dynasty = "Mutahhartenoglu"
 		birth_date = 1438.1.1
+		death_date = 1470.1.1
 		claim = 80
 		adm = 3
 		dip = 1

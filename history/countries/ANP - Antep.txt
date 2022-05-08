@@ -25,6 +25,7 @@ add_army_professionalism = 0.05
 		monarch_name = "Gunduz"
 		dynasty = "Tacettinoglu"
 		birth_date = 1441.1.1
+		death_date = 1480.1.1
 		claim = 100
 		adm = 4
 		dip = 2

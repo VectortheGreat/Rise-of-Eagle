@@ -24,6 +24,7 @@ add_army_professionalism = 0.05
 		monarch_name = "Juliana"
 		dynasty = "Pantechnes"
 		birth_date = 1429.1.1
+		death_date = 1460.1.1
 		claim = 85
 		female = yes
 		adm = 4

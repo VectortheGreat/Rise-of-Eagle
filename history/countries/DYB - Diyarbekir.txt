@@ -1,9 +1,35 @@
 government = monarchy
 add_government_reform = autocracy_reform
 government_rank = 1
-primary_culture = turkish
+primary_culture = kurdish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
 elector = yes
 capital = 418
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Bozorg"
+		dynasty = Ferozkohi
+		birth_date = 1392.1.1
+		adm = 1
+		dip = 2
+		mil = 4
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Surxap"
+		monarch_name = "Surxap"
+		dynasty = "Ferozkohi"
+		birth_date = 1411.1.1
+		death_date = 1460.1.1
+		claim = 85
+		adm = 3
+		dip = 2
+		mil = 6
+	}
+}

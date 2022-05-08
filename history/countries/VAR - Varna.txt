@@ -4,3 +4,30 @@ government_rank = 1
 technology_group = eastern
 primary_culture = bulgarian
 religion = orthodox
+capital = 5026
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Marcus"
+		dynasty = Terter
+		birth_date = 1388.1.1
+		adm = 3
+		dip = 6
+		mil = 2
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Vasilii"
+		monarch_name = "Vasilii"
+		dynasty = "Terter"
+		birth_date = 1414.1.1
+		death_date = 1460.1.1
+		claim = 85
+		adm = 6
+		dip = 1
+		mil = 6
+	}
+}

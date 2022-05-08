@@ -24,6 +24,7 @@ add_army_professionalism = 0.05
 		monarch_name = "Teodosiu"
 		dynasty = "Conachi"
 		birth_date = 1433.1.1
+		death_date = 1460.1.1
 		claim = 85
 		adm = 3
 		dip = 1

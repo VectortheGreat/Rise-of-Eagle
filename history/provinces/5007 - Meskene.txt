@@ -2,7 +2,7 @@
 
 owner = ANP
 controller = ANP
-culture = syrian
+culture = al_suryah_arabic
 religion = sunni
 capital = " "
 trade_goods = livestock

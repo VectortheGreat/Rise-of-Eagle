@@ -24,6 +24,7 @@ capital = 4942
 		monarch_name = "Emin"
 		dynasty = "Korkudoglu"
 		birth_date = 1430.1.1
+		death_date = 1460.1.1
 		claim = 90
 		adm = 2
 		dip = 6

@@ -1,6 +1,15 @@
-government = monarchy
-add_government_reform = feudalism_reform
+government = theocracy
+add_government_reform = leading_clergy_reform
 government_rank = 1
 technology_group = eastern
 primary_culture = bulgarian
 religion = orthodox
+1444.1.1 = {
+	monarch = {
+		name = "Mihail"
+		birth_date = 1407.2.27
+		adm = 5
+		dip = 2
+		mil = 5
+	}
+}

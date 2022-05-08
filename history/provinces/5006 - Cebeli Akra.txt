@@ -4,7 +4,7 @@ latent_trade_goods = {
 
 owner = JAQ
 controller = JAQ
-culture = syrian
+culture = al_suryah_arabic
 religion = sunni
 capital = " "
 trade_goods = cloth

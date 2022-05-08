@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 1
+primary_culture = albanian
+religion = catholic
+technology_group = eastern
+capital = 4750
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Dukagjin"
+		dynasty = Domagojevic
+		birth_date = 1428.1.1
+		adm = 5
+		dip = 2
+		mil = 4
+	}
+}

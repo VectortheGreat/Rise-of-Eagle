@@ -26,6 +26,7 @@ add_army_professionalism = 0.1
 		monarch_name = "Kubat IV"
 		dynasty = "Kubatoglu"
 		birth_date = 1438.1.1
+		death_date = 1500.1.1
 		claim = 100
 		adm = 6
 		dip = 2

@@ -2,7 +2,7 @@
 
 owner = IKD
 controller = IKD
-culture = syrian
+culture = al_suryah_arabic
 religion = sunni
 capital = " "
 trade_goods = silk

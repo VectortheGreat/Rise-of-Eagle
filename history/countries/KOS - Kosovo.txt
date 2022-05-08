@@ -23,6 +23,7 @@ add_army_professionalism = 0.05
 		monarch_name = "Petar"
 		dynasty = "Brakovic"
 		birth_date = 1424.1.1
+		death_date = 1460.1.1
 		claim = 85
 		adm = 3
 		dip = 0

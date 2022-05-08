@@ -25,6 +25,7 @@ add_army_professionalism = 0.05
 		monarch_name = "Osman"
 		dynasty = "Ismailoglu"
 		birth_date = 1413.1.1
+		death_date = 1463.1.1
 		claim = 88
 		adm = 6
 		dip = 4

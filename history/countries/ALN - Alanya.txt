@@ -27,6 +27,7 @@ add_army_professionalism = 0.05
 		monarch_name = "Bahadir"
 		dynasty = "Alaiyeoglu"
 		birth_date = 1431.1.1
+		death_date = 1490.1.1
 		claim = 80
 		adm = 4
 		dip = 2

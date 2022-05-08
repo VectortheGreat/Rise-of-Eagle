@@ -10,7 +10,7 @@ add_army_professionalism = 0.15
 
 1444.1.1 = {
 	monarch = {
-		name = "Alp Arslan IV"	#Too peaceful
+		name = "Alp Arslan IV"	#Too peaceful
 		dynasty = Selcukglu
 		birth_date = 1395.1.1
 		adm = 1
@@ -25,6 +25,7 @@ add_army_professionalism = 0.15
 		monarch_name = "Giyaseddin V Büyük"	#Giyaseddin V Chad
 		dynasty = "Selcukoglu"
 		birth_date = 1426.1.1
+		death_date = 1460.1.1
 		claim = 85
 		adm = 5
 		dip = 2

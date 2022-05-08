@@ -24,6 +24,7 @@ capital = 2304
 		monarch_name = "Cem"
 		dynasty = "Haciemiroglu"
 		birth_date = 1440.1.1
+		death_date = 1490.1.1
 		claim = 80
 		adm = 5
 		dip = 2

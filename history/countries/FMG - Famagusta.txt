@@ -1,11 +1,11 @@
 government = monarchy
 add_government_reform = autocracy_reform
 government_rank = 1
-primary_culture = turkish
-religion = sunni
-technology_group = ottoman
-religious_school = hanafi_school
+primary_culture = greek
+religion = orthodox
+technology_group = eastern
 add_army_professionalism = 0.05
+capital = 5003
 
 1444.1.1 = {
 	monarch = {
@@ -24,6 +24,7 @@ add_army_professionalism = 0.05
 		monarch_name = "Ali"
 		dynasty = "Haliloglu"
 		birth_date = 1435.1.1
+		death_date = 1460.1.1
 		claim = 60
 		adm = 5
 		dip = 2

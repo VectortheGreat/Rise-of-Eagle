@@ -24,6 +24,7 @@ add_army_professionalism = 0.05
 		monarch_name = "Iason"
 		dynasty = "Amiropoulos"
 		birth_date = 1432.1.1
+		death_date = 1460.1.1
 		claim = 60
 		adm = 2
 		dip = 4

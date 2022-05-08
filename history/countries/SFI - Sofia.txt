@@ -4,3 +4,31 @@ government_rank = 1
 technology_group = eastern
 primary_culture = bulgarian
 religion = orthodox
+capital = 1765
+add_army_professionalism = 0.1
+
+1444.1.1 = {
+	monarch = {
+		name = "Aleksandar"
+		dynasty = Cometopuli
+		birth_date = 1402.1.1
+		adm = 1
+		dip = 3
+		mil = 3
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Sofija"
+		monarch_name = "Sofija III"
+		dynasty = "Cometopuli"
+		birth_date = 1431.1.1
+		death_date = 1460.1.1
+		claim = 85
+		female = yes
+		adm = 5
+		dip = 3
+		mil = 4
+	}
+}

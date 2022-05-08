@@ -4,3 +4,17 @@ government_rank = 1
 technology_group = eastern
 primary_culture = bulgarian
 religion = orthodox
+capital = 159
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Aleksandrina"
+		dynasty = Teleki
+		birth_date = 1410.1.1
+		adm = 3
+		dip = 4
+		mil = 3
+		female = yes
+	}
+}

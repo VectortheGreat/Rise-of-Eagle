@@ -3,7 +3,7 @@
 owner = TRE
 controller = TRE
 culture = pontic_greek
-religion = orthoodox
+religion = orthodox
 capital = " "
 trade_goods = naval_supplies
 hre = yes

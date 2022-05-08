@@ -24,6 +24,7 @@ capital = 4993
 		monarch_name = "Ishak III"
 		dynasty = "Ishakoglu"
 		birth_date = 1433.1.1
+		death_date = 1460.1.1
 		claim = 88
 		adm = 5
 		dip = 2

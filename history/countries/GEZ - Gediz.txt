@@ -24,6 +24,7 @@ capital = 4961
 		monarch_name = "Ferhad"
 		dynasty = "Hasanoglu"
 		birth_date = 1405.1.1
+		death_date = 1460.1.1
 		claim = 90
 		adm = 3
 		dip = 3

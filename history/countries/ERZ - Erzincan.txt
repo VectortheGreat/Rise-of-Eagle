@@ -24,6 +24,7 @@ capital = 2305
 		monarch_name = "Alptigin II"
 		dynasty = "Oguzoglu"
 		birth_date = 1425.1.1
+		death_date = 1460.1.1
 		claim = 88
 		adm = 5
 		dip = 2

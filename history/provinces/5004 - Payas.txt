@@ -2,7 +2,7 @@
 
 owner = PYS
 controller = PYS
-culture = syrian
+culture = al_suryah_arabic
 religion = sunni
 capital = " "
 trade_goods = wool

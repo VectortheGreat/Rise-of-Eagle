@@ -24,6 +24,7 @@ add_army_professionalism = 0.1
 		monarch_name = "Gounaropoulos"
 		dynasty = "Aaron"
 		birth_date = 1434.1.1
+		death_date = 1481.5.3
 		claim = 100
 		female = yes
 		adm = 4

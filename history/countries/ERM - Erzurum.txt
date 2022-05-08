@@ -24,6 +24,7 @@ capital = 331
 		monarch_name = "Gökhan"
 		dynasty = "Oguzoglu"
 		birth_date = 1440.1.1
+		death_date = 1460.1.1
 		claim = 88
 		adm = 5
 		dip = 3

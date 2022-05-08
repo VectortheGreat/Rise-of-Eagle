@@ -1,7 +1,7 @@
 #143 - Vlorë - Southern Albania
 
-owner = DYR
-controller = DYR
+owner = AVL
+controller = AVL
 culture = albanian
 religion = orthodox
 capital = "Vlorë"
@@ -11,7 +11,7 @@ base_tax = 2
 base_production = 1
 base_manpower = 2
 is_city = yes
-add_core = DYR
+add_core = AVL
 discovered_by = KAZ
 discovered_by = CRI
 discovered_by = GOL

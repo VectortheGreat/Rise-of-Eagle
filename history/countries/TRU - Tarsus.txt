@@ -1,7 +1,19 @@
 government = monarchy
 add_government_reform = autocracy_reform
 government_rank = 1
-primary_culture = turkish
-religion = sunni
+primary_culture = armenian
+religion = coptic
 technology_group = ottoman
-religious_school = hanafi_school
+capital = 5060
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "David"
+		dynasty = Rubenid
+		birth_date = 1425.1.1
+		adm = 4
+		dip = 3
+		mil = 6
+	}
+}

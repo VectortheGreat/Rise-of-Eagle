@@ -25,6 +25,7 @@ add_army_professionalism = 0.05
 		monarch_name = "Iskender II"
 		dynasty = "Sökeoglu"
 		birth_date = 1400.1.1
+		death_date = 1460.1.1
 		claim = 90
 		adm = 5
 		dip = 1
