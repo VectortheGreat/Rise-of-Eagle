@@ -1,17 +1,17 @@
 #161 - Tîrgoviste
 
-owner = SLA
-controller = SLA
+owner = SLM
+controller = SLM
 culture = romanian
 religion = orthodox
 capital = "Tîrgoviste"
 trade_goods = livestock
 hre = yes
-base_tax = 5
-base_production = 5
+base_tax = 4
+base_production = 4
 base_manpower = 3
 is_city = yes
-add_core = SLA
+add_core = SLM
 discovered_by = KAZ
 discovered_by = CRI
 discovered_by = GOL

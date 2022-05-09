@@ -1,7 +1,7 @@
 
 
-owner = DEM
-controller = DEM
+owner = DYR
+controller = DYR
 culture = albanian
 religion = catholic
 capital = " "
@@ -11,7 +11,7 @@ base_tax = 3
 base_production = 3
 base_manpower = 3
 is_city = yes
-add_core = KRJDEM
+add_core = DYR
 discovered_by = western
 discovered_by = eastern
 discovered_by = muslim

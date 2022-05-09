@@ -1,0 +1,19 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+technology_group = eastern
+primary_culture = bulgarian
+religion = orthodox
+capital = 5026
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Vasilii"
+		adm = 2
+		dip = 4
+		mil = 4
+		regent = yes
+		birth_date = 1405.1.1
+	}
+}
