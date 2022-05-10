@@ -2,7 +2,7 @@
 
 owner = VID
 controller = VID
-culture = bulgarian
+culture = serbian
 religion = orthodox
 capital = "Vidin"
 trade_goods = grain

@@ -14,7 +14,7 @@ age_of_discovery = {
 			is_part_of_hre = yes
 			has_country_flag = dontforgettorenameit
 		}
-	}		
+	}	
 	
 
 	

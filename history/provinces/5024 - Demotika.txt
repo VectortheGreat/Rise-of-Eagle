@@ -2,7 +2,7 @@
 
 owner = ADR
 controller = ADR
-culture = bulgarian
+culture = greek
 religion = orthodox
 capital = " "
 trade_goods = wine

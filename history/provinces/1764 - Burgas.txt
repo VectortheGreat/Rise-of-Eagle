@@ -2,7 +2,7 @@
 
 owner = BUS
 controller = BUS
-culture = bulgarian
+culture = greek
 religion = orthodox
 capital = "Burgas"
 trade_goods = salt

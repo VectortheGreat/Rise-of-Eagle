@@ -1,0 +1,34 @@
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 1
+primary_culture = turkish
+religion = sunni
+technology_group = ottoman
+religious_school = hanafi_school
+capital = 4315
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Ahmed"
+		dynasty = Tokatoglu
+		birth_date = 1404.1.1
+		adm = 4
+		dip = 1
+		mil = 4
+	}
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Hasan"
+		monarch_name = "Hasan"
+		dynasty = "Mutahhartenoglu"
+		birth_date = 1428.1.1
+		death_date = 1470.1.1
+		claim = 80
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+}

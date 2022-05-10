@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 1
+primary_culture = armenian
+religion = coptic
+technology_group = ottoman
+capital = 4998
+add_army_professionalism = 0.05
+
+1444.1.1 = {
+	monarch = {
+		name = "Karayan"
+		dynasty = Melik-Avanyan
+		birth_date = 1424.1.1
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}

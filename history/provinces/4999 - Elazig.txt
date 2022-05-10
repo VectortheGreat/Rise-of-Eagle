@@ -2,7 +2,7 @@
 
 owner = ERZ
 controller = ERZ
-culture = turkish
+culture = kurdish
 religion = sunni
 capital = " "
 trade_goods = copper
