@@ -2,8 +2,8 @@
 
 owner = STL
 controller = STL
-culture = turkish
-religion = sunni
+culture = armenian
+religion = coptic
 capital = " "
 trade_goods = livestock
 hre = yes
