@@ -5,6 +5,7 @@ primary_culture = armenian
 religion = coptic
 technology_group = ottoman
 capital = 5060
+elector = yes
 add_army_professionalism = 0.05
 
 1444.1.1 = {

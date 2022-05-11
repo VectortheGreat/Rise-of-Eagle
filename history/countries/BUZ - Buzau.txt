@@ -5,6 +5,7 @@ primary_culture = romanian
 religion = orthodox
 technology_group = eastern
 capital = 2998
+elector = yes
 add_army_professionalism = 0.05
 
 1444.1.1 = {

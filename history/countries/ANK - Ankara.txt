@@ -5,7 +5,6 @@ primary_culture = turkish
 religion = sunni
 technology_group = ottoman
 religious_school = hanafi_school
-elector = yes
 capital = 326
 add_army_professionalism = 0.1
 

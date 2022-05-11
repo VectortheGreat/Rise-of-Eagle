@@ -5,6 +5,7 @@ technology_group = eastern
 primary_culture = bulgarian
 religion = orthodox
 capital = 5026
+elector = yes
 add_army_professionalism = 0.05
 
 1444.1.1 = {

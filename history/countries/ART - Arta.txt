@@ -5,6 +5,7 @@ primary_culture = greek
 religion = orthodox
 government_rank = 1
 capital = 4699
+elector = yes
 add_army_professionalism = 0.05
 
 1444.1.1 = {
