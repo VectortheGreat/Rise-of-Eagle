@@ -1,5 +1,5 @@
 
-
+center_of_trade = 2
 owner = SLA
 controller = SLA
 culture = bulgarian

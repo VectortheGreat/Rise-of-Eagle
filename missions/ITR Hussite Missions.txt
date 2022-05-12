@@ -1,0 +1,250 @@
+itr_religion_missions_hus = {		#Hussite Missions
+	slot = 1
+	generic = no
+	ai = yes
+	
+	potential = {
+		tag = ITR
+		has_country_flag = religion_reformed_hus
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	
+	itr_religion_mission_hus1 = {		#Bohemia
+		icon = inkhussite
+		required_missions = { }
+		position = 7
+		provinces_to_highlight = {
+			owned_by = BOH
+		}
+		trigger = {
+			OR = {
+				AND = {
+					alliance_with = BOH
+					BOH = {
+						has_opinion = {
+							who = ITR
+							value = 180
+						}
+					}
+				}
+				OR = {
+					is_subject_of = ITR
+					NOT = { exists = BOH }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = BOH
+				}
+				add_country_modifier = {
+					name = "ink_150"
+					duration = 3652
+				}
+			}
+			else = {
+				add_dip_power = 100
+			}
+			if = {
+				BOH = {
+					limit = {
+						NOT = { religion = hussite }
+					}
+					country_event = {
+						id = itest.14
+					}
+				}
+			}
+		}
+	}
+	itr_religion_mission_hus2 = {		#Bohemian Crown
+		icon = mission_empire
+		required_missions = { itr_religion_mission_hus1 }
+		position = 8
+		provinces_to_highlight = {
+			owned_by = BOH
+		}
+		trigger = {
+			BOH = {
+                OR = {
+					has_female_heir = yes
+					has_heir = no
+					NOT = { heir_claim = 50 }
+					is_subject_of = ITR
+					NOT = { exists = BOH }
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { exists = BOH }
+				BOH = {
+					define_heir = {
+						male = yes
+						dynasty = ROOT
+						claim = 90
+					}
+				}
+			}
+			else = {
+				add_dip_power = 200
+			}
+		}
+	}
+	
+	itr_religion_mission_hus3 = {		#Electors
+		icon = inkelectors
+		required_missions = {  }
+		position = 9
+		trigger = {
+			OR = {
+				AND = {
+					calc_true_if = {
+						all_elector = {
+							has_opinion = {
+								who = ROOT
+								value = 200
+							}
+						}
+						amount = 3
+					}
+					calc_true_if = {
+						all_elector = {
+							OR = {
+								religion = protestant
+								religion = reformed
+								religion = hussite
+							}
+						}
+						amount = 3
+					}
+				}
+				hre_religion = protestant
+				hre_religion = reformed
+				NOT = { hre_size = 1 }
+			}
+		}
+		effect = {
+			country_event = {
+				id = itest.11
+			}
+			add_country_modifier = {
+				name = "ink_015"
+				duration = 3652
+			}
+			if = {
+				limit = {
+					hre_religion = catholic
+				}
+				country_event = {
+					id = itest.23
+				}
+			}
+			custom_tooltip = itr_hre_league_tt
+		}
+	}
+	
+	itr_religion_mission_hus4 = {		#Secure HRE
+		icon = securethehre
+		required_missions = { itr_religion_mission_hus3 }
+		position = 10
+		provinces_to_highlight = {
+			NOT = {
+				ROOT = {
+					all_elector = {
+						alliance_with = ITR
+						has_opinion = { who = ROOT value = 200 }
+					}
+				}
+			}
+		}
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						hre_religion = protestant
+						hre_religion = reformed
+					}
+					all_elector = {
+						alliance_with = ITR
+						has_opinion = {
+							who = ITR
+							value = 200
+						}
+					}
+				}
+				AND = {
+					NOT = { hre_size = 1 }
+					NOT = { exists = HLR }
+				}
+			}
+		}
+		effect = {
+			every_elector = { 
+				limit = { 
+					has_opinion = {
+						who = ROOT
+						value = 200
+					}
+					NOT = { religion = catholic }
+				}
+				country_event = {
+					id = itest.566
+				}
+			}
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					NOT = { religion = ROOT }
+					NOT = { total_development = 150 }
+					NOT = { tag = ITR }
+					NOT = { is_emperor = yes }
+				}
+				country_event = {
+					id = itest.566
+				}
+			}
+			set_hre_religion = hussite
+		}
+	}
+	
+	itr_religion_mission_hus5 = {		#One Christian Sect
+		icon = catholicsm
+		required_missions = { itr_religion_mission_hus4 }
+		position = 11
+		provinces_to_highlight = {
+			is_capital = yes
+			owner = { 
+				capital_scope = {
+					continent = europe
+				}
+				NOT = { religion = ROOT } 
+			}
+		}
+		trigger = {
+			NOT = {
+				any_country = {
+					OR = {
+						religion = orthodox
+						religion = protestant
+						religion = reformed
+						religion = catholic
+						religion = coptic
+						religion = anglican
+					}
+					capital_scope = {
+						continent = europe
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ink_103"
+				duration = -1
+			}
+		}
+	}
+}

@@ -14,7 +14,7 @@ base_production = 4
 base_manpower = 3
 is_city = yes
 add_core = SFI
-
+center_of_trade = 2
 
 
 discovered_by = western

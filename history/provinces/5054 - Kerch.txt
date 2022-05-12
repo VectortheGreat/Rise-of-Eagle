@@ -1,5 +1,5 @@
 
-
+center_of_trade = 1
 owner = KCH
 controller = KCH
 culture = pontic_greek
