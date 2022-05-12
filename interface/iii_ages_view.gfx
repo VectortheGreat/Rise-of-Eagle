@@ -1,0 +1,99 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_ab_country_1"
+		texturefile = "gfx/interface/ages/ab_country_1.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_2"
+		texturefile = "gfx/interface/ages/ab_country_2.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_3"
+		texturefile = "gfx/interface/ages/ab_country_3.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_4"
+		texturefile = "gfx/interface/ages/ab_country_4.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_5"
+		texturefile = "gfx/interface/ages/ab_country_5.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_6"
+		texturefile = "gfx/interface/ages/ab_country_6.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_7"
+		texturefile = "gfx/interface/ages/ab_country_7.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_8"
+		texturefile = "gfx/interface/ages/ab_country_8.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_9"
+		texturefile = "gfx/interface/ages/ab_country_9.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_10"
+		texturefile = "gfx/interface/ages/ab_country_10.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_11"
+		texturefile = "gfx/interface/ages/ab_country_11.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_12"
+		texturefile = "gfx/interface/ages/ab_country_12.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_13"
+		texturefile = "gfx/interface/ages/ab_country_13.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_14"
+		texturefile = "gfx/interface/ages/ab_country_14.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_15"
+		texturefile = "gfx/interface/ages/ab_country_15.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_16"
+		texturefile = "gfx/interface/ages/ab_country_16.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_17"
+		texturefile = "gfx/interface/ages/ab_country_17.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_18"
+		texturefile = "gfx/interface/ages/ab_country_18.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_19"
+		texturefile = "gfx/interface/ages/ab_country_19.dds"
+	}
+	spriteType = {
+		name = "GFX_ab_country_20"
+		texturefile = "gfx/interface/ages/ab_country_20.dds"
+	}
+	spriteType = {
+		name = "GFX_obj_hre_1"
+		texturefile = "gfx/interface/ages/obj_hre_1.dds"
+	}
+	spriteType = {
+		name = "GFX_obj_hre_2"
+		texturefile = "gfx/interface/ages/obj_hre_2.dds"
+	}
+	spriteType = {
+		name = "GFX_obj_hre_3"
+		texturefile = "gfx/interface/ages/obj_hre_3.dds"
+	}
+	spriteType = {
+		name = "GFX_obj_hre_4"
+		texturefile = "gfx/interface/ages/obj_hre_4.dds"
+	}
+}
