@@ -242,13 +242,13 @@ guiTypes = {
 		
 		guiButtonType = {
 			name ="country_mission_button"
-			position = { x= 300 y = 7 }
+			position = { x= 0 y = 2 }
 			quadTextureSprite = "GFX_shield_small"
 		}
 
 		iconType = {
 			name = "country_higlight"
-			position = { x = 300 y = 7 }
+			position = { x = 0 y = 2 }
 			quadTextureSprite = "GFX_small_shield_overlay_great_power_transparent"
 		}
 	}

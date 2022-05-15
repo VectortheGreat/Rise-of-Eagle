@@ -1,4 +1,95 @@
-emperor_reichsreform = {
+iii_reform1 = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		local_defensiveness = 0.1
+	}
+	all = {
+		fort_maintenance_modifier = -0.10
+	}
+	on_effect = {
+		imperial_ban_allowed = yes
+	}
+	off_effect = {
+		imperial_ban_allowed = no
+	}
+	gui_container = mainline
+}
+
+iii_reform2 = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		local_warscore_cost_modifier = 0.15
+	}
+	emperor = {
+		imperial_authority_value = 0.1
+	}
+	gui_container = mainline
+	required_reform = iii_reform1
+}
+
+iii_reform3 = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		local_tax_modifier = 0.2
+	}
+	emperor = {
+		tax_income = 20
+	}
+	gui_container = mainline
+	required_reform = iii_reform2
+}
+
+iii_reform4 = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	all = {
+		imperial_mercenary_cost = -0.25
+	}
+	gui_container = mainline
+	required_reform = iii_reform3
+}
+
+iii_reform5 = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	elector = {
+		prestige = 1
+	}
+	emperor = {
+		max_electors = 1
+		diplomatic_reputation = 1
+	}
+	gui_container = mainline
+	required_reform = iii_reform4
+}
+
+iii_reform6 = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		local_production_efficiency = 0.15
+		trade_goods_size = 1
+	}
+	gui_container = mainline
+	required_reform = iii_reform5
+}
+
+iii_reform7 = {
 	empire = hre
 	potential = {
 		has_dlc = "Emperor"
@@ -7,9 +98,31 @@ emperor_reichsreform = {
 		
 	}
 	gui_container = mainline
+	required_reform = iii_reform6
 }
 
-emperor_reichsreform = {
+iii_reform8 = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	province = {
+		local_defensiveness = 0.1
+	}
+	all = {
+		fort_maintenance_modifier = -0.10
+	}
+	on_effect = {
+		imperial_ban_allowed = yes
+	}
+	off_effect = {
+		imperial_ban_allowed = no
+	}
+	gui_container = mainline
+	required_reform = iii_reform7
+}
+
+iii_reform9 = {
 	empire = hre
 	potential = {
 		has_dlc = "Emperor"
@@ -18,9 +131,10 @@ emperor_reichsreform = {
 		
 	}
 	gui_container = mainline
+	required_reform = iii_reform8
 }
 
-emperor_reichsreform = {
+iii_reform10 = {
 	empire = hre
 	potential = {
 		has_dlc = "Emperor"
@@ -29,9 +143,10 @@ emperor_reichsreform = {
 		
 	}
 	gui_container = mainline
+	required_reform = iii_reform9
 }
 
-emperor_reichsreform = {
+iii_reform11 = {
 	empire = hre
 	potential = {
 		has_dlc = "Emperor"
@@ -40,9 +155,10 @@ emperor_reichsreform = {
 		
 	}
 	gui_container = mainline
+	required_reform = iii_reform10
 }
 
-emperor_reichsreform = {
+iii_reform12 = {
 	empire = hre
 	potential = {
 		has_dlc = "Emperor"
@@ -51,9 +167,10 @@ emperor_reichsreform = {
 		
 	}
 	gui_container = mainline
+	required_reform = iii_reform11
 }
 
-emperor_reichsreform = {
+iii_reform13 = {
 	empire = hre
 	potential = {
 		has_dlc = "Emperor"
@@ -62,9 +179,10 @@ emperor_reichsreform = {
 		
 	}
 	gui_container = mainline
+	required_reform = iii_reform12
 }
 
-emperor_reichsreform = {
+iii_reform14 = {
 	empire = hre
 	potential = {
 		has_dlc = "Emperor"
@@ -73,11 +191,12 @@ emperor_reichsreform = {
 		
 	}
 	gui_container = mainline
+	required_reform = iii_reform13
 }
 
-emperor_reichskrieg = {	#decentralization
+iii_dec_reform1 = {	#decentralization
 	empire = hre
-	required_reform = emperor_perpetual_diet
+	required_reform = iii_reform7
 	disabled_by = emperor_hofgericht
 	gui_container = left_branch
 
@@ -89,9 +208,9 @@ emperor_reichskrieg = {	#decentralization
 	}
 }
 
-emperor_reichskrieg = {	#decentralization
+iii_dec_reform2 = {
 	empire = hre
-	required_reform = emperor_perpetual_diet
+	required_reform = iii_dec_reform1
 	disabled_by = emperor_hofgericht
 	gui_container = left_branch
 
@@ -103,9 +222,9 @@ emperor_reichskrieg = {	#decentralization
 	}
 }
 
-emperor_reichskrieg = {	#decentralization
+iii_dec_reform3 = {
 	empire = hre
-	required_reform = emperor_perpetual_diet
+	required_reform = iii_dec_reform2
 	disabled_by = emperor_hofgericht
 	gui_container = left_branch
 
@@ -117,9 +236,9 @@ emperor_reichskrieg = {	#decentralization
 	}
 }
 
-emperor_reichskrieg = {	#decentralization
+iii_dec_reform4 = {
 	empire = hre
-	required_reform = emperor_perpetual_diet
+	required_reform = iii_dec_reform3
 	disabled_by = emperor_hofgericht
 	gui_container = left_branch
 
@@ -132,7 +251,77 @@ emperor_reichskrieg = {	#decentralization
 }
 
 
-emperor_privilegia_de_non_appelando = { 	#centralization
+iii_dec_reform5 = {
+	empire = hre
+	required_reform = iii_dec_reform4
+	disabled_by = emperor_hofgericht
+	gui_container = left_branch
+
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		
+	}
+}
+
+iii_dec_reform6 = {
+	empire = hre
+	required_reform = iii_dec_reform5
+	disabled_by = emperor_hofgericht
+	gui_container = left_branch
+
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		
+	}
+}
+
+iii_dec_reform7 = {
+	empire = hre
+	required_reform = iii_dec_reform6
+	disabled_by = emperor_hofgericht
+	gui_container = left_branch
+
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		
+	}
+}
+
+iii_dec_reform8 = {
+	empire = hre
+	required_reform = iii_dec_reform7
+	disabled_by = emperor_hofgericht
+	gui_container = left_branch
+
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		
+	}
+}
+
+iii_dec_reform9 = {
+	empire = hre
+	required_reform = iii_dec_reform8
+	disabled_by = emperor_hofgericht
+	gui_container = left_branch
+
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		
+	}
+}
+
+iii_cent_reform1 = { 	#centralization
 	empire = hre
 	potential = {
 		has_dlc = "Emperor"
@@ -140,12 +329,12 @@ emperor_privilegia_de_non_appelando = { 	#centralization
 	emperor = {
 		core_creation = -0.10
 	}
-	required_reform = emperor_perpetual_diet
+	required_reform = iii_reform7
 	disabled_by = emperor_reichstag_collegia
 	gui_container = right_branch
 }
 
-emperor_privilegia_de_non_appelando = { 	#centralization
+iii_cent_reform2 = {
 	empire = hre
 	potential = {
 		has_dlc = "Emperor"
@@ -153,12 +342,12 @@ emperor_privilegia_de_non_appelando = { 	#centralization
 	emperor = {
 		core_creation = -0.10
 	}
-	required_reform = emperor_perpetual_diet
+	required_reform = iii_cent_reform1
 	disabled_by = emperor_reichstag_collegia
 	gui_container = right_branch
 }
 
-emperor_privilegia_de_non_appelando = { 	#centralization
+iii_cent_reform3 = {
 	empire = hre
 	potential = {
 		has_dlc = "Emperor"
@@ -166,12 +355,12 @@ emperor_privilegia_de_non_appelando = { 	#centralization
 	emperor = {
 		core_creation = -0.10
 	}
-	required_reform = emperor_perpetual_diet
+	required_reform = iii_cent_reform2
 	disabled_by = emperor_reichstag_collegia
 	gui_container = right_branch
 }
 
-emperor_privilegia_de_non_appelando = { 	#centralization
+iii_cent_reform4 = {
 	empire = hre
 	potential = {
 		has_dlc = "Emperor"
@@ -179,7 +368,72 @@ emperor_privilegia_de_non_appelando = { 	#centralization
 	emperor = {
 		core_creation = -0.10
 	}
-	required_reform = emperor_perpetual_diet
+	required_reform = iii_cent_reform3
+	disabled_by = emperor_reichstag_collegia
+	gui_container = right_branch
+}
+
+iii_cent_reform5 = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		core_creation = -0.10
+	}
+	required_reform = iii_cent_reform4
+	disabled_by = emperor_reichstag_collegia
+	gui_container = right_branch
+}
+
+iii_cent_reform6 = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		core_creation = -0.10
+	}
+	required_reform = iii_cent_reform5
+	disabled_by = emperor_reichstag_collegia
+	gui_container = right_branch
+}
+
+iii_cent_reform7 = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		core_creation = -0.10
+	}
+	required_reform = iii_cent_reform6
+	disabled_by = emperor_reichstag_collegia
+	gui_container = right_branch
+}
+
+iii_cent_reform8 = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		core_creation = -0.10
+	}
+	required_reform = iii_cent_reform7
+	disabled_by = emperor_reichstag_collegia
+	gui_container = right_branch
+}
+
+iii_cent_reform9 = {
+	empire = hre
+	potential = {
+		has_dlc = "Emperor"
+	}
+	emperor = {
+		core_creation = -0.10
+	}
+	required_reform = iii_cent_reform8
 	disabled_by = emperor_reichstag_collegia
 	gui_container = right_branch
 }
