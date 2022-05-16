@@ -44,6 +44,12 @@ iii_reform3 = {
 	emperor = {
 		tax_income = 20
 	}
+	on_effect = {
+		#About Islamic Reform
+	}
+	off_effect = {
+		
+	}
 	gui_container = mainline
 	required_reform = iii_reform2
 }
@@ -94,8 +100,9 @@ iii_reform7 = {
 	potential = {
 		has_dlc = "Emperor"
 	}
-	province = {
-		
+	emperor = {
+		max_free_cities = 2
+		free_city_imperial_authority = 0.25
 	}
 	gui_container = mainline
 	required_reform = iii_reform6
@@ -107,16 +114,10 @@ iii_reform8 = {
 		has_dlc = "Emperor"
 	}
 	province = {
-		local_defensiveness = 0.1
+		local_manpower_modifier = 0.2
 	}
 	all = {
-		fort_maintenance_modifier = -0.10
-	}
-	on_effect = {
-		imperial_ban_allowed = yes
-	}
-	off_effect = {
-		imperial_ban_allowed = no
+		land_morale = 0.05
 	}
 	gui_container = mainline
 	required_reform = iii_reform7
