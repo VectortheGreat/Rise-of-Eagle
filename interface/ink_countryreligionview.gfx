@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_nestorianism_aspects_icon"
+		texturefile = "gfx/interface/nestorianism_aspects_icon.dds"
+	}
+}

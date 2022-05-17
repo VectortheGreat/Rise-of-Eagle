@@ -845,6 +845,8 @@ muslim = {
 					limit = {
 						NOT = { religion = sunni }
 						NOT = { religion = ibadi }
+						NOT = { religion = reformed_shia }
+						NOT = { religion = reformed_sunni }
 					}
 					NOT = { piety = -0.5 }
 				}
@@ -918,6 +920,8 @@ muslim = {
 					limit = {
 						NOT = { religion = sunni }
 						NOT = { religion = ibadi }
+						NOT = { religion = reformed_shia }
+						NOT = { religion = reformed_sunni }
 					}
 					NOT = { piety = -0.5 }
 				}
@@ -990,6 +994,8 @@ muslim = {
 					limit = {
 						NOT = { religion = sunni }
 						NOT = { religion = ibadi }
+						NOT = { religion = reformed_shia }
+						NOT = { religion = reformed_sunni }
 					}
 					NOT = { piety = -0.5 }
 				}
@@ -1062,6 +1068,8 @@ muslim = {
 					limit = {
 						NOT = { religion = sunni }
 						NOT = { religion = ibadi }
+						NOT = { religion = reformed_shia }
+						NOT = { religion = reformed_sunni }
 					}
 					NOT = { piety = -0.5 }
 				}
@@ -1135,6 +1143,8 @@ muslim = {
 					limit = {
 						NOT = { religion = shiite }
 						NOT = { religion = ibadi }
+						NOT = { religion = reformed_shia }
+						NOT = { religion = reformed_sunni }
 					}
 					NOT = { piety = -0.5 }
 				}
@@ -1210,6 +1220,8 @@ muslim = {
 					limit = {
 						NOT = { religion = shiite }
 						NOT = { religion = ibadi }
+						NOT = { religion = reformed_shia }
+						NOT = { religion = reformed_sunni }
 					}
 					NOT = { piety = -0.5 }
 				}
@@ -1282,6 +1294,8 @@ muslim = {
 					limit = {
 						NOT = { religion = shiite }
 						NOT = { religion = ibadi }
+						NOT = { religion = reformed_shia }
+						NOT = { religion = reformed_sunni }
 					}
 					NOT = { piety = -0.5 }
 				}
@@ -1415,6 +1429,15 @@ muslim = {
 			local_missionary_strength = -0.02
 		}
 		heretic = { BEKTASHI AHMADI ZIKRI YAZIDI }
+
+		on_convert = {
+			change_religion = reformed_sunni
+			add_prestige = -100
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
 		
 		uses_judaism_power = yes
 		aspects_name = JEWISH_ASPECTS
@@ -1508,26 +1531,38 @@ muslim = {
 		color = { 62 222 219 }
 		icon = 5
 		country = {
-			tolerance_heretic = 1
-			global_manpower_modifier = 0.10
+			global_heretic_missionary_strength = 0.02
+			fire_damage_received = -0.10
 		}
 		country_as_secondary = {
-			tolerance_heretic = 1
-			global_manpower_modifier = 0.10
+			global_heretic_missionary_strength = 0.02
+			fire_damage_received = -0.10
 		}
 		province = {
 			local_missionary_strength = -0.02
 		}		
 		heretic = { BEKTASHI AHMADI ZIKRI YAZIDI }
+
+		on_convert = {
+			change_religion = reformed_shia
+			add_prestige = -100
+			add_country_modifier = {
+				name = "conversion_zeal"
+				duration = 3650
+			}
+		}
 		
 		uses_anglican_power = yes				# Uses church power/aspect mechanics
 		
 		aspects = {
-			divorce_consort_aspect
-			gain_consort_aspect
-			dissolve_monasteries_aspect
-			monopoly_aspect
-			stability_aspect
+			sons_of_ali_aspect
+			sharia_sermons_aspect
+			taste_of_alchol_aspect
+			shiite_merchants_aspect
+			religious_edicts
+			collect_donations_at_mosques
+			twelve_imams_legacy
+			merchant_monopoly_legacy
 		}
 		aspects_name = ANGLICAN_ASPECTS
 	}

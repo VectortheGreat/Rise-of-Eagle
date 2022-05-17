@@ -1,4 +1,4 @@
-allah_mohammad_ali_aspect = {
+sons_of_ali_aspect = {
 	sprite = "GFX_divorce_consort_icon"
 	cost = 150
 	trigger = {
@@ -38,9 +38,9 @@ allah_mohammad_ali_aspect = {
 	}
 }
 
-taste_of_alchol_aspect = {
+sharia_sermons_aspect = {
 	sprite = "GFX_marry_local_suitor_icon"
-	cost = 100
+	cost = 150
 	trigger = {
 		NOT = { has_country_modifier = ink_nesto_support_government }
 	}
@@ -50,8 +50,8 @@ taste_of_alchol_aspect = {
 			add_country_modifier = {
 				name = "ink_nesto_support_government"
 				duration = 3650
-				 #land_morale = 0.10
-				 #fire_damage = 0.10
+				 #manpower_in_true_faith_provinces= 0.10
+				 #10% tax at peace(local faith), 10%Regiment speed at war(local faith)
 			}
 			add_estate_loyalty = {
 				estate = estate_nobles
@@ -74,14 +74,24 @@ taste_of_alchol_aspect = {
 
 taste_of_alchol_aspect = {
 	sprite = "GFX_dissolve_monasteries_icon"
-	cost = 100
+	cost = 150
 	trigger = {
-		NOT = {
-			treasury = 1000000
-		}
+		NOT = { has_country_modifier = ink_nesto_support_government }
 	}
 	effect = {
-		add_years_of_income = 0.25
+		custom_tooltip = nesto4_tt
+		hidden_effect = {
+			add_country_modifier = {
+				name = "ink_nesto_support_government"
+				duration = 3650
+				 #global_unrest = -2
+				 #10% production for wine provinces
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 5
+				}
+		}
 	}
 	ai_will_do = {
 		factor = 1
@@ -92,16 +102,26 @@ taste_of_alchol_aspect = {
 	}
 }
 
-monopoly_aspect = {
+shiite_merchants_aspect = {
 	sprite = "GFX_grant_monopoly_icon"
-	cost = 100
+	cost = 150
 	trigger = {
-		NOT = {
-			mercantilism = 100
-		}
+		NOT = { has_country_modifier = ink_nesto_support_government }
 	}
 	effect = {
-		add_mercantilism = 1
+		custom_tooltip = nesto4_tt
+		hidden_effect = {
+			add_country_modifier = {
+				name = "ink_nesto_support_government"
+				duration = 3650
+				 #caravan_power = 0.2
+				 #trade_value_modifier = 0.1 (local faith)
+			}
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 5
+				}
+		}
 	}
 	ai_will_do = {
 		factor = 1
@@ -112,16 +132,104 @@ monopoly_aspect = {
 	}
 }
 
-stability_aspect = {
+religious_edicts = {
 	sprite = "GFX_progress_of_the_supreme_governor_icon"
-	cost = 200
+	cost = 150
+	effect = {
+		change_government_reform_progress = 20
+	}
+	ai_will_do = {
+		factor = 3
+		modifier = {
+			factor = 0.5
+			stability = 0
+		}
+		modifier = {
+			factor = 0.5
+			stability = 1
+		}
+		modifier = {
+			factor = 0.5
+			stability = 2
+		}
+	}
+}
+
+collect_donations_at_mosques = {
+	sprite = "GFX_progress_of_the_supreme_governor_icon"
+	cost = 100
+	effect = {
+		#variable will be added
+	}
+	ai_will_do = {
+		factor = 3
+		modifier = {
+			factor = 0.5
+			stability = 0
+		}
+		modifier = {
+			factor = 0.5
+			stability = 1
+		}
+		modifier = {
+			factor = 0.5
+			stability = 2
+		}
+	}
+}
+
+twelve_imams_legacy = {
+	sprite = "GFX_progress_of_the_supreme_governor_icon"
+	cost = 100
+	effect = {
+		if = {
+			limit = {
+				NOT = { prestige = 90 }
+			}
+			add_prestige = 20
+		}
+		else = {
+			add_adm_power = 10
+		}
+	}
+	ai_will_do = {
+		factor = 3
+		modifier = {
+			factor = 0.5
+			stability = 0
+		}
+		modifier = {
+			factor = 0.5
+			stability = 1
+		}
+		modifier = {
+			factor = 0.5
+			stability = 2
+		}
+	}
+}
+
+merchant_monopoly_legacy = {
+	sprite = "GFX_progress_of_the_supreme_governor_icon"
+	cost = 100
 	trigger = {
 		NOT = {
-			stability = 3
+			mercantilism = 100
 		}
 	}
 	effect = {
-		add_stability = 1
+		if = {
+			limit = {
+				NOT = { mercantilism = 100 }
+			}
+			add_mercantilism = 1
+		}
+		else = {
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 10
+			}
+		}
 	}
 	ai_will_do = {
 		factor = 3
