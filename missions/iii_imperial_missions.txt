@@ -1,0 +1,638 @@
+imperial_navy_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		is_part_of_hre = yes
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	imperial_mission_flagship = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 3
+		trigger = {
+			has_flagship = yes
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_flagship = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 4
+		trigger = {
+			navy_tradition = 30
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_flagship = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 5
+		trigger = {
+			has_global_modifier_value = {
+				which = galley_power
+				value = 0.15
+			}
+			galley_fraction = 0.33
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+}
+
+imperial_navy_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		is_part_of_hre = yes
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	imperial_mission_expand_navy = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 1
+		trigger = {
+			navy_size_percentage = 1
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_conquer_ports = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 2
+		trigger = {
+			check_variable = {
+				which = conquered_ports
+				value = 10
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_build_dock = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 4
+		trigger = {
+			num_of_owned_provinces_with = {
+				has_dock_building_trigger = yes
+				value = 5
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_build_dock2 = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 5
+		trigger = {
+			num_of_owned_provinces_with = {
+				has_dock_building_trigger = yes
+				value = 25
+			}
+			num_of_owned_provinces_with = {
+				has_shipyard_building_trigger = yes
+				value = 25
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+}
+
+imperial_military_missions_1 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		is_part_of_hre = yes
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	imperial_mission_conquer_land = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 2
+		trigger = {
+			check_variable = {
+				which = conquered_lands
+				value = 15
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_forts = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 3
+		trigger = {
+			num_of_owned_provinces_with = {
+				has_fort_building_trigger = yes
+				value = 5
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_barrack = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 4
+		trigger = {
+			num_of_owned_provinces_with = {
+				has_manpower_building_trigger = yes
+				value = 5
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_barrack = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 5
+		trigger = {
+			num_of_owned_provinces_with = {
+				has_forcelimit_building_trigger = yes
+				value = 25
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+}
+
+imperial_military_missions_2 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		is_part_of_hre = yes
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	imperial_mission_expand_army = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 1
+		trigger = {
+			army_size_percentage = 1
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_army_morale = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 3
+		trigger = {
+			has_global_modifier_value = {
+				which = land_morale
+				value = 0.05
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_reform_army = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 5
+		trigger = {
+			has_global_modifier_value = {
+				which = discipline
+				value = 0.15
+			}
+			estate_influence = {
+				estate = estate_church
+				influence = 40
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+}
+
+imperial_military_missions_3 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		is_part_of_hre = yes
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	imperial_mission_noble_estate = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 2
+		trigger = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 60
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_army_professionalism = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 2
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+				}
+				army_professionalism = 0.60
+			}
+			else = {
+				army_tradition = 80
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_crownland = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 2
+		trigger = {
+			
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+}
+
+imperial_imperial_mission_1 = {
+	slot = 6
+	generic = no
+	ai = yes
+	potential = {
+		is_part_of_hre = yes
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	imperial_mission_doldurulacak = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 2
+		trigger = {
+			#UNUTMA
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_reform_mission = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 3
+		trigger = {
+			#UNUTMA
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_reform_mission2 = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 4
+		trigger = {
+			#UNUTMA
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+}
+
+imperial_imperial_mission_2 = {
+	slot = 7
+	generic = no
+	ai = yes
+	potential = {
+		is_part_of_hre = yes
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes	
+	imperial_mission_culture_hegemon = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 1
+		trigger = {
+			#UNUTMA - Kültür popülasyonu
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_defend_the_empire = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 3
+		trigger = {
+			is_emperor = yes
+			NOT = { num_of_foreign_hre_provinces = 1 }
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_electors = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 4
+		trigger = {
+			owns_or_non_sovereign_subject_of = 151
+			#UNUTMA
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+}
+
+imperial_adm_missions = {
+	slot = 8
+	generic = no
+	ai = yes
+	potential = {
+		is_part_of_hre = yes
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes	
+	imperial_mission_defender_of_faith = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 2
+		trigger = {
+			is_defender_of_faith = yes
+			prestige = 50
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_defender_of_faith = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 3
+		trigger = {
+			NOT = { unrest = -4 }
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_defender_of_faith = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 4
+		trigger = {
+			religious_unity = 0.90
+			current_age = age_of_reformation
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_cultural_leader = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 5
+		trigger = {
+			#UNUTMA
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+}
+
+imperial_adm_missions2 = {
+	slot = 9
+	generic = no
+	ai = yes
+	potential = {
+		is_part_of_hre = yes
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes	
+	imperial_mission_temple = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 1
+		trigger = {
+			num_of_owned_provinces_with = {
+				has_tax_building_trigger = yes
+				value = 5
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_workshop = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 2
+		trigger = {
+			num_of_owned_provinces_with = {
+				has_production_building_trigger = yes
+				value = 5
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_courthouse = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 4
+		trigger = {
+			num_of_owned_provinces_with = {
+				has_courthouse_building_trigger = yes
+				value = 5
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_civilization = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 4
+		trigger = {
+			check_variable = {
+				which = number_of_builded
+				value = 50
+			}
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						has_building = mills
+						has_building = farm_estate
+						has_building = tradecompany
+						has_building = plantations
+						has_building = textile
+						has_building = weapons
+						has_building = wharf
+						has_building = furnace
+					}
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+}
+
+imperial_trade_missions = {
+	slot = 10
+	generic = no
+	ai = yes
+	potential = {
+		is_part_of_hre = yes
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes	
+	imperial_mission_trade = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 1
+		trigger = {
+			num_of_owned_provinces_with = {
+				has_trade_building_trigger = yes
+				value = 5
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_factory = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 2
+		trigger = {
+			num_of_owned_provinces_with = {
+				has_manufactory_trigger = yes
+				value = 3
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_capital = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 3
+		trigger = {
+			capital_scope = {
+				development = 40
+			}
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+	imperial_mission_income = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 4
+		trigger = {
+			monthly_income = 500
+		}
+		effect = {
+			#UNUTMA
+		}
+	}
+}

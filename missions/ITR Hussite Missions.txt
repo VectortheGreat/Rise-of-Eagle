@@ -1,6 +1,6 @@
 itr_religion_missions_hus = {		#Hussite Missions
 	slot = 1
-	generic = no
+	generic = no 
 	ai = yes
 	
 	potential = {
