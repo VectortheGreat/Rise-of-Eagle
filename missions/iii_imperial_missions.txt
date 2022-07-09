@@ -3,7 +3,7 @@ imperial_navy_missions_1 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = yes
+		is_part_of_hre = no
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -19,6 +19,7 @@ imperial_navy_missions_1 = {
 		}
 		effect = {
 			#UNUTMA
+			1
 		}
 	}
 	imperial_mission_flagship = {
@@ -56,7 +57,7 @@ imperial_navy_missions_2 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = yes
+		is_part_of_hre = no
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -130,7 +131,7 @@ imperial_military_missions_1 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = yes
+		is_part_of_hre = no
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -203,7 +204,7 @@ imperial_military_missions_2 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = yes
+		is_part_of_hre = no
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -262,7 +263,7 @@ imperial_military_missions_3 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = yes
+		is_part_of_hre = no
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -322,7 +323,7 @@ imperial_imperial_mission_1 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = yes
+		is_part_of_hre = no
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -371,7 +372,7 @@ imperial_imperial_mission_2 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = yes
+		is_part_of_hre = no
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -422,7 +423,7 @@ imperial_adm_missions = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = yes
+		is_part_of_hre = no
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -447,7 +448,7 @@ imperial_adm_missions = {
 		}
 		position = 3
 		trigger = {
-			NOT = { unrest = -4 }
+			NOT = { unrest = -6 }
 		}
 		effect = {
 			#UNUTMA
@@ -485,7 +486,7 @@ imperial_adm_missions2 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = yes
+		is_part_of_hre = no
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -573,7 +574,7 @@ imperial_trade_missions = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = yes
+		is_part_of_hre = no
 		NOT = {
 			map_setup = map_setup_random
 		}
