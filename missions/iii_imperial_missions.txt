@@ -3,7 +3,7 @@ imperial_navy_missions_1 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = no
+		is_part_of_hre = yes
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -18,20 +18,25 @@ imperial_navy_missions_1 = {
 			has_flagship = yes
 		}
 		effect = {
-			#UNUTMA
-			1
+			add_country_modifier = { 
+				name = the_royal_navy
+				duration = 7300
+			}
 		}
 	}
-	imperial_mission_flagship = {
+	imperial_mission_navy_tradition = {
 		icon = testtt
 		required_missions = {
 		}
 		position = 4
 		trigger = {
-			navy_tradition = 30
+			navy_tradition = 50
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = imperial_navy_ambitions
+				duration = 5475
+			}
 		}
 	}
 	imperial_mission_flagship = {
@@ -47,7 +52,10 @@ imperial_navy_missions_1 = {
 			galley_fraction = 0.33
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = imperial_galleys
+				duration = -1
+			}
 		}
 	}
 }
@@ -57,7 +65,7 @@ imperial_navy_missions_2 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = no
+		is_part_of_hre = yes
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -72,7 +80,11 @@ imperial_navy_missions_2 = {
 			navy_size_percentage = 1
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = to_conquer_the_seas
+				duration = 7300
+			}
+			add_sailors = 500
 		}
 	}
 	imperial_mission_conquer_ports = {
@@ -87,7 +99,10 @@ imperial_navy_missions_2 = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = to_build_a_great_navy
+				duration = 3650
+			}
 		}
 	}
 	imperial_mission_build_dock = {
@@ -102,7 +117,10 @@ imperial_navy_missions_2 = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = improve_ports
+				duration = 7300
+			}
 		}
 	}
 	imperial_mission_build_dock2 = {
@@ -120,8 +138,9 @@ imperial_navy_missions_2 = {
 				value = 25
 			}
 		}
-		effect = {
-			#UNUTMA
+		effect = {		
+			set_country_flag = iii_mission_shipyard	
+			##UNUTMA - açıklama ekle
 		}
 	}
 }
@@ -131,7 +150,7 @@ imperial_military_missions_1 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = no
+		is_part_of_hre = yes
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -149,7 +168,10 @@ imperial_military_missions_1 = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = to_build_a_great_army
+				duration = 7300
+			}
 		}
 	}
 	imperial_mission_forts = {
@@ -164,7 +186,8 @@ imperial_military_missions_1 = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			set_country_flag = iii_mission_forts
+			##UNUTMA - açıklama ekle
 		}
 	}
 	imperial_mission_barrack = {
@@ -179,7 +202,10 @@ imperial_military_missions_1 = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = expand_military_bases
+				duration = 5475
+			}
 		}
 	}
 	imperial_mission_barrack = {
@@ -194,7 +220,8 @@ imperial_military_missions_1 = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			set_country_flag = iii_mission_barrack
+			##UNUTMA - açıklama ekle
 		}
 	}
 }
@@ -204,7 +231,7 @@ imperial_military_missions_2 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = no
+		is_part_of_hre = yes
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -219,7 +246,11 @@ imperial_military_missions_2 = {
 			army_size_percentage = 1
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = to_conquer_the_lands
+				duration = 7300
+			}
+			add_yearly_manpower = 1.5
 		}
 	}
 	imperial_mission_army_morale = {
@@ -228,13 +259,16 @@ imperial_military_missions_2 = {
 		}
 		position = 3
 		trigger = {
-			has_global_modifier_value = {
-				which = land_morale
-				value = 0.05
+			check_variable = {
+				which = won_15_battles
+				value = 15
 			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = encourage_the_army
+				duration = 5475
+			}
 		}
 	}
 	imperial_mission_reform_army = {
@@ -248,12 +282,15 @@ imperial_military_missions_2 = {
 				value = 0.15
 			}
 			estate_influence = {
-				estate = estate_church
+				estate = estate_nobles
 				influence = 40
 			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = army_reformed
+				duration = -1
+			}
 		}
 	}
 }
@@ -263,7 +300,7 @@ imperial_military_missions_3 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = no
+		is_part_of_hre = yes
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -281,7 +318,17 @@ imperial_military_missions_3 = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = support_from_the_nobility
+				duration = -5475
+			}
+			capital_scope = {
+				cavalry = ROOT
+				cavalry = ROOT
+				cavalry = ROOT
+				cavalry = ROOT
+				cavalry = ROOT
+			}
 		}
 	}
 	imperial_mission_army_professionalism = {
@@ -294,14 +341,16 @@ imperial_military_missions_3 = {
 				limit = {
 					has_dlc = "Cradle of Civilization"
 				}
-				army_professionalism = 0.60
+				army_professionalism = 0.50
 			}
 			else = {
-				army_tradition = 80
+				army_tradition = 60
 			}
 		}
-		effect = {
-			#UNUTMA
+		effect = {			
+			country_event = { 
+				id = ime.1
+			}
 		}
 	}
 	imperial_mission_crownland = {
@@ -310,10 +359,13 @@ imperial_military_missions_3 = {
 		}
 		position = 2
 		trigger = {
-			
+			crown_land_share = 50
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = claim_the_crown_lands
+				duration = 5475
+			}
 		}
 	}
 }
@@ -323,7 +375,7 @@ imperial_imperial_mission_1 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = no
+		is_part_of_hre = yes
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -335,10 +387,29 @@ imperial_imperial_mission_1 = {
 		}
 		position = 2
 		trigger = {
-			#UNUTMA
+			OR = {
+				AND = {
+					NOT = { hre_size = 1 }
+					NOT = { exists = HLR }
+				}
+				AND = {
+					is_emperor = yes
+					##hre_reform_passed = 
+					## UNUTMA
+				}				
+			}
 		}
 		effect = {
-			#UNUTMA
+			if = {
+				limit = {
+					NOT = { hre_size = 1 }
+					NOT = { exists = HLR }
+				}
+				##UNUTMA - Özel CB
+			}
+			else = {
+				add_dip_power = 100
+			}
 		}
 	}
 	imperial_mission_reform_mission = {
@@ -347,7 +418,7 @@ imperial_imperial_mission_1 = {
 		}
 		position = 3
 		trigger = {
-			#UNUTMA
+			#UNUTMA - 5.reformu tamamla
 		}
 		effect = {
 			#UNUTMA
@@ -359,7 +430,7 @@ imperial_imperial_mission_1 = {
 		}
 		position = 4
 		trigger = {
-			#UNUTMA
+			#UNUTMA - Diet başladı
 		}
 		effect = {
 			#UNUTMA
@@ -372,7 +443,7 @@ imperial_imperial_mission_2 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = no
+		is_part_of_hre = yes
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -396,11 +467,31 @@ imperial_imperial_mission_2 = {
 		}
 		position = 3
 		trigger = {
-			is_emperor = yes
-			NOT = { num_of_foreign_hre_provinces = 1 }
+			OR = {
+				AND = {
+					NOT = { hre_size = 1 }
+					NOT = { exists = HLR }
+				}
+				AND = {
+					is_emperor = yes
+					NOT = { num_of_foreign_hre_provinces = 1 }
+				}				
+			}
 		}
 		effect = {
-			#UNUTMA
+			if = {
+				limit = {
+					NOT = { hre_size = 1 }
+					NOT = { exists = HLR }
+				}
+				add_country_modifier = { 
+					name = claim_the_crown_lands
+					duration = 5475
+				}
+			}
+			else = {
+				add_prestige = 15
+			}
 		}
 	}
 	imperial_mission_electors = {
@@ -409,11 +500,57 @@ imperial_imperial_mission_2 = {
 		}
 		position = 4
 		trigger = {
-			owns_or_non_sovereign_subject_of = 151
-			#UNUTMA
+			if = {
+				limit = {
+					num_of_electors = 3
+				}
+				OR = {
+					calc_true_if = {
+						amount = 3
+						all_elector = {
+							preferred_emperor = ROOT
+						}
+					}
+					calc_true_if = {
+						amount = 3
+						all_elector = {
+							vassal_of = ROOT
+						}
+					}
+				}
+				else = {
+					NOT = { hre_size = 1 }
+					NOT = { exists = HLR }
+				}
+			}
 		}
 		effect = {
-			#UNUTMA
+			if = {
+				limit = {
+					NOT = { hre_size = 1 }
+					NOT = { exists = HLR }
+				}
+				add_country_modifier = { 
+					name = support_from_electors
+					duration = 9125
+				}
+			}
+			else = {
+				add_dip_power = 150
+			}			
+		}
+	}
+	imperial_mission_occupy_imperial_capital = {
+		icon = testtt
+		required_missions = {
+		}
+		position = 5
+		trigger = {
+			owns_or_non_sovereign_subject_of = 323
+		}
+		effect = {
+			add_legitimacy = 25
+			add_prestige = 25
 		}
 	}
 }
@@ -423,7 +560,7 @@ imperial_adm_missions = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = no
+		is_part_of_hre = yes
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -439,10 +576,13 @@ imperial_adm_missions = {
 			prestige = 50
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = religious_leader
+				duration = 3650
+			}
 		}
 	}
-	imperial_mission_defender_of_faith = {
+	imperial_mission_stabilize_the_country = {
 		icon = testtt
 		required_missions = {
 		}
@@ -451,10 +591,13 @@ imperial_adm_missions = {
 			NOT = { unrest = -6 }
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = stabilize_the_country
+				duration = -1
+			}
 		}
 	}
-	imperial_mission_defender_of_faith = {
+	imperial_mission_protect_the_faith = {
 		icon = testtt
 		required_missions = {
 		}
@@ -464,7 +607,10 @@ imperial_adm_missions = {
 			current_age = age_of_reformation
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = stabilize_the_country
+				duration = -1
+			}
 		}
 	}
 	imperial_mission_cultural_leader = {
@@ -486,7 +632,7 @@ imperial_adm_missions2 = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = no
+		is_part_of_hre = yes
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -574,7 +720,7 @@ imperial_trade_missions = {
 	generic = no
 	ai = yes
 	potential = {
-		is_part_of_hre = no
+		is_part_of_hre = yes
 		NOT = {
 			map_setup = map_setup_random
 		}

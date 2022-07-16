@@ -1,0 +1,62 @@
+adopt_military_traditions = {
+	potential = {
+		has_country_flag = iii_mission_barrack
+	}
+
+	trigger = {
+		OR = {
+			has_manpower_building_trigger = yes
+			has_forcelimit_building_trigger = yes
+		}
+	}
+
+	local_manpower_modifier = 0.2
+	regiment_recruit_speed = -0.2
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}
+
+imperial_forts = {
+	potential = {
+		has_country_flag = iii_mission_forts
+	}
+
+	trigger = {
+		has_fort_building_trigger = yes
+	}
+
+	defensiveness = 0.15
+	fort_maintenance_modifier = -0.15
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}
+
+imperial_shipyards = {
+	potential = {
+		has_country_flag = iii_mission_shipyard
+	}
+
+	trigger = {
+		OR = {
+			has_dock_building_trigger = yes
+			has_shipyard_building_trigger = yes
+		}
+	}
+
+	local_ship_cost = -0.2
+	local_ship_repair = 0.2
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}

@@ -1,0 +1,22 @@
+namespace = ime
+normal_or_historical_nations = yes
+
+country_event = {	#Demand Islands
+	id = ime.1
+	title = "ime.1_title"
+	desc = "ime.1_desc"
+	picture = HARBOUR_eventPicture
+	
+	is_triggered_only = yes
+	option = {
+		name = ink_common1.a
+		set_country_flag = iii_army_prof_mechanic
+		ai_chance = { factor = 50 }
+	}
+	
+	option = {
+		name = ink_common1.b
+		ai_chance = { factor = 50 }
+		add_prestige = 5
+	}
+}

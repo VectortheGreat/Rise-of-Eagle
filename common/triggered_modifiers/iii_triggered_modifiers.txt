@@ -1,0 +1,47 @@
+army_prof_buff = {
+	potential = {
+		has_country_flag = iii_army_prof_mechanic
+	}
+
+	trigger = {
+		army_professionalism = 0.5
+	}
+
+	discipline = 0.05
+}
+
+army_prof_nerf = {
+	potential = {
+		has_country_flag = iii_army_prof_mechanic
+	}
+
+	trigger = {
+		NOT = { army_professionalism = 0.5 }
+	}
+
+	discipline = -0.05
+}
+
+army_trad_buff = {
+	potential = {
+		has_country_flag = iii_army_prof_mechanic
+	}
+
+	trigger = {
+		army_tradition = 0.6
+	}
+
+	discipline = 0.05
+}
+
+army_trad_nerf = {
+	potential = {
+		has_country_flag = iii_army_prof_mechanic
+	}
+
+	trigger = {
+		NOT = { army_tradition = 0.6 }
+	}
+
+	discipline = -0.05
+}

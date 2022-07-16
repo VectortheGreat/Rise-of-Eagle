@@ -75,5 +75,39 @@ on_startup = {
 	}
 
 	### MOD ###
-	
+	on_battle_won_country = {
+		if = {
+			limit = {
+				ROOT = {
+					tag = ALB
+					NOT = { has_country_flag = albanian_victory }
+				}
+				FROM = {
+					tag = TUR
+				}
+			}
+			ROOT = { set_country_flag = albanian_victory }
+		}
+		if = {
+			limit = {
+				ROOT = {
+					religion = jewish
+					has_church_aspect = judaism_purim_teachings_aspect
+				}
+			}
+			ROOT = {
+				add_war_exhaustion = -0.05
+			}
+		}
+		if = {
+			limit = {
+				is_part_of_hre = yes
+				NOT = { mission_completed = imperial_mission_army_morale }
+			}
+			change_variable = {
+				which = won_15_battles
+				value = 1
+			}
+		}
+	}
 }
