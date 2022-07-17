@@ -75,36 +75,39 @@ stabilized_the_country = {
 	autonomy_change_time = -0.25
 }
 
-11111111111111111 = {
-	
+cultural_leader = {
+	relation_with_same_culture_group = 20
+	same_culture_advisor_cost = -0.25
 }
 
-11111111111111111 = {
-	
+increase_local_taxes = {
+	global_tax_modifier = 0.2
 }
 
-11111111111111111 = {
-	
+encourage_production = {
+	production_efficiency = 0.2
 }
 
-11111111111111111 = {
-	
+encourage_trade = {
+	trade_efficiency = 0.2
 }
 
-11111111111111111 = {
-	
+develop_the_provinces = {
+	development_cost = -0.2
 }
 
-11111111111111111 = {
-	
+early_industrialization = {
+	global_trade_goods_size_modifier = 0.1
 }
 
-11111111111111111 = {
-	
+the_great_capital = {
+	allowed_num_of_buildings = 1
+	local_tax_modifier = 0.25
+	local_manpower_modifier = 0.25
 }
 
-11111111111111111 = {
-	
+the_greater_projects = {
+	great_project_upgrade_cost = -0.25
 }
 
 11111111111111111 = {

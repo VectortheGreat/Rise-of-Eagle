@@ -1,0 +1,461 @@
+achaea_conquer_greece_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = ACH
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	achaea_conquer_north_epirus = {
+		icon = testtt
+		required_missions = { }
+		position = 9
+		provinces_to_highlight = {
+			area = northepirus_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			northepirus_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			
+		}
+	}
+
+	achaea_conquer_albania = {
+		icon = testtt
+		required_missions = { achaea_conquer_north_epirus }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = berat_area
+				area = albania_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			berat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			albania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			
+		}
+	}
+}
+
+achaea_conquer_greece_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = ACH
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	achaea_conquer_middle_greeece = {
+		icon = testtt
+		required_missions = { }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = northern_greece_area
+				area = trikala_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			northern_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			trikala_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			
+		}
+	}
+	achaea_conquer_macedonia = {
+		icon = testtt
+		required_missions = { achaea_conquer_middle_greeece }
+		position = 9
+		provinces_to_highlight = {
+			area = macedonia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+
+		}
+	}
+	achaea_hellenic_kingdom = {
+		icon = testtt
+		required_missions = {achaea_conquer_macedonia achaea_conquer_aegean_islands achaea_conquer_north_epirus }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = thrace_area
+				area = gelibolu_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gelibolu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			change_tag = GRE
+		}
+	}
+}
+
+achaea_conquer_greece_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = ACH
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	achaea_conquer_aegean_islands = {
+		icon = testtt
+		required_missions = {achaea_aegean_navy  }
+		position = 9
+		provinces_to_highlight = {
+			area = aegean_archipelago_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			aegean_archipelago_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			
+		}
+	}
+}
+
+achaea_aegean_missions = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = ACH
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	achaea_aegean_navy = {
+		icon = testtt
+		required_missions = { }
+		position = 8
+		trigger = {
+			navy_size = 25
+		}
+		effect = {
+			
+		}
+	}
+	achaea_aegean_trade = {
+		icon = testtt
+		required_missions = { achaea_aegean_navy }
+		position = 9
+		trigger = {
+			###UNUTMA - Egede ki trade center yerlere trade bina dik
+		}
+		effect = {
+			
+		}
+	}
+}
+
+achaea_south_italy_mission = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = ACH
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	achaea_south_italy = {
+		icon = testtt
+		required_missions = { }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = calabria_area
+				area = apulia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			
+		}
+	}
+}
+
+achaea_navy_missions = {
+	slot = 6
+	generic = no
+	ai = yes
+	potential = {
+		tag = ACH
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	achaea_greater_navy = {
+		icon = testtt
+		required_missions = { }
+		position = 8
+		trigger = {
+			navy_size = 50
+			dip_tech = 5
+			capital_scope = {
+				has_coast_def_building_trigger = yes
+			}
+		}
+		effect = {
+			
+		}
+	}
+	achaea_defeat_tunis = {
+		icon = testtt
+		required_missions = { achaea_greater_navy }
+		position = 9
+		trigger = {
+			TUN = {
+				NOT = { navy_size = 10 }
+			}
+			check_variable = {
+				which = achaea_won_war_against_tunis
+				value = 1
+			}
+		}
+		effect = {
+			
+		}
+	}
+}
+
+achaea_religion_missions = {
+	slot = 7
+	generic = no
+	ai = yes
+	potential = {
+		tag = ACH
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes	
+	achaea_clergy_relations = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+			num_of_estate_privileges = {
+				estate = estate_church
+				value = 4
+			}
+		}
+		effect = {
+			
+		}
+	}
+	achaea_hagia_sophia = {
+		icon = testtt
+		required_missions = { achaea_clergy_relations }
+		position = 9
+		provinces_to_highlight = {
+			province_id = 151
+		}
+		trigger = {		
+			if = {
+				limit = {
+					has_dlc = "Leviathan"
+				}
+				151 = {
+					has_great_project = {
+						type = hagia_sophia
+						tier = 3
+					}
+				}
+			}
+			else = {
+				151 = {
+					religion = ROOT
+					has_tax_building_trigger = yes
+					development = 40
+				}
+			}
+		}
+		effect = {
+			
+		}
+	}
+}
+
+achaea_production_missions = {
+	slot = 8
+	generic = no
+	ai = yes
+	potential = {
+		tag = ACH
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes	
+	imperial_mission_defender_of_faith = {
+		icon = testtt
+		required_missions = { }
+		position = 8
+		trigger = {
+			production_income_percentage = 0.33
+		}
+		effect = {
+			
+		}
+	}
+}
+
+achaea_trade_missions = {
+	slot = 9
+	generic = no
+	ai = yes
+	potential = {
+		tag = ACH
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes	
+	achaea_burghers_relations = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		trigger = {
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 60
+			}
+			num_of_estate_privileges = {
+				estate = estate_burghers
+				value = 4
+			}
+		}
+		effect = {
+			
+		}
+	}
+	achaea_trade_piracy = {
+		icon = testtt
+		required_missions = { achaea_burghers_relations }
+		position = 8
+		trigger = {
+			any_rival_country = {
+				capital_scope = {
+					has_privateer_share_in_trade_node = {
+						who = ROOT
+						share = 33
+					}
+				}
+			}
+		}
+		effect = {
+			
+		}
+	}
+	achaea_trade_income = {
+		icon = testtt
+		required_missions = { achaea_trade_piracy }
+		position = 9
+		trigger = {
+			trade_income_percentage = 0.4
+		}
+		effect = {
+			
+		}
+	}
+}
+
+achaea_piracy_mission = {
+	slot = 10
+	generic = no
+	ai = yes
+	potential = {
+		tag = ACH
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes	
+	achaea_piracy_aleppo = {
+		icon = testtt
+		required_missions = { }
+		position = 8
+		trigger = {
+			377 = {
+				has_privateer_share_in_trade_node = {
+					who = ROOT
+					share = 33
+				}
+			}
+		}
+		effect = {
+			
+		}
+	}
+}

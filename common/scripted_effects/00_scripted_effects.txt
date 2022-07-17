@@ -1,0 +1,6 @@
+has_coast_def_building_trigger = {
+	OR = {
+		has_building = coastal_defence
+		has_building = naval_battery
+	}
+}

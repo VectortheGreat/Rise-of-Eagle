@@ -11,8 +11,7 @@ imperial_navy_missions_1 = {
 	has_country_shield = yes
 	imperial_mission_flagship = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 3
 		trigger = {
 			has_flagship = yes
@@ -26,8 +25,7 @@ imperial_navy_missions_1 = {
 	}
 	imperial_mission_navy_tradition = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 4
 		trigger = {
 			navy_tradition = 50
@@ -41,8 +39,7 @@ imperial_navy_missions_1 = {
 	}
 	imperial_mission_flagship = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 5
 		trigger = {
 			has_global_modifier_value = {
@@ -73,8 +70,7 @@ imperial_navy_missions_2 = {
 	has_country_shield = yes
 	imperial_mission_expand_navy = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 1
 		trigger = {
 			navy_size_percentage = 1
@@ -89,8 +85,7 @@ imperial_navy_missions_2 = {
 	}
 	imperial_mission_conquer_ports = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 2
 		trigger = {
 			check_variable = {
@@ -107,8 +102,7 @@ imperial_navy_missions_2 = {
 	}
 	imperial_mission_build_dock = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 4
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -125,8 +119,7 @@ imperial_navy_missions_2 = {
 	}
 	imperial_mission_build_dock2 = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 5
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -158,8 +151,7 @@ imperial_military_missions_1 = {
 	has_country_shield = yes
 	imperial_mission_conquer_land = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 2
 		trigger = {
 			check_variable = {
@@ -176,8 +168,7 @@ imperial_military_missions_1 = {
 	}
 	imperial_mission_forts = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 3
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -192,8 +183,7 @@ imperial_military_missions_1 = {
 	}
 	imperial_mission_barrack = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 4
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -210,8 +200,7 @@ imperial_military_missions_1 = {
 	}
 	imperial_mission_barrack = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 5
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -239,8 +228,7 @@ imperial_military_missions_2 = {
 	has_country_shield = yes
 	imperial_mission_expand_army = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 1
 		trigger = {
 			army_size_percentage = 1
@@ -255,8 +243,7 @@ imperial_military_missions_2 = {
 	}
 	imperial_mission_army_morale = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 3
 		trigger = {
 			check_variable = {
@@ -273,8 +260,7 @@ imperial_military_missions_2 = {
 	}
 	imperial_mission_reform_army = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 5
 		trigger = {
 			has_global_modifier_value = {
@@ -308,8 +294,7 @@ imperial_military_missions_3 = {
 	has_country_shield = yes
 	imperial_mission_noble_estate = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 2
 		trigger = {
 			estate_loyalty = {
@@ -333,8 +318,7 @@ imperial_military_missions_3 = {
 	}
 	imperial_mission_army_professionalism = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 2
 		trigger = {
 			if = {
@@ -355,8 +339,7 @@ imperial_military_missions_3 = {
 	}
 	imperial_mission_crownland = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 2
 		trigger = {
 			crown_land_share = 50
@@ -383,8 +366,7 @@ imperial_imperial_mission_1 = {
 	has_country_shield = yes
 	imperial_mission_doldurulacak = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 2
 		trigger = {
 			OR = {
@@ -414,8 +396,7 @@ imperial_imperial_mission_1 = {
 	}
 	imperial_mission_reform_mission = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 3
 		trigger = {
 			#UNUTMA - 5.reformu tamamla
@@ -426,8 +407,7 @@ imperial_imperial_mission_1 = {
 	}
 	imperial_mission_reform_mission2 = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 4
 		trigger = {
 			#UNUTMA - Diet başladı
@@ -451,8 +431,7 @@ imperial_imperial_mission_2 = {
 	has_country_shield = yes	
 	imperial_mission_culture_hegemon = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 1
 		trigger = {
 			#UNUTMA - Kültür popülasyonu
@@ -463,8 +442,7 @@ imperial_imperial_mission_2 = {
 	}
 	imperial_mission_defend_the_empire = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 3
 		trigger = {
 			OR = {
@@ -496,8 +474,7 @@ imperial_imperial_mission_2 = {
 	}
 	imperial_mission_electors = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 4
 		trigger = {
 			if = {
@@ -542,8 +519,7 @@ imperial_imperial_mission_2 = {
 	}
 	imperial_mission_occupy_imperial_capital = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 5
 		trigger = {
 			owns_or_non_sovereign_subject_of = 323
@@ -568,8 +544,7 @@ imperial_adm_missions = {
 	has_country_shield = yes	
 	imperial_mission_defender_of_faith = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 2
 		trigger = {
 			is_defender_of_faith = yes
@@ -584,8 +559,7 @@ imperial_adm_missions = {
 	}
 	imperial_mission_stabilize_the_country = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 3
 		trigger = {
 			NOT = { unrest = -6 }
@@ -599,8 +573,7 @@ imperial_adm_missions = {
 	}
 	imperial_mission_protect_the_faith = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 4
 		trigger = {
 			religious_unity = 0.90
@@ -615,14 +588,22 @@ imperial_adm_missions = {
 	}
 	imperial_mission_cultural_leader = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 5
 		trigger = {
-			#UNUTMA
+			NOT = {
+				any_country = {
+					culture_group = ROOT
+					army_size = ROOT 
+					total_development = ROOT 
+				}
+			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = cultural_leader
+				duration = -1
+			}
 		}
 	}
 }
@@ -640,8 +621,7 @@ imperial_adm_missions2 = {
 	has_country_shield = yes	
 	imperial_mission_temple = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 1
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -650,13 +630,15 @@ imperial_adm_missions2 = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = increase_local_taxes
+				duration = 3650
+			}
 		}
 	}
 	imperial_mission_workshop = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 2
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -665,13 +647,15 @@ imperial_adm_missions2 = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = encourage_production
+				duration = 3650
+			}
 		}
 	}
 	imperial_mission_courthouse = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 4
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -680,13 +664,12 @@ imperial_adm_missions2 = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			set_country_flag = iii_mission_governorships
 		}
 	}
 	imperial_mission_civilization = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 4
 		trigger = {
 			check_variable = {
@@ -710,7 +693,11 @@ imperial_adm_missions2 = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = develop_the_provinces
+				duration = 7300
+			}
+			add_years_of_income = 0.75
 		}
 	}
 }
@@ -728,8 +715,7 @@ imperial_trade_missions = {
 	has_country_shield = yes	
 	imperial_mission_trade = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 1
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -738,13 +724,15 @@ imperial_trade_missions = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = encourage_trade
+				duration = 3650
+			}
 		}
 	}
 	imperial_mission_factory = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 2
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -753,33 +741,51 @@ imperial_trade_missions = {
 			}
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = early_industrialization
+				duration = 3650
+			}
 		}
 	}
 	imperial_mission_capital = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 3
 		trigger = {
 			capital_scope = {
 				development = 40
 			}
+			NOT = {
+				any_province = {
+					OR = {
+						is_part_of_hre = yes
+						continent = europe
+					}					
+					total_development = ROOT 
+				}
+			}
 		}
 		effect = {
-			#UNUTMA
+			capital_scope = {
+				add_province_modifier = { 
+					name = the_great_capital
+					duration = -1 
+				}
+			}
 		}
 	}
 	imperial_mission_income = {
 		icon = testtt
-		required_missions = {
-		}
+		required_missions = { }
 		position = 4
 		trigger = {
 			monthly_income = 500
 		}
 		effect = {
-			#UNUTMA
+			add_country_modifier = { 
+				name = the_greater_projects
+				duration = -1
+			}
 		}
 	}
 }

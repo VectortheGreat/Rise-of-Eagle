@@ -18,5 +18,11 @@ country_event = {	#Demand Islands
 		name = ink_common1.b
 		ai_chance = { factor = 50 }
 		add_prestige = 5
+		set_country_flag = iii_ban_generic_missions
+		change_tag = ACH
+		swap_non_generic_missions = yes
+		random_owned_province = {
+			add_core = ACH
+		}
 	}
 }

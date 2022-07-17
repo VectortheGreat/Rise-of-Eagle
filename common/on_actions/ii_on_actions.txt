@@ -110,4 +110,100 @@ on_startup = {
 			}
 		}
 	}
+	on_war_won = {
+		FROM = { country_event = { id = flavor_cri.6 } }
+		ROOT = { country_event = { id = tributary_events.32 } }
+		
+		if = {
+			limit = {
+				is_part_of_hre = yes
+				FROM  = { is_part_of_hre = yes }
+			}
+			ROOT = { save_global_event_target_as = hre_winner }
+			FROM = { save_global_event_target_as = hre_loser }
+			random_known_country = {
+				limit = {
+					has_reform = free_city
+					NOT = {
+						prestige = 40
+					}
+					NOT = {
+						has_country_modifier = fc_treatyconference_timer
+					}
+				}
+				add_country_modifier = {
+					name = fc_treatyconference_timer
+					duration = 3650
+					hidden = yes
+				}
+				country_event = {
+					id = free_cities.7
+					days = 7
+				}
+			}
+		}
+	
+		if = {
+			limit = {
+				tag = MLO
+				NOT = { has_country_flag = emp_mlo_won_war_with_swiss_mercs }
+				any_hired_mercenary_company = {
+					home_province = {
+						OR = {
+							area = switzerland_area
+							area = romandie_area
+						}
+					}
+				}
+			}
+			set_country_flag = emp_mlo_won_war_with_swiss_mercs
+		}
+		
+		if = {
+			limit = {
+				is_hiring_condottiere_from = SWI
+			}
+			SWI = { set_country_flag = won_condottiere_war }
+			if = {
+				limit = {
+					tag = PAP
+				}
+				SWI = {
+					set_country_flag = hired_to_pope
+				}
+			}
+		}
+		
+		if = {
+			limit = {
+				primary_culture = melanesian
+				NOT = { has_country_modifier = warlord_mod }
+			}
+			FROM = {
+				country_event = {
+					id = polynesian.17
+				}
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					religion = jewish
+					has_church_aspect = judaism_purim_teachings_aspect
+				}
+			}
+			add_church_power = 10
+		}
+
+		if = {
+			limit = {
+				ROOT = { tag = ACH }
+				FROM = { tag = TUN }
+			}
+			set_variable = {
+				which = achia_won_war_against_tunis
+				value = 1
+			}
+		}
+	}
 }

@@ -60,3 +60,26 @@ imperial_shipyards = {
 	on_deactivation = {	
 	}	
 }
+
+strengthened_the_governorships = {
+	potential = {
+		has_country_flag = iii_mission_governorships
+		culture = ROOT
+	}
+
+	trigger = {
+		OR = {
+			has_dock_building_trigger = yes
+			has_shipyard_building_trigger = yes
+		}
+	}
+
+	local_ship_cost = -0.2
+	local_ship_repair = 0.2
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}
