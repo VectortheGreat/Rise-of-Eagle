@@ -110,8 +110,51 @@ the_greater_projects = {
 	great_project_upgrade_cost = -0.25
 }
 
-11111111111111111 = {
-	
+latin_mercenaries = {
+	mercenary_discipline = 0.05
+	mercenary_cost = -0.25
+}
+
+to_unite_the_culture = {
+	ae_impact = -0.15
+}
+
+aegean_trade = {
+	province_trade_power_modifier = 0.25
+	trade_value_modifier = 0.2
+}
+
+iii_block_slave_raid = {
+	block_slave_raid = yes
+}
+
+the_pirates_were_defeated = {
+	capture_ship_chance = 0.33
+	naval_forcelimit_modifier = 0.25
+}
+
+clergy_increase_local_taxes = {
+	global_tax_modifier = 0.15
+}
+
+the_sumptuous_church = {
+	local_tax_modifier = 0.15
+}
+
+advanced_production = {
+	adm_tech_cost_modifier = -0.1
+}
+
+burghers_increase_local_trades = {
+	trade_efficiency = 0.15
+}
+
+advanced_trade = {
+	dip_tech_cost_modifier = -0.1
+}
+
+trade_terror = {
+	privateer_efficiency = 0.33
 }
 
 11111111111111111 = {
@@ -158,3 +201,42 @@ the_greater_projects = {
 	
 }
 
+11111111111111111 = {
+	
+}
+
+11111111111111111 = {
+	
+}
+
+11111111111111111 = {
+	
+}
+
+11111111111111111 = {
+	
+}
+
+11111111111111111 = {
+	
+}
+
+11111111111111111 = {
+	
+}
+
+11111111111111111 = {
+	
+}
+
+11111111111111111 = {
+	
+}
+
+11111111111111111 = {
+	
+}
+
+11111111111111111 = {
+	
+}

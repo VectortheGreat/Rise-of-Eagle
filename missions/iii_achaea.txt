@@ -4,6 +4,7 @@ achaea_conquer_greece_missions_1 = {
 	ai = yes
 	potential = {
 		tag = ACH
+		NOT = { tag = GRE }
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -12,7 +13,7 @@ achaea_conquer_greece_missions_1 = {
 	achaea_conquer_north_epirus = {
 		icon = testtt
 		required_missions = { }
-		position = 9
+		position = 8
 		provinces_to_highlight = {
 			area = northepirus_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -24,14 +25,31 @@ achaea_conquer_greece_missions_1 = {
 			}
 		}
 		effect = {
-			
+			berat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			albania_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "latin_mercenaries"
+				duration = 3650
+			}
 		}
 	}
 
 	achaea_conquer_albania = {
 		icon = testtt
 		required_missions = { achaea_conquer_north_epirus }
-		position = 10
+		position = 9
 		provinces_to_highlight = {
 			OR = {
 				area = berat_area
@@ -50,7 +68,7 @@ achaea_conquer_greece_missions_1 = {
 			}
 		}
 		effect = {
-			
+			add_prestige = 25
 		}
 	}
 }
@@ -61,6 +79,7 @@ achaea_conquer_greece_missions_2 = {
 	ai = yes
 	potential = {
 		tag = ACH
+		NOT = { tag = GRE }
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -69,7 +88,7 @@ achaea_conquer_greece_missions_2 = {
 	achaea_conquer_middle_greeece = {
 		icon = testtt
 		required_missions = { }
-		position = 8
+		position = 7
 		provinces_to_highlight = {
 			OR = {
 				area = northern_greece_area
@@ -88,13 +107,23 @@ achaea_conquer_greece_missions_2 = {
 			}
 		}
 		effect = {
-			
+			macedonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "to_unite_the_culture"
+				duration = 3650
+			}
 		}
 	}
 	achaea_conquer_macedonia = {
 		icon = testtt
 		required_missions = { achaea_conquer_middle_greeece }
-		position = 9
+		position = 8
 		provinces_to_highlight = {
 			area = macedonia_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -106,13 +135,27 @@ achaea_conquer_greece_missions_2 = {
 			}
 		}
 		effect = {
-
+			thrace_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gelibolu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_adm_power = 200
 		}
 	}
 	achaea_hellenic_kingdom = {
 		icon = testtt
 		required_missions = {achaea_conquer_macedonia achaea_conquer_aegean_islands achaea_conquer_north_epirus }
-		position = 10
+		position = 9
 		provinces_to_highlight = {
 			OR = {
 				area = thrace_area
@@ -132,6 +175,7 @@ achaea_conquer_greece_missions_2 = {
 		}
 		effect = {
 			change_tag = GRE
+			swap_non_generic_missions = yes
 		}
 	}
 }
@@ -142,6 +186,7 @@ achaea_conquer_greece_missions_3 = {
 	ai = yes
 	potential = {
 		tag = ACH
+		NOT = { tag = GRE }
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -150,7 +195,7 @@ achaea_conquer_greece_missions_3 = {
 	achaea_conquer_aegean_islands = {
 		icon = testtt
 		required_missions = {achaea_aegean_navy  }
-		position = 9
+		position = 8
 		provinces_to_highlight = {
 			area = aegean_archipelago_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -162,7 +207,7 @@ achaea_conquer_greece_missions_3 = {
 			}
 		}
 		effect = {
-			
+			add_dip_power = 200
 		}
 	}
 }
@@ -173,6 +218,7 @@ achaea_aegean_missions = {
 	ai = yes
 	potential = {
 		tag = ACH
+		NOT = { tag = GRE }
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -181,23 +227,42 @@ achaea_aegean_missions = {
 	achaea_aegean_navy = {
 		icon = testtt
 		required_missions = { }
-		position = 8
+		position = 7
 		trigger = {
 			navy_size = 25
 		}
 		effect = {
-			
+			aegean_archipelago_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 	}
 	achaea_aegean_trade = {
 		icon = testtt
 		required_missions = { achaea_aegean_navy }
-		position = 9
+		position = 8
 		trigger = {
 			###UNUTMA - Egede ki trade center yerlere trade bina dik
 		}
 		effect = {
-			
+			every_owned_province = {
+				limit = {
+					area = aegean_archipelago_area
+				}
+				add_province_modifier = {
+					name = "aegean_trade"
+					duration = 7300
+				}
+			}
 		}
 	}
 }
@@ -208,6 +273,7 @@ achaea_south_italy_mission = {
 	ai = yes
 	potential = {
 		tag = ACH
+		NOT = { tag = GRE }
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -216,7 +282,7 @@ achaea_south_italy_mission = {
 	achaea_south_italy = {
 		icon = testtt
 		required_missions = { }
-		position = 8
+		position = 7
 		provinces_to_highlight = {
 			OR = {
 				area = calabria_area
@@ -235,7 +301,7 @@ achaea_south_italy_mission = {
 			}
 		}
 		effect = {
-			
+			add_mil_power = 200
 		}
 	}
 }
@@ -246,6 +312,7 @@ achaea_navy_missions = {
 	ai = yes
 	potential = {
 		tag = ACH
+		NOT = { tag = GRE }
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -254,7 +321,7 @@ achaea_navy_missions = {
 	achaea_greater_navy = {
 		icon = testtt
 		required_missions = { }
-		position = 8
+		position = 7
 		trigger = {
 			navy_size = 50
 			dip_tech = 5
@@ -263,13 +330,21 @@ achaea_navy_missions = {
 			}
 		}
 		effect = {
-			
+			every_owned_province = {
+				limit = {
+					region = south_balkan_region
+				}
+				add_province_modifier = {
+					name = "iii_block_slave_raid"
+					duration = 18250
+				}
+			}
 		}
 	}
 	achaea_defeat_tunis = {
 		icon = testtt
 		required_missions = { achaea_greater_navy }
-		position = 9
+		position = 8
 		trigger = {
 			TUN = {
 				NOT = { navy_size = 10 }
@@ -280,7 +355,10 @@ achaea_navy_missions = {
 			}
 		}
 		effect = {
-			
+			add_country_modifier = {
+				name = "the_pirates_were_defeated"
+				duration = -1
+			}
 		}
 	}
 }
@@ -291,6 +369,7 @@ achaea_religion_missions = {
 	ai = yes
 	potential = {
 		tag = ACH
+		NOT = { tag = GRE }
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -299,7 +378,7 @@ achaea_religion_missions = {
 	achaea_clergy_relations = {
 		icon = testtt
 		required_missions = { }
-		position = 7
+		position = 6
 		trigger = {
 			estate_loyalty = {
 				estate = estate_church
@@ -311,13 +390,16 @@ achaea_religion_missions = {
 			}
 		}
 		effect = {
-			
+			add_country_modifier = {
+				name = "clergy_increase_local_taxes"
+				duration = 5475
+			}
 		}
 	}
 	achaea_hagia_sophia = {
 		icon = testtt
 		required_missions = { achaea_clergy_relations }
-		position = 9
+		position = 8
 		provinces_to_highlight = {
 			province_id = 151
 		}
@@ -340,9 +422,15 @@ achaea_religion_missions = {
 					development = 40
 				}
 			}
+			owns_or_non_sovereign_subject_of = 151
 		}
 		effect = {
-			
+			151 = {
+				add_province_modifier = {
+					name = "the_sumptuous_church"
+					duration = -1
+				}
+			}
 		}
 	}
 }
@@ -353,20 +441,29 @@ achaea_production_missions = {
 	ai = yes
 	potential = {
 		tag = ACH
+		NOT = { tag = GRE }
 		NOT = {
 			map_setup = map_setup_random
 		}
 	}
 	has_country_shield = yes	
-	imperial_mission_defender_of_faith = {
+	achea_production_income = {
 		icon = testtt
 		required_missions = { }
-		position = 8
+		position = 7
 		trigger = {
 			production_income_percentage = 0.33
 		}
 		effect = {
-			
+			add_country_modifier = {
+				name = "advanced_production"
+				duration = 3650
+			}
+			define_advisor = {
+				type = natural_scientist
+				skill = 3
+				discount = yes
+			}
 		}
 	}
 }
@@ -377,6 +474,7 @@ achaea_trade_missions = {
 	ai = yes
 	potential = {
 		tag = ACH
+		NOT = { tag = GRE }
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -385,7 +483,7 @@ achaea_trade_missions = {
 	achaea_burghers_relations = {
 		icon = testtt
 		required_missions = { }
-		position = 7
+		position = 6
 		trigger = {
 			estate_loyalty = {
 				estate = estate_burghers
@@ -397,13 +495,16 @@ achaea_trade_missions = {
 			}
 		}
 		effect = {
-			
+			add_country_modifier = {
+				name = "burghers_increase_local_trades"
+				duration = 5475
+			}
 		}
 	}
 	achaea_trade_piracy = {
 		icon = testtt
 		required_missions = { achaea_burghers_relations }
-		position = 8
+		position = 7
 		trigger = {
 			any_rival_country = {
 				capital_scope = {
@@ -415,18 +516,29 @@ achaea_trade_missions = {
 			}
 		}
 		effect = {
-			
+			add_country_modifier = {
+				name = "trade_terror"
+				duration = 7300
+			}
 		}
 	}
 	achaea_trade_income = {
 		icon = testtt
 		required_missions = { achaea_trade_piracy }
-		position = 9
+		position = 8
 		trigger = {
 			trade_income_percentage = 0.4
 		}
 		effect = {
-			
+			add_country_modifier = {
+				name = "advanced_trade"
+				duration = 3650
+			}
+			define_advisor = {
+				type = trader
+				skill = 3
+				discount = yes
+			}
 		}
 	}
 }
@@ -437,6 +549,7 @@ achaea_piracy_mission = {
 	ai = yes
 	potential = {
 		tag = ACH
+		NOT = { tag = GRE }
 		NOT = {
 			map_setup = map_setup_random
 		}
@@ -445,7 +558,7 @@ achaea_piracy_mission = {
 	achaea_piracy_aleppo = {
 		icon = testtt
 		required_missions = { }
-		position = 8
+		position = 7
 		trigger = {
 			377 = {
 				has_privateer_share_in_trade_node = {
@@ -455,7 +568,7 @@ achaea_piracy_mission = {
 			}
 		}
 		effect = {
-			
+			add_years_of_income = 0.5
 		}
 	}
 }

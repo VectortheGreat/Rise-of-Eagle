@@ -1,7 +1,7 @@
 namespace = ime
 normal_or_historical_nations = yes
 
-country_event = {	#Demand Islands
+country_event = {	#Army Prof Mechanic - Discipline
 	id = ime.1
 	title = "ime.1_title"
 	desc = "ime.1_desc"
