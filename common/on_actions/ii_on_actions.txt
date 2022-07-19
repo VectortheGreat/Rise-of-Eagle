@@ -205,5 +205,14 @@ on_startup = {
 				value = 1
 			}
 		}
+		if = {
+			limit = {
+				FROM = { is_emperor = yes }
+			}
+			set_variable = {
+				which = won_war_against_emperor
+				value = 1
+			}
+		}
 	}
 }

@@ -78,3 +78,5 @@ SLA	= "countries/Sulina.txt"
 VAR	= "countries/Varna.txt"
 VID	= "countries/Vidin.txt"
 VRT	= "countries/Vratsa.txt"
+
+AKN = "countries/Akdeniz.txt"
