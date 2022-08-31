@@ -215,4 +215,78 @@ on_startup = {
 			}
 		}
 	}
+	on_province_religion_converted = {
+		on_province_religion_converted_estate_privileges_effect = yes
+		if = {
+			limit = {
+				owner = {
+					has_country_modifier = son_fetishism_as_secondary_religion
+				}
+				religion = shamanism
+				NOT = { has_province_modifier = son_fetishism_as_secondary_religion_province }
+			}
+			add_province_modifier = {
+				name = son_fetishism_as_secondary_religion_province
+				duration = -1
+				desc = son_fetishism_as_secondary_religion_province_desc
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					owner = {
+						NOT = { has_country_modifier = son_fetishism_as_secondary_religion }
+					}
+					NOT = { religion = shamanism }
+				}
+				has_province_modifier = son_fetishism_as_secondary_religion_province
+			}
+			remove_province_modifier = son_fetishism_as_secondary_religion_province
+		}
+		judaism_on_province_change_religion_or_change_owner_effect = yes
+		
+		if = {
+			limit = {
+				religion_group = muslim
+				is_part_of_hre = yes
+			}
+			set_variable = {
+				which = converted_province_to_muslim
+				value = 1
+			}
+		}
+		set_variable = {
+			which = converted_province
+			value = 1
+		}
+	}
+
+	on_great_project_constructed = {
+		set_variable = {
+			which = builded_great_project
+			value = 1
+		}
+	}
+	on_dip_development = {
+		set_variable = {
+			which = dip_development_increase
+			value = 1
+		}
+	}
+	on_flagship_captured = {
+		FROM = {
+			set_country_flag = captured_flagship_country_flag
+		}
+		ROOT = {
+			country_event = { id = flagship_events.2 }
+			set_country_flag = trophy_hunter_flag
+		}
+		FROM = {
+			country_event = { id = flagship_events.1 }
+		}
+		set_variable = {
+			which = flagship_captured
+			value = 1
+		}
+	}
 }

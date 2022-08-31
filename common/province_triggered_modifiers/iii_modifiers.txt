@@ -83,3 +83,24 @@ strengthened_the_governorships = {
 	on_deactivation = {	
 	}	
 }
+
+akdeniz_pamuk_sanayileri = {
+	potential = {
+		has_country_flag = iii_mission_akdeniz_pamuk
+		trade_goods = wool
+	}
+
+	trigger = {
+		production_leader = {
+			trade_goods = wool
+		}
+	}
+
+	trade_goods_size_modifier = 0.15
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}

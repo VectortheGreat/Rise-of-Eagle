@@ -45,3 +45,19 @@ army_trad_nerf = {
 
 	discipline = -0.05
 }
+
+#Super Modifiers
+tm_akdeniz_super_modifier = {
+	potential = {
+		has_global_flag = iii_akdeniz_super_modifier
+		NOt = { has_country_flag = iii_akdeniz_super_modifier }
+	}
+
+	trigger = {
+		war_with = AKN
+		blockade = 0.75
+	}
+
+	war_exhaustion = 0.03
+	global_unrest = 2
+}

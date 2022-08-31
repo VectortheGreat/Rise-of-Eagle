@@ -1,0 +1,762 @@
+albania_navy_missions = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = ALB
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	albania_navy = {
+		icon = testtt
+		required_missions = { albania_western_diplomacy }
+		position = 8
+		trigger = {
+			navy_size = 25
+		}
+		effect = {
+			add_country_modifier = {
+				name = "albanian_navy"
+				duration = -1
+			}
+		}
+	}
+}
+
+albania_western_diplomacy_missions = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = ALB
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	albania_western_diplomacy = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		provinces_to_highlight = {
+			owner = {
+				capital_scope = {
+					continent = europe					
+				}
+				religion_group = christian
+				total_development = 200
+			}
+		}
+		trigger = {
+			any_known_country = {
+				capital_scope = {
+					continent = europe
+				}
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+				alliance_with = ROOT
+				religion_group = christian
+				total_development = 200
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "albanian_diplomacy"
+				duration = -1
+			}
+		}
+	}
+	albania_latin_mercenaries = {
+		icon = testtt
+		required_missions = { albania_western_diplomacy }
+		position = 8
+		provinces_to_highlight = {
+			owner = {
+				capital_scope = {
+					region = italy_region
+				}
+			}
+		}
+		trigger = {
+			is_institution_enabled = renaissance
+			any_known_country = {
+				capital_scope = {
+					region = italy_region
+				}
+				has_opinion = {
+					who = ROOT
+					value = 100
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "latin_mercenaries"
+				duration = -1
+			}
+		}
+	}	
+}
+
+albania_conquer_north_missions = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = ALB
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	albania_conquer_rascia = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		provinces_to_highlight = {
+			area = rascia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			rascia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			serbia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	albania_conquer_serbia = {
+		icon = testtt
+		required_missions = { albania_conquer_rascia }
+		position = 8
+		provinces_to_highlight = {
+			area = serbia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			serbia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			bosnia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	albania_conquer_bosnia = {
+		icon = testtt
+		required_missions = { albania_conquer_serbia  }
+		position = 9
+		provinces_to_highlight = {
+			area = bosnia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			bosnia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			croatia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_adriatic_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+albania_conquer_south_missions = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = ALB
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	albania_conquer_epirus = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = northepirus_area
+				area = northern_greece_area
+			}
+			NOT = {owned_by = ROOT }
+		}
+		trigger = {
+			owns_all_provinces = {
+				OR = {
+					area = northepirus_area
+					area = northern_greece_area
+				}
+			}
+		}
+		effect = {
+			athens_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			morea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			macedonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			trikala_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	albania_conquer_south_greece = {
+		icon = testtt
+		required_missions = { albania_conquer_epirus }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = athens_area
+				area = morea_area
+			}
+			NOT = {owned_by = ROOT }
+		}
+		trigger = {
+			owns_all_provinces = {
+				OR = {
+					area = athens_area
+					area = morea_area
+				}
+			}
+		}
+		effect = {			
+			aegean_archipelago_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "great_aegean_navy"
+				duration = -1
+			}
+		}
+	}
+}
+
+albania_thrace_missions = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = ALB
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	albania_conquer_macedonia = {
+		icon = testtt
+		required_missions = { albania_conquer_epirus }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = macedonia_area
+				area = trikala_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			trikala_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			thrace_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gelibolu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	albania_conquer_thrace = {
+		icon = testtt
+		required_missions = { albania_conquer_macedonia }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = gelibolu_area
+				area = thrace_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			gelibolu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 300
+		}
+	}
+	albania_balkan_empire = {
+		icon = testtt
+		required_missions = { albania_conquer_thrace albania_conquer_bosnia albania_romania albania_east_bulgaria }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				region = balkan_region
+				region = east_balkan_region
+				region = south_balkan_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			balkan_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_balkan_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			south_balkan_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "balkan_empire"
+				duration = -1
+			}
+		}
+	}
+}
+
+albania_bulgaria_missions = {
+	slot = 6
+	generic = no
+	ai = yes
+	potential = {
+		tag = ALB
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes
+	albania_western_bulgaria = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		provinces_to_highlight = {
+			area = bulgaria_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			bulgaria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			nigbolu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			edirne_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			varna_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			silistria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	albania_east_bulgaria = {
+		icon = testtt
+		required_missions = { albania_western_bulgaria }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = nigbolu_area
+				area = edirne_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			nigbolu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			edirne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 300
+		}
+	}
+}
+
+albania_north_balkans_missions = {
+	slot = 7
+	generic = no
+	ai = yes
+	potential = {
+		tag = ALB
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes	
+	albania_north_bulgaria = {
+		icon = testtt
+		required_missions = { albania_western_bulgaria }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = varna_area
+				area = silistria_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			varna_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			silistria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			buzau_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			wallachia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			oltenia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	albania_romania = {
+		icon = testtt
+		required_missions = { achaea_clergy_relations }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = buzau_area
+				area = wallachia_area
+				area = oltenia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			buzau_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			wallachia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			oltenia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			moldavia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+albania_religion_missions = {
+	slot = 8
+	generic = no
+	ai = yes
+	potential = {
+		tag = ALB
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes	
+	albania_clergy_relations = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+			num_of_estate_privileges = {
+				estate = estate_church
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "clergy_increase_local_taxes"
+				duration = 5475
+			}
+		}
+	}
+	albania_convert_province = {
+		icon = testtt
+		required_missions = { albania_clergy_relations }
+		position = 8
+		trigger = {
+			check_variable = {
+				which = converted_province
+				value = 15
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "albanian_missionaries"
+				duration = -1
+			}
+		}
+	}
+	albania_convert_balkans = {
+		icon = testtt
+		required_missions = { albania_convert_province }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = balkan_region
+				region = east_balkan_region
+				region = south_balkan_region
+			}
+			NOT = { religion = ROOT }
+		}
+		trigger = {
+			balkan_region = {
+				type = all
+				religion = ROOT
+			}
+			east_balkan_region = {
+				type = all
+				religion = ROOT
+			}
+			south_balkan_region = {
+				type = all
+				religion = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 300
+		}
+	}
+}
+
+albania_production_missions = {
+	slot = 9
+	generic = no
+	ai = yes
+	potential = {
+		tag = ALB
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes	
+	albania_production_mission_1 = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		trigger = {
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 60
+			}
+			num_of_estate_privileges = {
+				estate = estate_burghers
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "burghers_increase_local_trades"
+				duration = 5475
+			}
+		}
+	}
+	albania_production_mission_2 = {
+		icon = testtt
+		required_missions = { albania_production_mission_1 }
+		position = 8
+		trigger = {
+			production_income_percentage = 0.33
+		}
+		effect = {
+			if = {
+				limit = { NOT = { stability = 3 } }
+				add_stability = 1
+			}
+			else = {
+				add_adm_power = 50
+			}
+		}
+	}
+}
+
+albania_trade_missions = {
+	slot = 10
+	generic = no
+	ai = yes
+	potential = {
+		tag = ALB
+		NOT = {
+			map_setup = map_setup_random
+		}
+	}
+	has_country_shield = yes	
+	albania_trade_income = {
+		icon = testtt
+		required_missions = { albania_production_mission_1 }
+		position = 8
+		trigger = {
+			trade_income_percentage = 0.4
+		}
+		effect = {
+			add_country_modifier = {
+				name = "advanced_trade"
+				duration = 3650
+			}
+			define_advisor = {
+				type = trader
+				skill = 3
+				discount = yes
+			}
+		}
+	}
+	albania_piracy_rival = {
+		icon = testtt
+		required_missions = { albania_trade_income }
+		position = 9
+		trigger = {
+			any_rival_country = {
+				capital_scope = {
+					has_privateer_share_in_trade_node = {
+						who = ROOT
+						share = 33
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "trade_terror"
+				duration = 7300
+			}
+		}
+	}
+}
