@@ -4,9 +4,7 @@ akdeniz_conquer_eastern_mediterrenian_missions = {
 	ai = yes
 	potential = {
 		tag = AKN
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	akdeniz_conquer_cyprus = {
@@ -141,9 +139,7 @@ akdeniz_navy_missions = {
 	ai = yes
 	potential = {
 		tag = AKN
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	akdeniz_crete = {
@@ -234,9 +230,7 @@ akdeniz_expansion_missions = {
 	ai = yes
 	potential = {
 		tag = AKN
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	akdeniz_full_control_mediterrenean = {
@@ -447,9 +441,7 @@ akdeniz_balkan_expansion = {
 	ai = yes
 	potential = {
 		tag = AKN
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	akdeniz_aegean_islands = {
@@ -579,9 +571,7 @@ akdeniz_anatolia_expansion = {
 	ai = yes
 	potential = {
 		tag = AKN
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	akdenix_central_anatolia = {
@@ -701,9 +691,7 @@ akdeniz_power_mission = {
 	ai = yes
 	potential = {
 		tag = AKN
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	akdeniz_defeat_the_emperor = {
@@ -765,9 +753,7 @@ akdeniz_religion_missions = {
 	ai = yes
 	potential = {
 		tag = AKN
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
 	akdeniz_convert_christians = {
@@ -923,9 +909,7 @@ akdeniz_production_missions = {
 	ai = yes
 	potential = {
 		tag = AKN
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
 	akdeniz_wool_production = {
@@ -993,9 +977,7 @@ akdeniz_trade_missions = {
 	ai = yes
 	potential = {
 		tag = AKN
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
 	akdeniz_build_light_ship = {
@@ -1103,9 +1085,7 @@ akdeniz_development_missions = {
 	ai = yes
 	potential = {
 		tag = AKN
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
 	akdeniz_piracy_aleppo = {

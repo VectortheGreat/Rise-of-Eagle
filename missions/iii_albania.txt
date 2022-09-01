@@ -4,9 +4,7 @@ albania_navy_missions = {
 	ai = yes
 	potential = {
 		tag = ALB
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	albania_navy = {
@@ -31,9 +29,7 @@ albania_western_diplomacy_missions = {
 	ai = yes
 	potential = {
 		tag = ALB
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	albania_western_diplomacy = {
@@ -108,9 +104,7 @@ albania_conquer_north_missions = {
 	ai = yes
 	potential = {
 		tag = ALB
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	albania_conquer_rascia = {
@@ -200,9 +194,7 @@ albania_conquer_south_missions = {
 	ai = yes
 	potential = {
 		tag = ALB
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	albania_conquer_epirus = {
@@ -296,9 +288,7 @@ albania_thrace_missions = {
 	ai = yes
 	potential = {
 		tag = ALB
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	albania_conquer_macedonia = {
@@ -405,9 +395,7 @@ albania_bulgaria_missions = {
 	ai = yes
 	potential = {
 		tag = ALB
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	albania_western_bulgaria = {
@@ -488,9 +476,7 @@ albania_north_balkans_missions = {
 	ai = yes
 	potential = {
 		tag = ALB
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
 	albania_north_bulgaria = {
@@ -582,9 +568,7 @@ albania_religion_missions = {
 	ai = yes
 	potential = {
 		tag = ALB
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
 	albania_clergy_relations = {
@@ -663,9 +647,7 @@ albania_production_missions = {
 	ai = yes
 	potential = {
 		tag = ALB
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
 	albania_production_mission_1 = {
@@ -714,9 +696,7 @@ albania_trade_missions = {
 	ai = yes
 	potential = {
 		tag = ALB
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
 	albania_trade_income = {

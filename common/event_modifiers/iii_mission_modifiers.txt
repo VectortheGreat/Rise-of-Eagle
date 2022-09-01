@@ -244,40 +244,46 @@ albanian_missionaries = {
 	global_missionary_strength = 0.03
 }
 
-11111111111111111 = {
-	
+accept_latin_cultures = {
+	num_accepted_cultures = 12
 }
 
-11111111111111111 = {
-	
+roman_empire = {
+	legitimacy = 1
+	republican_tradition = 0.5
+	min_autonomy_in_territories = -0.1
+	governing_capacity_modifier = 0.1
 }
 
-11111111111111111 = {
-	
+greek_fire = {
+	leader_naval_fire = 1
+	sunk_ship_morale_hit_recieved = -0.1
 }
 
-11111111111111111 = {
-	
+our_sea = {
+	local_ship_repair = 0.2
+	ship_recruit_speed = -0.25
 }
 
-11111111111111111 = {
-	
+control_berbers = {
+	privateer_efficiency = 0.2
 }
 
-11111111111111111 = {
-	
+byzantine_absolutism_modifier = {
+	yearly_absolutism = 0.1
 }
 
-11111111111111111 = {
-	
+crushed_mamluks = {
+	diplomatic_reputation = 1
+	global_unrest = -1
 }
 
-11111111111111111 = {
-	
+only_one_emperor = {
+	diplomatic_reputation = 3
 }
 
-11111111111111111 = {
-	
+weak_emperor = {
+	diplomatic_reputation = -3
 }
 
 11111111111111111 = {

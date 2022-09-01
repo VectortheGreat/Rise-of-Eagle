@@ -5,9 +5,7 @@ achaea_conquer_greece_missions_1 = {
 	potential = {
 		tag = ACH
 		NOT = { tag = GRE }
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	achaea_conquer_north_epirus = {
@@ -80,9 +78,7 @@ achaea_conquer_greece_missions_2 = {
 	potential = {
 		tag = ACH
 		NOT = { tag = GRE }
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	achaea_conquer_middle_greeece = {
@@ -187,9 +183,7 @@ achaea_conquer_greece_missions_3 = {
 	potential = {
 		tag = ACH
 		NOT = { tag = GRE }
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	achaea_conquer_aegean_islands = {
@@ -219,9 +213,7 @@ achaea_aegean_missions = {
 	potential = {
 		tag = ACH
 		NOT = { tag = GRE }
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	achaea_aegean_navy = {
@@ -274,9 +266,7 @@ achaea_south_italy_mission = {
 	potential = {
 		tag = ACH
 		NOT = { tag = GRE }
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	achaea_south_italy = {
@@ -313,9 +303,7 @@ achaea_navy_missions = {
 	potential = {
 		tag = ACH
 		NOT = { tag = GRE }
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	achaea_greater_navy = {
@@ -349,10 +337,13 @@ achaea_navy_missions = {
 			TUN = {
 				NOT = { navy_size = 10 }
 			}
-			check_variable = {
-				which = achaea_won_war_against_tunis
-				value = 1
-			}
+			OR = {
+				check_variable = {
+					which = achia_won_war_against_tunis
+					value = 1
+				}
+				NOT = { exists = TUN }
+			}			
 		}
 		effect = {
 			add_country_modifier = {
@@ -370,9 +361,7 @@ achaea_religion_missions = {
 	potential = {
 		tag = ACH
 		NOT = { tag = GRE }
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
 	achaea_clergy_relations = {
@@ -442,9 +431,7 @@ achaea_production_missions = {
 	potential = {
 		tag = ACH
 		NOT = { tag = GRE }
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
 	achea_production_income = {
@@ -475,9 +462,7 @@ achaea_trade_missions = {
 	potential = {
 		tag = ACH
 		NOT = { tag = GRE }
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
 	achaea_burghers_relations = {
@@ -550,9 +535,7 @@ achaea_piracy_mission = {
 	potential = {
 		tag = ACH
 		NOT = { tag = GRE }
-		NOT = {
-			map_setup = map_setup_random
-		}
+		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
 	achaea_piracy_aleppo = {

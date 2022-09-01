@@ -74,8 +74,7 @@ strengthened_the_governorships = {
 		}
 	}
 
-	local_ship_cost = -0.2
-	local_ship_repair = 0.2
+	local_governing_cost = -0.25
 	
 	#Province scope
 	on_activation = {	
