@@ -379,12 +379,13 @@ advanced_trade_node = {
 	province_trade_power_modifier = 0.1
 }
 
-11111111111111111 = {
-	
+naval_base = {
+	ship_recruit_speed = -0.25
+	local_ship_repair = 0.25
 }
 
-11111111111111111 = {
-	
+turkish_heavy_ships = {
+	heavy_ship_power = 0.15
 }
 
 11111111111111111 = {

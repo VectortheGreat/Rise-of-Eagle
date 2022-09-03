@@ -1,0 +1,953 @@
+ege_navy_missions = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = EGE
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	ege_conquer_akdeniz = {
+		icon = testtt
+		required_missions = {  }
+		position = 9
+		provinces_to_highlight = {
+			area = marmaris_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			marmaris_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			karaman_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ege_karaman_navy_base = {
+		icon = testtt
+		required_missions = { ege_conquer_akdeniz }
+		position = 10
+		provinces_to_highlight = {
+			province_id = 4971
+			has_dock_building_trigger = no
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			4971 = {
+				has_dock_building_trigger = yes
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dip_tech = 5
+		}
+		effect = {
+			321 = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			5091 = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			5003 = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			4971 = {
+				add_province_modifier = {
+					name = "naval_base"
+					duration = -1
+				}
+			}
+		}
+	}
+	ege_conquer_cyprus = {
+		icon = testtt
+		required_missions = { ege_karaman_navy_base }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				province_id = 321
+				province_id = 5091
+				province_id = 5003
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 321
+			owns_or_non_sovereign_subject_of = 5091
+			owns_or_non_sovereign_subject_of = 5003
+		}
+		effect = {
+			aleppo_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			syria_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+ege_aegean_island_missions = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = EGE
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	ege_conquer_aegean_islands = {
+		icon = testtt
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			area = aegean_archipelago_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			aegean_archipelago_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			athens_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			morea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ege_athens_naval_base = {
+		icon = testtt
+		required_missions = { ege_conquer_aegean_islands }
+		position = 10
+		provinces_to_highlight = {
+			province_id = 146
+			has_dock_building_trigger = no 
+		}
+		trigger = {
+			146 = {
+				has_dock_building_trigger = yes
+			}
+			dip_tech = 7
+		}
+		effect = {
+			146 = {
+				add_province_modifier = {
+					name = "naval_base"
+					duration = -1
+				}
+			}			
+		}
+	}
+	ege_bigger_ships = {
+		icon = testtt
+		required_missions = { akdeniz_build_docks }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				owned_by = GEN
+				owned_by = VEN
+			}
+		}
+		trigger = {
+			heavy_ship_fraction = 0.25
+			NOT = {
+				all_rival_country = {
+					navy_size = ROOT 
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "turkish_heavy_ships"
+				duration = -1
+			}
+		}
+	}
+}
+
+ege_balkan_expansion = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = EGE
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	ege_full_control_west_anatolia = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = aydin_area
+				area = saruhan_area
+				province_id = 2296
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			saruhan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			2296 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			aegean_archipelago_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_yearly_sailors = 10
+		}
+	}
+	ege_conquer_south_greece = {
+		icon = testtt
+		required_missions = { ege_full_control_west_anatolia }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = athens_area
+				area = morea_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			athens_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			morea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			trikala_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			macedonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			} 
+		}
+	}
+	ege_conquer_north_greece = {
+		icon = testtt
+		required_missions = { ege_conquer_south_greece }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = trikala_area
+				area = macedonia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			trikala_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			gelibolu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ege_integration_of_nations = {
+		icon = testtt
+		required_missions = { ege_conquer_north_greece }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = kastamonu_area
+				area = kocaeli_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			dip_tech = 15
+			num_accepted_cultures = 4
+		}
+		effect = {
+			### UNUTMA - Super modifier - Kültür dönüştürme penaltılıdır fakat farklı kültür komşuya cb verir ve farklı kültüre sahip oldukça güçlenir
+		}
+	}
+}
+
+ege_black_sea_expansion = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = EGE
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	ege_conquest_marmara = {
+		icon = testtt
+		required_missions = {  }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = hudavendigar_area
+				area = kocaeli_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kocaeli_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			kastamonu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sinop_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			thrace_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ege_conquer_blacksea_coast = {
+		icon = testtt
+		required_missions = { ege_conquest_marmara }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = kastamonu_area
+				area = sinop_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			kastamonu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			sinop_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			trabzon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_dip_power = 150
+		}
+	}
+}
+
+ege_central_anatolia_expansion = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = EGE
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	ege_central_anatolia = {
+		icon = testtt
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = denizli_area
+				area = germiyan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			denizli_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			germiyan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			konya_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ankara_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	akdeniz_to_eastern_anatolia = {
+		icon = testtt
+		required_missions = { akdenix_central_anatolia }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = konya_area
+				area = ankara_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			konya_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ankara_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			kayseri_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			chorum_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_mil_power = 150
+		}
+	}
+}
+
+ege_power_missions = {
+	slot = 6
+	generic = no
+	ai = yes
+	potential = {
+		tag = EGE
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	ege_autonomy_mission = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		trigger = {
+			monthly_adm = 8
+			all_state_pronivce = {
+				average_autonomy = 15
+			}		
+		}
+		effect = {
+			
+		}
+	}
+	akdeniz_strongest_muslim_country = {
+		icon = testtt
+		required_missions = { akdeniz_defeat_the_emperor }
+		position = 10
+		trigger = {
+			total_development = 1000
+			army_size = 250
+			custom_trigger_tooltip = {
+				tooltip = blabla
+				NOT = {
+					any_country = {
+						religion_group = ROOT
+						army_size = ROOT 
+						total_development = ROOT 
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = { 
+				name = strongest_religious_country
+				duration = -1
+			}
+		}
+	}
+}
+
+akdeniz_religion_missions = {
+	slot = 7
+	generic = no
+	ai = yes
+	potential = {
+		tag = EGE
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	akdeniz_convert_christians = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		trigger = {
+			check_variable = {
+				which = converted_province_to_muslim
+				value = 5
+			}
+		}
+		effect = {
+			add_country_modifier = { 
+				name = religious_favor
+				duration = 3650
+			}
+		}
+	}
+	akdeniz_be_on_side_on_reformation = {
+		icon = testtt
+		required_missions = { akdeniz_convert_christians }
+		position = 8
+		trigger = {
+			OR = {
+				has_country_flag = joined_reformation
+				has_country_flag = joined_against_reformation
+			}
+			OR = {
+				has_country_flag = war_started
+				has_country_flag = war_ended
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = war_ended
+				}
+				if = {
+					limit = {
+						NOT = { stability = 3}
+					}
+					add_stabilty = 1
+				}
+				else = {
+					add_adm_power = 50
+				}
+			}
+			else_ = {
+				add_country_modifier = { 
+					name = reformation_war
+					duration = 3650
+				}
+			}
+		}
+	}
+	akdeniz_clergy_relations = {
+		icon = testtt
+		required_missions = { akdeniz_be_on_side_on_reformation }
+		position = 9
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+			num_of_estate_privileges = {
+				estate = estate_church
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "clergy_increase_local_taxes"
+				duration = 5475
+			}
+		}
+	}
+	akdeniz_convert_30_provinces = {
+		icon = testtt
+		required_missions = { akdeniz_clergy_relations }
+		position = 10
+		trigger = {
+			check_variable = {
+				which = converted_province_to_muslim
+				value = 30
+			}
+		}
+		effect = {
+			add_country_modifier = { 
+				name = almighty_religion
+				duration = -1
+			}
+		}
+	}
+	akdeniz_own_hagia_sophia = {
+		icon = testtt
+		required_missions = { akdeniz_convert_30_provinces }
+		position = 11
+		trigger = {
+			151 = {
+				religion = ROOT
+				owned_by = ROOT
+				has_tax_building_trigger = yes
+			}
+		}
+		effect = {
+			151 = {
+				add_province_modifier = {
+					name = "develop_hagia_sophia"
+					duration = 10950
+				}
+			}
+		}
+	}
+	akdeniz_develop_hagia_sophia = {
+		icon = testtt
+		required_missions = { akdeniz_own_hagia_sophia }
+		position = 12
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Leviathan"
+				}
+				151 = {
+					has_great_project = {
+						type = hagia_sophia
+						tier = 3
+					}
+				}
+			}
+			else = {
+				151 = {
+					religion = ROOT
+					has_tax_building_trigger = yes
+					development = 50
+				}
+			}
+		}
+		effect = {
+			151 = {
+				add_province_modifier = {
+					name = "almighty_city"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+akdeniz_production_missions = {
+	slot = 8
+	generic = no
+	ai = yes
+	potential = {
+		tag = EGE
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	akdeniz_wool_production = {
+		icon = testtt
+		required_missions = {  }
+		position = 8
+		trigger = {
+			trade_goods_produced_amount = {
+				trade_goods = wool
+				amount = 5
+			}
+		}
+		effect = {
+			random_owned_province = {
+				limit = { trade_goods = wool }
+				add_building = workshop
+			}
+			add_country_modifier = { 
+				name = encourage_production
+				duration = 5475
+			}
+		}
+	}
+	akdeniz_pamuk_endustri = {
+		icon = testtt
+		required_missions = { akdeniz_wool_production }
+		position = 9
+		trigger = {
+			production_leader = {
+				trade_goods = wool
+			}
+			calc_true_if = {
+				all_owned_province = {
+					has_building = textile
+				}
+				amount = 20
+			}
+		}
+		effect = {
+			set_country_flag = iii_mission_akdeniz_pamuk
+		}
+	}
+	akdeniz_build_5_monuments = {
+		icon = testtt
+		required_missions = {  }
+		position = 11
+		trigger = {
+			check_variable = {
+				which = builded_great_project
+				value = 5
+			}
+		}
+		effect = {
+			add_country_modifier = { 
+				name = long_live_our_ruler
+				duration = 14600
+			}
+		}
+	}
+}
+
+akdeniz_trade_missions = {
+	slot = 9
+	generic = no
+	ai = yes
+	potential = {
+		tag = EGE
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	akdeniz_build_light_ship = {
+		icon = testtt
+		required_missions = { }
+		position = 6
+		trigger = {
+			navy_tradition = 20
+			capital_scope = {
+				owned_by = ROOT
+				has_shipyard_building_trigger = yes
+			}
+		}
+		effect = {			
+			add_country_modifier = {
+				name = "mediterranean_navy"
+				duration = 7300
+			}
+		}
+	}
+	akdeniz_piracy_rival = {
+		icon = testtt
+		required_missions = { akdeniz_build_light_ship akdeniz_piracy_aleppo }
+		position = 8
+		trigger = {
+			any_rival_country = {
+				capital_scope = {
+					has_privateer_share_in_trade_node = {
+						who = ROOT
+						share = 33
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "trade_terror"
+				duration = 7300
+			}
+		}
+	}
+	akdeniz_imperial_navy = {
+		icon = testtt
+		required_missions = { akdeniz_piracy_rival }
+		position = 9
+		trigger = {
+			light_ship_fraction = 0.33
+			has_flagship = yes
+			NOT = {
+				any_country = {
+					navy_size = ROOT
+				}
+			}
+		}
+		effect = {
+			##Super Modifier
+			set_country_flag = iii_akdeniz_super_modifier
+			set_global_flag = iii_akdeniz_super_modifier
+		}
+	}
+	akdeniz_trade_income = {
+		icon = testtt
+		required_missions = {  }
+		position = 10
+		trigger = {
+			trade_income_percentage = 0.4
+		}
+		effect = {
+			add_country_modifier = {
+				name = "advanced_trade"
+				duration = 3650
+			}
+			define_advisor = {
+				type = trader
+				skill = 3
+				discount = yes
+			}
+		}
+	}
+	akdeniz_trade_center = {
+		icon = testtt
+		required_missions = { akdeniz_trade_income }
+		position = 12
+		trigger = {
+			capital_scope = {
+				has_trade_building_trigger = yes
+				province_has_center_of_trade_of_level = 3
+				development = 30
+			}
+		}
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = "trade_center"
+					duration = -1
+				}
+			}			
+		}
+	}
+}
+
+akdeniz_development_missions = {
+	slot = 10
+	generic = no
+	ai = yes
+	potential = {
+		tag = EGE
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	akdeniz_piracy_aleppo = {
+		icon = testtt
+		required_missions = { akdeniz_build_light_ship }
+		position = 7
+		trigger = {
+			377 = {
+				has_privateer_share_in_trade_node = {
+					who = ROOT
+					share = 33
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 0.5
+		}
+	}
+	akdeniz_control_kervansaray = {
+		icon = testtt
+		required_missions = { akdeniz_piracy_aleppo }
+		position = 8
+		trigger = {
+			###UNUTMA
+		}
+		effect = {
+			
+		}
+	}
+	akdeniz_develop_provinces = {
+		icon = testtt
+		required_missions = { akdeniz_control_kervansaray }
+		position = 10
+		trigger = {
+			check_variable = {
+				which = achaea_won_war_against_tunis
+				value = 50
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "developed_country"
+				duration = -1
+			}
+		}
+	}
+}
