@@ -286,88 +286,97 @@ weak_emperor = {
 	diplomatic_reputation = -3
 }
 
-11111111111111111 = {
-	
+converted_holy_lands = {
+	prestige = 1
+	tolerance_own = 2
 }
 
-11111111111111111 = {
-	
+restored_pentarchy = {
+	local_unrest = -2
+	local_tax_modifier = 0.25
 }
 
-11111111111111111 = {
-	
+anatolian_garrison = {
+	global_manpower_modifier = 0.10
 }
 
-11111111111111111 = {
-	
+byzantine_late_cannons_modifier = {
+	artillery_fire = 1
 }
 
-11111111111111111 = {
-	
+christian_anatolia_back = {
+	manpower_recovery_speed = 0.10
+	prestige_decay = -0.01
 }
 
-11111111111111111 = {
-	
+byzantine_professional_army = {
+	discipline = 0.05
 }
 
-11111111111111111 = {
-	
+byzantine_black_leak = {
+	own_coast_naval_combat_bonus = 1.0
+	prestige_from_naval = 0.1
 }
 
-11111111111111111 = {
-	
+leader_of_orthodox_nations = {
+	relation_with_same_religion = 25
+	cb_on_religious_enemies = yes
+	yearly_patriarch_authority = 0.1
 }
 
-11111111111111111 = {
-	
+integrating_serbians = {
+	local_years_of_nationalism = -5
 }
 
-11111111111111111 = {
-	
+great_bulgarian_fleet = {
+	naval_morale = 0.1
+	ship_durability = 0.1
 }
 
-11111111111111111 = {
-	
+bulgarian_eastern_caravan = {
+	trade_value_modifier = 0.25
 }
 
-11111111111111111 = {
-	
+greater_bulgaria = {
+	core_creation = -0.2
 }
 
-11111111111111111 = {
-	
+bulgarianization = {
+	local_culture_conversion_cost = -0.25
 }
 
-11111111111111111 = {
-	
+bulgarian_bureaucracy = {
+	allowed_num_of_manufactories = 1
 }
 
-11111111111111111 = {
-	
+bulgarian_balkan_bases = {
+	reserves_organisation = 0.2
 }
 
-11111111111111111 = {
-	
+bulgarian_forts = {
+	local_defensiveness = 0.2
+	garrison_growth = 0.2
 }
 
-11111111111111111 = {
-	
+bulgaria_absolutism_modifier = {
+	yearly_absolutism = 0.01
 }
 
-11111111111111111 = {
-	
+greatest_capital = {
+	local_production_efficiency = 0.25
 }
 
-11111111111111111 = {
-	
+bulgarian_industry = {
+	production_efficiency = 0.25
 }
 
-11111111111111111 = {
-	
+the_great_black_industry = {
+	global_trade_goods_size_modifier = 0.1
 }
 
-11111111111111111 = {
-	
+advanced_trade_node = {
+	trade_value_modifier = 0.2
+	province_trade_power_modifier = 0.1
 }
 
 11111111111111111 = {

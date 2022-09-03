@@ -309,6 +309,7 @@ east_balkan_region = {
 		buzau_area
 		oltenia_area
 		wallachia_area
+		moldavia_area
 	}
 }
 
@@ -319,7 +320,6 @@ carpathia_region = {
 		slovakia_area
 		transylvania_area
 		southern_transylvania_area
-		moldavia_area
 	}
 }
 
