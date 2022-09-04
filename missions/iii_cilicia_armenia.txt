@@ -1,0 +1,1056 @@
+armenia_east_mediterrenian_missions  = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ARM
+			tag = CLC
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	armenia_defeat_emperor = {
+		icon = testtt
+		required_missions = {  }
+		position = 8
+		trigger = {
+			OR = {
+				check_variable = {
+					which = won_war_against_emperor
+					value = 1
+				}
+				NOT = { hre_size = 1 }
+				is_emperor = yes
+			}
+		}
+		effect = {			
+			if = {
+				limit = {
+					OR = {
+						NOT = { hre_size = 1 }
+						is_emperor = yes
+					}
+				}
+				add_country_modifier = { 
+					name = only_one_emperor
+					duration = 7300
+				}
+			}
+			else = {
+				emperor = {
+					add_country_modifier = { 
+						name = weak_emperor
+						duration = 7300
+					}
+				}
+				add_country_modifier = { 
+					name = only_one_emperor
+					duration = 7300
+				}
+			}
+			konya_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			germiyan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kayseri_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	armenia_conquer_central_anatolia = {
+		icon = testtt
+		required_missions = { armenia_defeat_emperor }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = konya_area
+				area = kayseri_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			konya_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kayseri_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			ankara_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			chorum_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			rum_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT }
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+armenia_western_anatolia_expansion = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ARM
+			tag = CLC
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	armenia_mediterrenian_navy = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		trigger = {
+			navy_size_percentage = 1
+		}
+		effect = {
+			321 = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			5091 = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			5003 = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			antioch_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			marmaris_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	armenia_greater_navy = {
+		icon = testtt
+		required_missions = { armenia_mediterrenian_navy }
+		position = 8
+		trigger = {
+			navy_size = 50
+			num_of_owned_provinces_with = { 
+				has_dock_building_trigger = yes
+				value = 5  
+			}
+			num_of_owned_provinces_with = { 
+				has_dock_building_trigger = yes
+				value = 5  
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "great_armenian_fleet"
+				duration = 7300
+			}
+		}
+	}
+	armenia_to_western_anatolia = {
+		icon = testtt
+		required_missions = { armenia_defeat_emperor }
+		position = 9
+		provinces_to_highlight = {
+			area = germiyan_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			germiyan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			denizli_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			aydin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			saruhan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hudavendigar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}	
+		}
+	}
+	armenia_defeat_turks = {
+		icon = testtt
+		required_missions = { armenia_to_western_anatolia }
+		position = 10
+		provinces_to_highlight = {
+			region = anatolia_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			NOT = {
+				any_country = {
+					culture = turkish
+					army_size = ROOT
+					total_development = ROOT
+				}
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 40 ### UNUTMA - Say!
+				region = anatolia_region
+				is_city = yes
+			}
+		}
+		effect = {
+			anatolia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	armenia_armenian_anatolia = {
+		icon = testtt
+		required_missions = { armenia_defeat_turks armenia_conquer_central_anatolia }
+		position = 12
+		provinces_to_highlight = {
+			region = anatolia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { religon = ROOT }
+		}
+		trigger = {
+			anatolia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = ROOT
+			}
+		}
+		effect = {			
+			every_province = {
+				limit = {
+					region = anatolia_region
+					NOT = { culture_group = ROOT }
+				}
+				add_province_modifier = {
+					name = "armenianization"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+armenia_levant_expansion = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ARM
+			tag = CLC
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	armenia_conquer_cyprus = {
+		icon = testtt
+		required_missions = { armenia_mediterrenian_navy }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				province_id = 321
+				province_id = 5091
+				province_id = 5003
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 321
+			owns_or_non_sovereign_subject_of = 5091
+			owns_or_non_sovereign_subject_of = 5003
+		}
+		effect = {
+			if = {
+				limit = {
+					syria_area = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }					
+					}
+				}
+				syria_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				add_mil_power = 200
+			}
+		}
+	}
+	armenia_conquer_syria = {
+		icon = testtt
+		required_missions = { armenia_conquer_cyprus armenia_conquer_antioch }
+		position = 9
+		provinces_to_highlight = {
+			area = syria_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}	
+		effect = {			
+			palestine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	armenia_conquer_alexandria = {
+		icon = testtt
+		required_missions = { armenia_conquer_palestine }
+		position = 11
+		provinces_to_highlight = {
+			area = delta_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			bahari_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+armenia_levant_expansion_2 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ARM
+			tag = CLC
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	armenia_conquer_antioch = {
+		icon = testtt
+		required_missions = { armenia_mediterrenian_navy }
+		position = 8
+		provinces_to_highlight = {
+			area = antioch_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			antioch_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					syria_area = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }					
+					}
+				}
+				syria_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			else = {
+				add_mil_power = 200
+			}
+			### UNUTMA - Event ile Kafirlere CB verme özelliği ekle
+		}
+	}
+	armenia_conquer_palestine = {
+		icon = testtt
+		required_missions = { armenia_conquer_antioch }
+		position = 10
+		provinces_to_highlight = {
+			area = palestine_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			delta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	armenia_armenian_crusader = {
+		icon = testtt
+		required_missions = { armenia_conquer_palestine armenia_conquer_alexandria }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				area = thrace_area
+				area = gelibolu_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			NOT = {
+				any_country = {
+					religion_group = muslim
+					is_great_power = yes
+				}
+			}
+			total_development = 1000
+		}
+		effect = {
+			add_country_modifier = {
+				name = "armenian_crusader"
+				duration = -1
+			}
+		}
+	}
+}
+
+armenia_religion_missions = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ARM
+			tag = CLC
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	armenia_clergy_relations = {
+		icon = testtt
+		required_missions = {  }
+		position = 8
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+			num_of_estate_privileges = {
+				estate = estate_church
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "clergy_increase_local_taxes"
+				duration = 5475
+			}
+		}
+	}
+	armenia_convert_antioch = {
+		icon = testtt
+		required_missions = { armenia_clergy_relations }
+		position = 9
+		provinces_to_highlight = {
+			area = antioch_area
+			NOT = { religion = ROOT }
+		}
+		trigger = {
+			antioch_area = {
+				religion = ROOT
+			}
+		}
+		effect = {			
+			add_prestige = 25
+		}
+	}
+	armenia_convert_palestine = {
+		icon = testtt
+		required_missions = { armenia_convert_antioch }
+		position = 10
+		provinces_to_highlight = {
+			area = palestine_area
+			NOT = { religion = ROOT }
+		}
+		trigger = {
+			palestine_area = {
+				religion = ROOT
+			}
+		}
+		effect = {			
+			add_adm_power = 200
+		}
+	}
+	armenia_holy_sites = {
+		icon = testtt
+		required_missions = { armenia_convert_palestine }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1227
+				province_id = 1234
+				province_id = 358
+				province_id = 2313
+				province_id = 419
+			}
+			NOT = { religion = ROOT }
+		}
+		trigger = {
+			1227 = {
+				religion = ROOT
+			}
+			1234 = {
+				religion = ROOT
+			}
+			358 = {
+				religion = ROOT
+			}
+			2313 = {
+				religion = ROOT
+			}
+			419 = {
+				religion = ROOT
+			}
+		}
+		effect = {			
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+		}
+	}
+}
+
+armenia_blacksea_expansion = {
+	slot = 6
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ARM
+			tag = CLC
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	armenia_conquer_blacksea_coast = {
+		icon = testtt
+		required_missions = { armenia_east_anatolia }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = sinop_area
+				area = trabzon_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			sinop_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			trabzon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			crimea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	armenia_conquer_crimea = {
+		icon = testtt
+		required_missions = { armenia_conquer_blacksea_coast }
+		position = 10
+		provinces_to_highlight = {
+			area = crimea_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			crimea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 200
+		}
+	}
+}
+
+armenia_east_anatolia_expansion = {
+	slot = 7
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ARM
+			tag = CLC
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	armenia_east_anatolia = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		provinces_to_highlight = {
+			region = east_anatolia_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				region = east_anatolia_region
+				is_city = yes
+			}
+		}
+		effect = {
+			sinop_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			trabzon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_anatolia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			armenia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			samtskhe_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	armenia_conquer_east_anatolia = {
+		icon = testtt
+		required_missions = { armenia_east_anatolia }
+		position = 9
+		provinces_to_highlight = {
+			region = east_anatolia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			east_anatolia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			al_jazira_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			iraq_arabi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	armenia_absolutism = {
+		icon = testtt
+		required_missions = {  }
+		position = 11
+		trigger = {
+			current_age = age_of_absolutism
+			has_regency = no
+			has_any_disaster = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = "armenia_absolutism_modifier"
+				duration = 5475
+			}
+		}
+	}
+	armenia_centralization = {
+		icon = testtt
+		required_missions = { armenia_absolutism }
+		position = 12
+		trigger = {
+			absolutism = 90
+			average_unrest = 0
+			crown_land_share = 50
+			NOT = { num_of_rebel_armies = 1 }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "armenia_centralization_modifier"
+				duration = -1
+			}
+		}
+	}
+}
+
+armenia_caucasia_expansion = {
+	slot = 8
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ARM
+			tag = CLC
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	armenia_conquer_georgians = {
+		icon = testtt
+		required_missions = { armenia_east_anatolia }
+		position = 8
+		provinces_to_highlight = {
+			region = caucasia_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 10
+				region = caucasia_region
+				is_city = yes
+			}
+			NOT = {
+				GEO = {
+					army_size = ROOT
+				}
+			}
+		}
+		effect = {
+			every_province = {
+				limit = {
+					culture = georgian
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	armenia_conquer_georgia = {
+		icon = testtt
+		required_missions = { armenia_conquer_georgians }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = kartli_kakheti_area
+				area = imereti_area
+				area = samtskhe_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			kartli_kakheti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			imereti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			samtskhe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			caucasia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}	
+		}
+	}
+	armenia_improve_trade = {
+		icon = testtt
+		required_missions = {  }
+		position = 10
+		trigger = {
+			mercantilism = 25
+			num_of_centers_of_trade = 3
+		}
+		effect = {
+			add_country_modifier = { 
+				name = long_live_our_ruler
+				duration = 14600
+			}
+		}
+	}
+	armenia_advanced_trade = {
+		icon = testtt
+		required_missions = { armenia_improve_trade }
+		position = 11
+		trigger = {
+			trade_income_percentage = 0.35
+		}
+		effect = {
+			add_country_modifier = {
+				name = "advanced_trade"
+				duration = 3650
+			}
+			define_advisor = {
+				type = trader
+				skill = 3
+				discount = yes
+			}
+		}
+	}
+}
+
+armenia_azerbaijan_missions = {
+	slot = 9
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ARM
+			tag = CLC
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	armenia_controll_causcasia = {
+		icon = testtt
+		required_missions = { armenia_conquer_georgians }
+		position = 9
+		provinces_to_highlight = {
+			region = caucasia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			caucasia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			if = {
+				limit = {
+					accepted_culture = azerbaijani
+				}
+				every_owned_province = {
+					limit = {
+						culture = azerbaijani
+					}
+					add_province_modifier = {
+						name = "accept_azers"
+						duration = 3650
+					}
+				}
+				every_owned_province = {
+					limit = {
+						culture = azerbaijani
+						NOT = { religion = ROOT }
+					}
+					add_province_modifier = {
+						name = "accept_azers2"
+						duration = 3650
+					}
+				}
+			}
+			else = {
+				every_owned_province = {
+					limit = {
+						culture = azerbaijani
+					}
+					add_province_modifier = {
+						name = "armenianization"
+						duration = -1
+					}
+				}		
+			}
+		}
+	}
+	armenia_dominant_culture = {
+		icon = testtt
+		required_missions = { armenia_controll_causcasia }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				region = east_anatolia_region
+				region = caucasia_region
+			}
+		}
+		trigger = {
+			east_anatolia_region = {
+				type = all
+				dominant_culture = ROOT
+			}
+			caucasia_region = {
+				type = all
+				dominant_culture = ROOT
+			}
+		}
+		effect = {
+			add_years_of_income = 1
+		}
+	}
+}
+
+armenia_estate_missions = {
+	slot = 10
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = ARM
+			tag = CLC
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	armenia_improve_relations = {
+		icon = testtt
+		required_missions = {  }
+		position = 8
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 60
+			}
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 60
+			}
+		}
+		effect = {
+			### UNUTMA - Estate privilege eklet
+		}
+	}
+}

@@ -414,28 +414,36 @@ greater_navy = {
 	ship_durability = 0.15
 }
 
-11111111111111111 = {
-	
+great_armenian_fleet = {
+	naval_morale = 0.1
+	ship_durability = 0.1
 }
 
-11111111111111111 = {
-	
+armenianization = {
+	local_culture_conversion_cost = -0.35
 }
 
-11111111111111111 = {
-	
+armenian_crusader = {
+	relation_with_same_religion = 25
+	relation_with_heathens = 15
+	land_morale = 0.10
 }
 
-11111111111111111 = {
-	
+armenia_absolutism_modifier = {
+	yearly_absolutism = 0.1
 }
 
-11111111111111111 = {
-	
+armenia_centralization_modifier = {
+	global_autonomy = -0.05
+	autonomy_change_time = -0.5
 }
 
-11111111111111111 = {
-	
+accept_azers = {
+	local_years_of_nationalism = -5
+}
+
+accept_azers2 = {
+	local_missionary_strength = 0.1
 }
 
 11111111111111111 = {

@@ -81,3 +81,4 @@ VRT	= "countries/Vratsa.txt"
 
 AKN = "countries/Akdeniz.txt"
 EGE = "countries/Ege.txt"
+CLC = "countries/Cilicia.txt"

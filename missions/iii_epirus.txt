@@ -11,7 +11,7 @@ epirus_conquer_albania_missios = {
 	epirus_conquer_albania = {
 		icon = testtt
 		required_missions = { epirus_conquer_middle_greeece }
-		position = 9
+		position = 8
 		provinces_to_highlight = {
 			OR = {
 				area = berat_area
@@ -373,7 +373,7 @@ epirus_tunis_missions = {
 	epirus_convert_provinces = {
 		icon = testtt
 		required_missions = { epirus_clergy_relations }
-		position = 7
+		position = 8
 		trigger = {
 			check_variable = {
 				which = converted_province_to_orthodox
@@ -390,7 +390,7 @@ epirus_tunis_missions = {
 	epirus_defeat_tunis = {
 		icon = testtt
 		required_missions = { epirus_bigger_navy }
-		position = 8
+		position = 10
 		trigger = {
 			TUN = {
 				NOT = { navy_size = 10 }
@@ -586,7 +586,7 @@ epirus_trade_missions = {
 	}
 }
 
-achaea_piracy_mission = {
+epirus_piracy_mission = {
 	slot = 10
 	generic = no
 	ai = yes
@@ -599,7 +599,7 @@ achaea_piracy_mission = {
 	epirus_piracy_adriatic = {
 		icon = testtt
 		required_missions = { epirus_burghers_relations }
-		position = 7
+		position = 8
 		trigger = {
 			112 = {
 				has_privateer_share_in_trade_node = {

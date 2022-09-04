@@ -8,7 +8,7 @@ imperial_navy_missions_1 = {
 			map_setup = map_setup_random
 		}
 	}
-	has_country_shield = yes
+	has_country_shield = no
 	imperial_mission_flagship = {
 		icon = testtt
 		required_missions = { imperial_mission_conquer_ports }
@@ -67,7 +67,7 @@ imperial_navy_missions_2 = {
 			map_setup = map_setup_random
 		}
 	}
-	has_country_shield = yes
+	has_country_shield = no
 	imperial_mission_expand_navy = {
 		icon = testtt
 		required_missions = { }
@@ -148,7 +148,7 @@ imperial_military_missions_1 = {
 			map_setup = map_setup_random
 		}
 	}
-	has_country_shield = yes
+	has_country_shield = no
 	imperial_mission_conquer_land = {
 		icon = testtt
 		required_missions = { imperial_mission_expand_army }
@@ -225,7 +225,7 @@ imperial_military_missions_2 = {
 			map_setup = map_setup_random
 		}
 	}
-	has_country_shield = yes
+	has_country_shield = no
 	imperial_mission_expand_army = {
 		icon = testtt
 		required_missions = { }
@@ -291,7 +291,7 @@ imperial_military_missions_3 = {
 			map_setup = map_setup_random
 		}
 	}
-	has_country_shield = yes
+	has_country_shield = no
 	imperial_mission_noble_estate = {
 		icon = testtt
 		required_missions = { }
@@ -363,7 +363,7 @@ imperial_imperial_mission_1 = {
 			map_setup = map_setup_random
 		}
 	}
-	has_country_shield = yes
+	has_country_shield = no
 	imperial_mission_hre_cb = {
 		icon = testtt
 		required_missions = { }
@@ -428,7 +428,7 @@ imperial_imperial_mission_2 = {
 			map_setup = map_setup_random
 		}
 	}
-	has_country_shield = yes	
+	has_country_shield = no	
 	imperial_mission_culture_hegemon = {
 		icon = testtt
 		required_missions = { }
@@ -541,7 +541,7 @@ imperial_adm_missions = {
 			map_setup = map_setup_random
 		}
 	}
-	has_country_shield = yes	
+	has_country_shield = no	
 	imperial_mission_defender_of_faith = {
 		icon = testtt
 		required_missions = { imperial_mission_temple }
@@ -618,7 +618,7 @@ imperial_adm_missions2 = {
 			map_setup = map_setup_random
 		}
 	}
-	has_country_shield = yes	
+	has_country_shield = no	
 	imperial_mission_temple = {
 		icon = testtt
 		required_missions = { }
@@ -712,7 +712,7 @@ imperial_trade_missions = {
 			map_setup = map_setup_random
 		}
 	}
-	has_country_shield = yes	
+	has_country_shield = no	
 	imperial_mission_trade = {
 		icon = testtt
 		required_missions = { }
