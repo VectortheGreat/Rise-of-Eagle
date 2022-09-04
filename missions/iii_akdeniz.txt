@@ -725,7 +725,6 @@ akdeniz_power_mission = {
 		required_missions = { akdeniz_defeat_the_emperor }
 		position = 10
 		trigger = {
-			total_development = 1000
 			army_size = 250
 			custom_trigger_tooltip = {
 				tooltip = blabla
@@ -1121,7 +1120,7 @@ akdeniz_development_missions = {
 		position = 10
 		trigger = {
 			check_variable = {
-				which = achaea_won_war_against_tunis
+				which = mission_developed
 				value = 50
 			}
 		}

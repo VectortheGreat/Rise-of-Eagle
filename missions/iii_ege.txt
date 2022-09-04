@@ -9,7 +9,7 @@ ege_navy_missions = {
 	has_country_shield = yes
 	ege_conquer_akdeniz = {
 		icon = testtt
-		required_missions = {  }
+		required_missions = { ege_aegean_island_missions }
 		position = 9
 		provinces_to_highlight = {
 			area = marmaris_area
@@ -124,7 +124,7 @@ ege_aegean_island_missions = {
 	has_country_shield = yes
 	ege_conquer_aegean_islands = {
 		icon = testtt
-		required_missions = {  }
+		required_missions = { ege_full_control_west_anatolia }
 		position = 8
 		provinces_to_highlight = {
 			area = aegean_archipelago_area
@@ -474,7 +474,7 @@ ege_central_anatolia_expansion = {
 			}
 		}
 	}
-	akdeniz_to_eastern_anatolia = {
+	ege_central_anatolia_2 = {
 		icon = testtt
 		required_missions = { akdenix_central_anatolia }
 		position = 10
@@ -530,20 +530,43 @@ ege_power_missions = {
 		position = 7
 		trigger = {
 			monthly_adm = 8
-			all_state_pronivce = {
-				average_autonomy = 15
+			all_owned_pronivce = {
+				NOT = { local_autonomy = 15 }
 			}		
 		}
 		effect = {
-			
+			add_country_modifier = {
+				name = "ege_local_laws"
+				duration = 5475
+			}
 		}
 	}
-	akdeniz_strongest_muslim_country = {
+	ege_clergy_relations = {
 		icon = testtt
-		required_missions = { akdeniz_defeat_the_emperor }
+		required_missions = { ege_be_on_side_on_reformation }
 		position = 10
 		trigger = {
-			total_development = 1000
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+			num_of_estate_privileges = {
+				estate = estate_church
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "clergy_increase_local_taxes"
+				duration = 5475
+			}
+		}
+	}
+	ege_strongest_muslim_country = {
+		icon = testtt
+		required_missions = { ege_clergy_relations }
+		position = 10
+		trigger = {
 			army_size = 250
 			custom_trigger_tooltip = {
 				tooltip = blabla
@@ -565,7 +588,7 @@ ege_power_missions = {
 	}
 }
 
-akdeniz_religion_missions = {
+ege_religion_missions = {
 	slot = 7
 	generic = no
 	ai = yes
@@ -574,27 +597,10 @@ akdeniz_religion_missions = {
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
-	akdeniz_convert_christians = {
-		icon = testtt
-		required_missions = { }
-		position = 7
-		trigger = {
-			check_variable = {
-				which = converted_province_to_muslim
-				value = 5
-			}
-		}
-		effect = {
-			add_country_modifier = { 
-				name = religious_favor
-				duration = 3650
-			}
-		}
-	}
-	akdeniz_be_on_side_on_reformation = {
+	ege_be_on_side_on_reformation = {
 		icon = testtt
 		required_missions = { akdeniz_convert_christians }
-		position = 8
+		position = 9
 		trigger = {
 			OR = {
 				has_country_flag = joined_reformation
@@ -628,30 +634,9 @@ akdeniz_religion_missions = {
 			}
 		}
 	}
-	akdeniz_clergy_relations = {
+	ege_convert_religion = {
 		icon = testtt
-		required_missions = { akdeniz_be_on_side_on_reformation }
-		position = 9
-		trigger = {
-			estate_loyalty = {
-				estate = estate_church
-				loyalty = 60
-			}
-			num_of_estate_privileges = {
-				estate = estate_church
-				value = 4
-			}
-		}
-		effect = {
-			add_country_modifier = {
-				name = "clergy_increase_local_taxes"
-				duration = 5475
-			}
-		}
-	}
-	akdeniz_convert_30_provinces = {
-		icon = testtt
-		required_missions = { akdeniz_clergy_relations }
+		required_missions = { ege_be_on_side_on_reformation }
 		position = 10
 		trigger = {
 			check_variable = {
@@ -666,9 +651,9 @@ akdeniz_religion_missions = {
 			}
 		}
 	}
-	akdeniz_own_hagia_sophia = {
+	ege_own_hagia_sophia = {
 		icon = testtt
-		required_missions = { akdeniz_convert_30_provinces }
+		required_missions = { ege_convert_religion }
 		position = 11
 		trigger = {
 			151 = {
@@ -686,7 +671,7 @@ akdeniz_religion_missions = {
 			}
 		}
 	}
-	akdeniz_develop_hagia_sophia = {
+	ege_develop_hagia_sophia = {
 		icon = testtt
 		required_missions = { akdeniz_own_hagia_sophia }
 		position = 12
@@ -721,7 +706,7 @@ akdeniz_religion_missions = {
 	}
 }
 
-akdeniz_production_missions = {
+ege_production_missions = {
 	slot = 8
 	generic = no
 	ai = yes
@@ -729,51 +714,50 @@ akdeniz_production_missions = {
 		tag = EGE
 		NOT = { map_setup = map_setup_random }
 	}
-	has_country_shield = yes	
-	akdeniz_wool_production = {
+	has_country_shield = yes
+	ege_production = {
 		icon = testtt
 		required_missions = {  }
 		position = 8
 		trigger = {
-			trade_goods_produced_amount = {
-				trade_goods = wool
+			production_income_percentage = 0.25
+			calc_true_if = {
+				all_owned_province = {
+					has_production_building_trigger = yes
+				}
+				amount = 10
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ege_focus_on_production"
+				duration = 9125
+			}
+		}
+	}
+	ege_industry = {
+		icon = testtt
+		required_missions = { ege_production }
+		position = 10
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					has_building = furnace
+				}
 				amount = 5
 			}
 		}
 		effect = {
-			random_owned_province = {
-				limit = { trade_goods = wool }
-				add_building = workshop
-			}
-			add_country_modifier = { 
-				name = encourage_production
-				duration = 5475
-			}
+			add_country_modifier = {
+				name = "the_great_black_industry"
+				duration = -1
+			}			
 		}
 	}
-	akdeniz_pamuk_endustri = {
+	ege_build_5_monuments = {
 		icon = testtt
-		required_missions = { akdeniz_wool_production }
-		position = 9
-		trigger = {
-			production_leader = {
-				trade_goods = wool
-			}
-			calc_true_if = {
-				all_owned_province = {
-					has_building = textile
-				}
-				amount = 20
-			}
-		}
-		effect = {
-			set_country_flag = iii_mission_akdeniz_pamuk
-		}
-	}
-	akdeniz_build_5_monuments = {
-		icon = testtt
-		required_missions = {  }
-		position = 11
+		required_missions = { ege_industry }
+		position = 12
 		trigger = {
 			check_variable = {
 				which = builded_great_project
@@ -789,7 +773,7 @@ akdeniz_production_missions = {
 	}
 }
 
-akdeniz_trade_missions = {
+ege_trade_missions = {
 	slot = 9
 	generic = no
 	ai = yes
@@ -798,28 +782,25 @@ akdeniz_trade_missions = {
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
-	akdeniz_build_light_ship = {
+	ege_turkish_mercantilism = {
 		icon = testtt
-		required_missions = { }
-		position = 6
+		required_missions = { ege_smyrna_trade }
+		position = 9
 		trigger = {
-			navy_tradition = 20
-			capital_scope = {
-				owned_by = ROOT
-				has_shipyard_building_trigger = yes
-			}
+			mercantilism = 25
+			num_of_centers_of_trade = 5
 		}
 		effect = {			
 			add_country_modifier = {
-				name = "mediterranean_navy"
+				name = "turkish_mercantilism"
 				duration = 7300
 			}
 		}
 	}
-	akdeniz_piracy_rival = {
+	ege_piracy_rival = {
 		icon = testtt
-		required_missions = { akdeniz_build_light_ship akdeniz_piracy_aleppo }
-		position = 8
+		required_missions = { ege_turkish_mercantilism }
+		position = 10
 		trigger = {
 			any_rival_country = {
 				capital_scope = {
@@ -837,31 +818,12 @@ akdeniz_trade_missions = {
 			}
 		}
 	}
-	akdeniz_imperial_navy = {
+	ege_trade_income = {
 		icon = testtt
-		required_missions = { akdeniz_piracy_rival }
-		position = 9
+		required_missions = { ege_piracy_rival }
+		position = 12
 		trigger = {
-			light_ship_fraction = 0.33
-			has_flagship = yes
-			NOT = {
-				any_country = {
-					navy_size = ROOT
-				}
-			}
-		}
-		effect = {
-			##Super Modifier
-			set_country_flag = iii_akdeniz_super_modifier
-			set_global_flag = iii_akdeniz_super_modifier
-		}
-	}
-	akdeniz_trade_income = {
-		icon = testtt
-		required_missions = {  }
-		position = 10
-		trigger = {
-			trade_income_percentage = 0.4
+			trade_income_percentage = 0.35
 		}
 		effect = {
 			add_country_modifier = {
@@ -875,29 +837,9 @@ akdeniz_trade_missions = {
 			}
 		}
 	}
-	akdeniz_trade_center = {
-		icon = testtt
-		required_missions = { akdeniz_trade_income }
-		position = 12
-		trigger = {
-			capital_scope = {
-				has_trade_building_trigger = yes
-				province_has_center_of_trade_of_level = 3
-				development = 30
-			}
-		}
-		effect = {
-			capital_scope = {
-				add_province_modifier = {
-					name = "trade_center"
-					duration = -1
-				}
-			}			
-		}
-	}
 }
 
-akdeniz_development_missions = {
+ege_development_missions = {
 	slot = 10
 	generic = no
 	ai = yes
@@ -906,26 +848,36 @@ akdeniz_development_missions = {
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
-	akdeniz_piracy_aleppo = {
+	ege_smyrna_trade = {	### UNUTMA - SMYRNA ekle
 		icon = testtt
-		required_missions = { akdeniz_build_light_ship }
-		position = 7
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 5052
+			NOT = { has_most_province_trade_power = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { province_has_center_of_trade_of_level = 3 }
+		}
 		trigger = {
-			377 = {
-				has_privateer_share_in_trade_node = {
-					who = ROOT
-					share = 33
-				}
+			5052 = {
+				has_most_province_trade_power = ROOT
+				country_or_non_sovereign_subject_holds = ROOT
+				province_has_center_of_trade_of_level = 3
 			}
 		}
 		effect = {
-			add_years_of_income = 0.5
+			5052 = {
+				add_province_modifier = {
+					name = "advanced_trade_node"
+					duration = -1
+				}
+			}
 		}
 	}
-	akdeniz_control_kervansaray = {
+	ege_control_kervansaray = {
 		icon = testtt
-		required_missions = { akdeniz_piracy_aleppo }
-		position = 8
+		required_missions = { ege_smyrna_trade }
+		position = 9
 		trigger = {
 			###UNUTMA
 		}
@@ -933,13 +885,13 @@ akdeniz_development_missions = {
 			
 		}
 	}
-	akdeniz_develop_provinces = {
+	ege_develop_provinces = {
 		icon = testtt
-		required_missions = { akdeniz_control_kervansaray }
-		position = 10
+		required_missions = { ege_control_kervansaray }
+		position = 11
 		trigger = {
 			check_variable = {
-				which = achaea_won_war_against_tunis
+				which = mission_developed
 				value = 50
 			}
 		}

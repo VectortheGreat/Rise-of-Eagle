@@ -388,28 +388,30 @@ turkish_heavy_ships = {
 	heavy_ship_power = 0.15
 }
 
-11111111111111111 = {
-	
+ege_local_laws = {
+	global_unrest = -3
 }
 
-11111111111111111 = {
-	
+ege_focus_on_production = {
+	production_efficiency = 0.2
 }
 
-11111111111111111 = {
-	
+turkish_mercantilism = {
+	mercantilism_cost = -0.3
+	merchants = 1
 }
 
-11111111111111111 = {
-	
+epirus_navy = {
+	global_ship_cost = -0.2
+	global_ship_recruit_speed = -0.2
 }
 
-11111111111111111 = {
-	
+helenize_italy = {
+	culture_conversion_cost = -0.5
 }
 
-11111111111111111 = {
-	
+greater_navy = {
+	ship_durability = 0.15
 }
 
 11111111111111111 = {

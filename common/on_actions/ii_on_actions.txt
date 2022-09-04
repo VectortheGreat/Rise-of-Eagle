@@ -197,7 +197,13 @@ on_startup = {
 
 		if = {
 			limit = {
-				ROOT = { tag = ACH }
+				ROOT = {
+					OR = {
+						tag = ACH
+						tag = EPI
+						tag = BYZ
+					}
+				}
 				FROM = { tag = TUN }
 			}
 			set_variable = {
@@ -264,10 +270,18 @@ on_startup = {
 		if = {
 			limit = {
 				religion_group = muslim
-				is_part_of_hre = yes
 			}
 			change_variable = {
 				which = converted_province_to_muslim
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				religion = orthodox
+			}
+			change_variable = {
+				which = converted_province_to_orthodox
 				value = 1
 			}
 		}
@@ -315,6 +329,18 @@ on_startup = {
 				value = 1
 			}
 		}
+		if = {
+			limit = {
+				OR = {
+					tag = EGE
+					tag = AKN
+				}
+			}
+			change_variable = {
+				which = mission_developed
+				value = 1
+			}
+		}
 	}
 	on_dip_development = {
 		change_variable = {
@@ -352,6 +378,18 @@ on_startup = {
 				value = 1
 			}
 		}
+		if = {
+			limit = {
+				OR = {
+					tag = EGE
+					tag = AKN
+				}
+			}
+			change_variable = {
+				which = mission_developed
+				value = 1
+			}
+		}
 	}
 	on_mil_development = {
 		if = {
@@ -382,6 +420,18 @@ on_startup = {
 			}
 			change_variable = {
 				which = byzantine_developed_anatolia
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					tag = EGE
+					tag = AKN
+				}
+			}
+			change_variable = {
+				which = mission_developed
 				value = 1
 			}
 		}

@@ -641,7 +641,7 @@ bulgaria_greece_expansion2 = {
 	
 	bulggaria_conquer_south_greece = {
 		icon = testtt
-		required_missions = { byzantine_strikes_back }
+		required_missions = {  }
 		position = 8
 		provinces_to_highlight = {
 			OR = {
@@ -988,7 +988,7 @@ bulgaria_empire_production_missions = {
 	}
 	bulgaria_coal = {
 		icon = testtt
-		required_missions = { byzantine_army_reform }
+		required_missions = { bulgaria_production }
 		position = 12
 		trigger = {
 			calc_true_if = {
@@ -1043,13 +1043,13 @@ bulgaria_trade_missions = {
 		position = 9
 		provinces_to_highlight = {
 			province_id = 5052
-			highest_value_trade_node = no
+			NOT = { has_most_province_trade_power = ROOT }
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			NOT = { province_has_center_of_trade_of_level = 3 }
 		}
 		trigger = {
 			5052 = {
-				highest_value_trade_node = yes
+				has_most_province_trade_power = ROOT
 				country_or_non_sovereign_subject_holds = ROOT
 				province_has_center_of_trade_of_level = 3
 			}
@@ -1069,13 +1069,13 @@ bulgaria_trade_missions = {
 		position = 10
 		provinces_to_highlight = {
 			province_id = 137
-			highest_value_trade_node = no
+			NOT = { has_most_province_trade_power = ROOT }
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			NOT = { province_has_center_of_trade_of_level = 3 }
 		}
 		trigger = {
 			137 = {
-				highest_value_trade_node = yes
+				has_most_province_trade_power = ROOT
 				country_or_non_sovereign_subject_holds = ROOT
 				province_has_center_of_trade_of_level = 3
 			}

@@ -1,0 +1,615 @@
+epirus_conquer_albania_missios = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		NOT = { tag = GRE }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	epirus_conquer_albania = {
+		icon = testtt
+		required_missions = { epirus_conquer_middle_greeece }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = berat_area
+				area = albania_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			berat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			albania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+		}
+	}
+}
+
+epirus_conquer_greece_missions = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		NOT = { tag = GRE }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	epirus_conquer_middle_greeece = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		provinces_to_highlight = {
+			area = trikala_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			trikala_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			macedonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			athens_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	epirus_conquer_athens = {
+		icon = testtt
+		required_missions = { epirus_conquer_middle_greeece }
+		position = 8
+		provinces_to_highlight = {
+			area = athens_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			athens_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 100
+		}
+	}
+	epirus_hellenic_kingdom = {
+		icon = testtt
+		required_missions = { epirus_conquer_athens epirus_conquer_macedonia }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = thrace_area
+				area = gelibolu_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gelibolu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			change_tag = GRE
+			swap_non_generic_missions = yes
+		}
+	}
+}
+
+epirus_conquer_greece_missions_2 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		NOT = { tag = GRE }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	epirus_conquer_morea = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			area = morea_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			morea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "epirus_navy"
+				duration = 5475
+			}
+		}
+	}
+	epirus_conquer_macedonia = {
+		icon = testtt
+		required_missions = { epirus_conquer_middle_greeece }
+		position = 8
+		provinces_to_highlight = {
+			area = macedonia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			thrace_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gelibolu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+epirus_navy_missions = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		NOT = { tag = GRE }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	epirus_navy_mission = {
+		icon = testtt
+		required_missions = { epirus_conquer_morea }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 1773
+			has_dock_building_trigger = no
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			navy_size_percentage = 1
+			1773 = {
+				has_dock_building_trigger = yes
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			aegean_archipelago_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+	}
+	epirus_south_italy = {
+		icon = testtt
+		required_missions = { epirus_navy_mission }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = calabria_area
+				area = apulia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	epirus_sicily = {
+		icon = testtt
+		required_missions = { epirus_south_italy }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = sicily_area
+				area = western_sicily_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = calabria_area
+						area = apulia_area
+						area = sicily_area
+						area = western_sicily_area
+					}
+				}
+				add_province_modifier = {
+					name = "helenize_italy"
+					duration = -1
+				}
+			}
+			### UNUTMA - Bunu eventli yap. Ya kültür değiştirme ya kabul etme
+		}
+	}
+}
+
+epirus_navy_missions_2 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		NOT = { tag = GRE }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	epirus_bigger_navy = {
+		icon = testtt
+		required_missions = { epirus_navy_mission }
+		position = 9
+		trigger = {
+			navy_size = 60
+			dip_tech = 8
+		}
+		effect = {
+			add_country_modifier = {
+				name = "greater_navy"
+				duration = -1
+			}
+			tunisia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	epirus_defeat_venice = {
+		icon = testtt
+		required_missions = { epirus_bigger_navy }
+		position = 10
+		provinces_to_highlight = {
+			owned_by = VEN
+		}
+		trigger = {
+			naval_strength = {
+				who = VEN
+				value = 2
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "defeated_merchant_republics"
+				duration = 5475
+			}
+		}
+	}
+}
+
+epirus_tunis_missions = {
+	slot = 6
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		NOT = { tag = GRE }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	epirus_convert_provinces = {
+		icon = testtt
+		required_missions = { epirus_clergy_relations }
+		position = 7
+		trigger = {
+			check_variable = {
+				which = converted_province_to_orthodox
+				value = 15
+			}
+		}
+		effect = {
+			add_country_modifier = { 
+				name = almighty_religion
+				duration = -1
+			}
+		}
+	}
+	epirus_defeat_tunis = {
+		icon = testtt
+		required_missions = { epirus_bigger_navy }
+		position = 8
+		trigger = {
+			TUN = {
+				NOT = { navy_size = 10 }
+			}
+			OR = {
+				check_variable = {
+					which = achia_won_war_against_tunis
+					value = 1
+				}
+				NOT = { exists = TUN }
+			}			
+		}
+		effect = {
+			add_country_modifier = {
+				name = "the_pirates_were_defeated"
+				duration = -1
+			}
+		}
+	}
+}
+
+epirus_religion_missions = {
+	slot = 7
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		NOT = { tag = GRE }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	epirus_clergy_relations = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+			num_of_estate_privileges = {
+				estate = estate_church
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "clergy_increase_local_taxes"
+				duration = 5475
+			}
+		}
+	}
+	epirus_hagia_sophia = {
+		icon = testtt
+		required_missions = { epirus_clergy_relations }
+		position = 9
+		provinces_to_highlight = {
+			province_id = 151
+		}
+		trigger = {		
+			if = {
+				limit = {
+					has_dlc = "Leviathan"
+				}
+				151 = {
+					has_great_project = {
+						type = hagia_sophia
+						tier = 3
+					}
+				}
+			}
+			else = {
+				151 = {
+					religion = ROOT
+					has_tax_building_trigger = yes
+					development = 40
+				}
+			}
+			owns_or_non_sovereign_subject_of = 151
+		}
+		effect = {
+			151 = {
+				add_province_modifier = {
+					name = "the_sumptuous_church"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+epirus_production_missions = {
+	slot = 8
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		NOT = { tag = GRE }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	epirus_production_income = {
+		icon = testtt
+		required_missions = { }
+		position = 8
+		trigger = {
+			production_income_percentage = 0.33
+		}
+		effect = {
+			add_country_modifier = {
+				name = "advanced_production"
+				duration = 3650
+			}
+			define_advisor = {
+				type = natural_scientist
+				skill = 3
+				discount = yes
+			}
+		}
+	}
+}
+
+epirus_trade_missions = {
+	slot = 9
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		NOT = { tag = GRE }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	epirus_burghers_relations = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		trigger = {
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 60
+			}
+			num_of_estate_privileges = {
+				estate = estate_burghers
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "burghers_increase_local_trades"
+				duration = 5475
+			}
+		}
+	}
+	epirus_trade_piracy = {
+		icon = testtt
+		required_missions = { epirus_burghers_relations }
+		position = 8
+		trigger = {
+			any_rival_country = {
+				capital_scope = {
+					has_privateer_share_in_trade_node = {
+						who = ROOT
+						share = 33
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "trade_terror"
+				duration = 7300
+			}
+		}
+	}
+	epirus_trade_income = {
+		icon = testtt
+		required_missions = { epirus_trade_piracy }
+		position = 9
+		trigger = {
+			trade_income_percentage = 0.4
+		}
+		effect = {
+			add_country_modifier = {
+				name = "advanced_trade"
+				duration = 3650
+			}
+			define_advisor = {
+				type = trader
+				skill = 3
+				discount = yes
+			}
+		}
+	}
+}
+
+achaea_piracy_mission = {
+	slot = 10
+	generic = no
+	ai = yes
+	potential = {
+		tag = EPI
+		NOT = { tag = GRE }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	epirus_piracy_adriatic = {
+		icon = testtt
+		required_missions = { epirus_burghers_relations }
+		position = 7
+		trigger = {
+			112 = {
+				has_privateer_share_in_trade_node = {
+					who = ROOT
+					share = 33
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 0.5
+		}
+	}
+}
