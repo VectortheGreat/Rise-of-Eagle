@@ -1,0 +1,1005 @@
+crimea_navy_missions = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = CRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	crimea_pirates = {
+		icon = testtt
+		required_missions = { crimea_blacksea_navy }
+		position = 8
+		trigger = {
+			num_of_light_ship = 30
+			num_ships_privateering = 30
+			dip_tech = 5
+		}
+		effect = {
+			may_perform_slave_raid_on_same_religion = yes
+			add_country_modifier = {
+				name = "crimean_pirates"
+				duration = -1
+			}
+		}
+	}
+	crimea_raid_black_sea = {
+		icon = testtt
+		required_missions = { crimea_pirates }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = crimea_region
+				region = caucasia_region
+				area = moldavia_area
+				area = silistria_area
+				area = varna_area
+				area = edirne_area
+				area = thrace_area
+				area = kocaeli_area
+				area = kastamonu_area
+				area = sinop_area
+				area = trabzon_area
+			}
+			has_port = yes
+			NOT = {owned_by = ROOT }
+		}
+		trigger = {
+			all_province = {
+				OR = {
+					region = crimea_region
+					region = caucasia_region
+					area = moldavia_area
+					area = silistria_area
+					area = varna_area
+					area = edirne_area
+					area = thrace_area
+					area = kocaeli_area
+					area = kastamonu_area
+					area = sinop_area
+					area = trabzon_area					
+				}
+				has_port = yes
+				NOT = { devastation = 10 }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "blacksea_pirates"
+				duration = 7300
+			}
+		}
+	}
+	crimea_better_than_rivals = {
+		icon = testtt
+		required_missions = { crimea_raid_black_sea }
+		position = 11
+		trigger = {
+			NOT  = {
+				any_rival_country = {
+					navy_size = ROOT
+					army_size = ROOT
+				}
+			}
+			total_development = 500
+		}
+		effect = {
+			add_prestige = 20
+		}
+	}
+}
+
+crimea_blacksea_expansion = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = CRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	crimea_blacksea_navy = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		trigger = {
+			navy_size_percentage = 1
+		}
+		effect = {
+			sinop_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			silistria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			imereti_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crimea_conquer_sinop = {
+		icon = testtt
+		required_missions = { crimea_blacksea_navy }
+		position = 8
+		provinces_to_highlight = {
+			area = sinop_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			sinop_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			trabzon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crimea_conquer_trabzon = {
+		icon = testtt
+		required_missions = { crimea_conquer_sinop }
+		position = 9
+		provinces_to_highlight = {
+			area = trabzon_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			trabzon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			kastamonu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kocaeli_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crimea_conquer_west_blacksea_coast = {
+		icon = testtt
+		required_missions = { crimea_conquer_trabzon }
+		position = 10
+		provinces_to_highlight = {
+			OR  = {
+				area = kastamonu_area
+				area = kocaeli_area
+			}		
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			kastamonu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kocaeli_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			anatolia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crimea_invade_anatolia = {
+		icon = testtt
+		required_missions = { crimea_conquer_west_blacksea_coast }
+		position = 11
+		provinces_to_highlight = {
+			region = anatolia_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 40
+				region = anatolia_region
+				is_city = yes
+			}
+		}
+		effect = {			
+			add_mil_power = 150
+		}
+	}
+}
+
+crimea_balkan_expansion = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = CRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	crimea_conquer_silistra = {
+		icon = testtt
+		required_missions = { crimea_blacksea_navy }
+		position = 8
+		provinces_to_highlight = {
+			area = silistria_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			silistria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			varna_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			edirne_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			thrace_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crimea_conquer_east_balkans = {
+		icon = testtt
+		required_missions = { crimea_conquer_silistra }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = varna_area
+				area = edirne_area
+				area = morea_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			varna_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			edirne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			east_balkan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+crimea_crimea_expansion = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = CRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	crimea_make_crimea_crimean_again = {
+		icon = testtt
+		required_missions = { crimea_conquer_crimea }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = crimea_area
+				area = yedisan_area
+				area = zaporizhia_area
+				area = azov_area
+				area = kerch_area
+			}
+			NOT = { culture = ROOT }
+		}
+		trigger = {
+			OR  = {
+				AND = {
+					crimea_area = {
+						culture = ROOT
+					}
+					yedisan_area = {
+						culture = ROOT
+					}
+					zaporizhia_area = {
+						culture = ROOT
+					}
+					azov_area = {
+						culture = ROOT
+					}
+					kerch_area = {
+						culture = ROOT
+					}
+				}
+				accepted_culture = goths
+			}			
+		}
+		effect = {			
+			add_dip_power = 200
+			every_owned_province = {
+				limit = {
+					culture = ROOT
+				}
+				add_province_modifier = {
+					name = "develop_the_culture"
+					duration = 10950
+				}
+			}
+		}
+	}
+	crimea_return_to_horde_traditions = {
+		icon = testtt
+		required_missions = { crimea_make_crimea_crimean_again }
+		position = 9
+		trigger = {
+			adm_tech = 10
+			is_at_war = no		
+		}
+		effect = {			
+			if = {
+				limit = {
+						government = tribal
+				}
+				add_country_modifier = {
+					name = "boost_raze"
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+						government = monarchy
+				}
+				###UNUTMA - Event ile yağmalama mekaniği ekleme
+			}
+			else = {
+				add_country_modifier = {
+					name = "horde_traditions"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+crimea_europe_expansion = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = CRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	crimea_conquer_crimea = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = crimea_area
+				area = yedisan_area
+				area = zaporizhia_area
+				area = azov_area
+				area = kerch_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			crimea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			yedisan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			zaporizhia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			azov_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kerch_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			crimea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			circassia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			dagestan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_dniepr_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			podolia_volhynia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			moldavia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crimea_conquer_ruthenia = {
+		icon = testtt
+		required_missions = { crimea_conquer_crimea }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = west_dniepr_area
+				area = podolia_volhynia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			west_dniepr_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			podolia_volhynia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			ruthenia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			poland_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crimea_conquer_poland = {
+		icon = testtt
+		required_missions = { crimea_conquer_ruthenia }
+		position = 9
+		provinces_to_highlight = {
+			region = poland_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 15
+				region = poland_region
+				is_city = yes
+			}
+			OR =  {
+				NOT = {
+					POL = {
+						army_size = ROOT 
+						total_development = ROOT 
+					}
+				}
+				NOT = {
+					PLC = {
+						army_size = ROOT 
+						total_development = ROOT 
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "destruction_of_gate_of_europe"
+				duration = 9125
+			}
+		}
+	}
+	crimea_europe = {
+		icon = testtt
+		required_missions = { crimea_conquer_poland }
+		position = 10
+		provinces_to_highlight = {
+			is_capital = yes
+			owner = { 
+				capital_scope = {
+					continent = europe
+				}
+				NOT = { religion = ROOT } 
+			}
+		}
+		trigger = {
+			NOT = {
+				any_country = {
+					army_size = ROOT 
+					total_development = ROOT 
+					capital_scope = {
+						continent = europe
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "subdue_the_europeans"
+				duration = -1
+			}
+		}
+	}
+}
+
+crimea_russia_expansion = {
+	slot = 6
+	generic = no
+	ai = yes
+	potential = {
+		tag = CRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	crimea_burn_moscow = {
+		icon = testtt
+		required_missions = { crimea_conquer_crimea }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 295
+			NOT = { religion = ROOT }
+		}
+		trigger = {
+			295 = {
+				NOT = { devastation = 15 }
+				controlled_by = ROOT
+			}
+		}
+		effect = {
+			###UNUTMA - Moskovayı yakma eventi
+			russia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crimea_conquer_russia = {
+		icon = testtt
+		required_missions = { crimea_burn_moscow }
+		position = 10
+		provinces_to_highlight = {
+			region = russia_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 35
+				region = russia_region
+				is_city = yes
+			}
+			OR =  {
+				NOT = {
+					MOS = {
+						army_size = ROOT 
+						total_development = ROOT 
+					}
+				}
+				NOT = {
+					RUS = {
+						army_size = ROOT 
+						total_development = ROOT 
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "defeats_of_russians"
+				duration = -1
+			}
+		}
+	}
+}
+
+crimea_government_missions = {
+	slot = 7
+	generic = no
+	ai = yes
+	potential = {
+		tag = CRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	crimea_government = {
+		icon = testtt
+		required_missions = { crimea_burn_moscow }
+		position = 9
+		trigger = {
+			mil_tech = 12
+			is_at_war = no
+		}
+		effect = {
+			###UNUTMA - Super Modifier - Hükümdarla ile kazandığın her muharebe extra loot
+		}
+	}
+}
+
+crimea_religion_mission = {
+	slot = 8
+	generic = no
+	ai = yes
+	potential = {
+		tag = CRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	crimea_religion_issue = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		trigger = {
+			###has_disaster = time_of_troubles UNUTMA - Tengri sorunu
+		}
+		effect = {
+			#UNUTMA - Event ile disaster ile güçlenme
+		}
+	}
+	crimea_religion = {
+		icon = testtt
+		required_missions = { crimea_religion_issue }
+		position = 8
+		trigger = {
+			has_any_disaster = no
+			is_at_war = no
+		}
+		effect = {
+			### Event - UNUTMA - Din değiştirme		
+		}
+	}
+	crimea_convert_province = {
+		icon = testtt
+		required_missions = { crimea_religion }
+		position = 9
+		trigger = {
+			OR = {
+				has_idea_group = humanist_ideas
+				check_variable = {
+				which = converted_province
+				value = 40
+				}
+			}		
+		}
+		effect = {			
+			if = {
+				limit = {
+					has_idea_group = humanist_ideas
+				}
+				add_country_modifier = { 
+					name = universal_religion
+					duration = -1
+				}
+			}
+			else = {
+				add_country_modifier = { 
+					name = almighty_religion
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+crimea_trade_missions = {
+	slot = 9
+	generic = no
+	ai = yes
+	potential = {
+		tag = CRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	crimea_crimean_trade = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 284
+			NOT = { has_most_province_trade_power = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { province_has_center_of_trade_of_level = 3 }
+		}
+		trigger = {
+			284 = {
+				has_most_province_trade_power = ROOT
+				country_or_non_sovereign_subject_holds = ROOT
+				province_has_center_of_trade_of_level = 3
+			}
+		}
+		effect = {
+			284 = {
+				add_province_modifier = {
+					name = "advanced_trade_node"
+					duration = -1
+				}
+			}
+		}
+	}
+	crimea_fur_industry = {
+		icon = testtt
+		required_missions = { crimea_crimean_trade }
+		position = 8
+		trigger = {
+			trade_goods_produced_amount = {
+				trade_goods = fur
+				amount = 10
+			}
+		}
+		effect = {
+			add_country_modifier = { 
+				name = encourage_production
+				duration = 5475
+			}
+			set_country_flag = iii_mission_crimea_fur
+		}
+	}
+	crimea_defeat_kazan = {
+		icon = testtt
+		required_missions = { crimea_astrakhan_trade }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = lower_yik_area
+				area = nogai_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			lower_yik_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			nogai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = {
+				NOG = {
+					army_size = ROOT
+				}
+			}
+		}
+		effect = {
+			ural_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crimea_great_tatar = {
+		icon = testtt
+		required_missions = { crimea_defeat_kazan crimea_defeat_nogai }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				culture = astrakhani
+				culture = bashkir
+				culture = crimean
+				culture = kazani
+				culture = mishary
+				culture = nogaybak
+				culture = siberian
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			culture_group = tatar
+			NOT = {
+				any_province = {
+					OR = {
+						culture = astrakhani
+						culture = bashkir
+						culture = crimean
+						culture = kazani
+						culture = mishary
+						culture = nogaybak
+						culture = siberian
+					}
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "great_tatar"
+				duration = -1
+			}
+			#UNUTMA - Ülkenin ismi great tatar yap
+		}
+	}
+}
+
+crimea_central_asia_expansion = {
+	slot = 10
+	generic = no
+	ai = yes
+	potential = {
+		tag = CRI
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	crimea_astrakhan_trade = {	### UNUTMA - SMYRNA ekle
+		icon = testtt
+		required_missions = {  }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 464
+			NOT = { has_most_province_trade_power = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { province_has_center_of_trade_of_level = 3 }
+		}
+		trigger = {
+			464 = {
+				has_most_province_trade_power = ROOT
+				country_or_non_sovereign_subject_holds = ROOT
+				province_has_center_of_trade_of_level = 3
+			}
+		}
+		effect = {
+			lower_yik_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nogai_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			saratov_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			samara_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	crimea_defeat_nogai = {
+		icon = testtt
+		required_missions = { crimea_astrakhan_trade }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = lower_yik_area
+				area = nogai_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			lower_yik_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			nogai_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = {
+				NOG = {
+					army_size = ROOT
+				}
+			}
+		}
+		effect = {
+			central_asia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}

@@ -446,44 +446,45 @@ accept_azers2 = {
 	local_missionary_strength = 0.1
 }
 
-11111111111111111 = {
-	
+crimean_pirates = {
+	capture_ship_chance = 0.25
 }
 
-11111111111111111 = {
-	
+blacksea_pirates = {
+	privateer_efficiency = 0.2
 }
 
-11111111111111111 = {
-	
+develop_the_culture = {
+	local_development_cost = -0.2
 }
 
-11111111111111111 = {
-	
+boost_raze = {
+		raze_power_gain = 0.15
 }
 
-11111111111111111 = {
-	
+horde_traditions = {
+	cavalry_power = 0.2
 }
 
-11111111111111111 = {
-	
+destruction_of_gate_of_europe = {
+	land_morale = 0.2
 }
 
-11111111111111111 = {
-	
+subdue_the_europeans = {
+	prestige_decay = -0.01
+	monarch_admin_power = 1
 }
 
-11111111111111111 = {
-	
+defeats_of_russians = {
+	discipline = 0.05
 }
 
-11111111111111111 = {
-	
+universal_religion = {
+	global_unrest = -2
 }
 
-11111111111111111 = {
-	
+great_tatar = {
+	governing_capacity_modifier = 0.2
 }
 
 11111111111111111 = {

@@ -103,3 +103,24 @@ akdeniz_pamuk_sanayileri = {
 	on_deactivation = {	
 	}	
 }
+
+crimea_pamuk_sanayileri = {
+	potential = {
+		has_country_flag = iii_mission_crimea_fur
+		trade_goods = fur
+	}
+
+	trigger = {
+		production_leader = {
+			trade_goods = fur
+		}
+	}
+
+	trade_goods_size_modifier = 0.1
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}
