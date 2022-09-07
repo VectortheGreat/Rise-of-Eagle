@@ -487,48 +487,54 @@ great_tatar = {
 	governing_capacity_modifier = 0.2
 }
 
-11111111111111111 = {
-	
+konya_navy = {
+	naval_morale = 0.1
 }
 
-11111111111111111 = {
-	
+defender_of_holy_lands = {
+	prestige_decay = -0.01
+	tolerance_own = 1
 }
 
-11111111111111111 = {
-	
+royal_lands = {
+	global_tax_modifier = 0.3
 }
 
-11111111111111111 = {
-	
+control_electors = {
+	diplomatic_reputation = 2
 }
 
-11111111111111111 = {
-	
+konya_imperial_ambition = {
+	imperial_authority_value = 0.1
+	diplomatic_upkeep = 2
 }
 
-11111111111111111 = {
-	
+imperial_conquest = {
+	ae_impact = -0.2
 }
 
-11111111111111111 = {
-	
+konya_conqueror = {
+	province_warscore_cost = -0.2
 }
 
-11111111111111111 = {
-	
+italy_has_fallen = {
+	defensiveness = -0.20
+	land_morale = -0.10
 }
 
-11111111111111111 = {
-	
+caliphate_modifier = {
+	warscore_cost_vs_other_religion = -0.15
+	tolerance_own = 2
 }
 
-11111111111111111 = {
-	
+developed_empire = {
+	global_unrest = -2
+	global_tax_modifier = 0.25
 }
 
-11111111111111111 = {
-	
+trade_terror_2 = {
+	embargo_efficiency = 0.25
+	hostile_disembark_speed = 0.5
 }
 
 11111111111111111 = {

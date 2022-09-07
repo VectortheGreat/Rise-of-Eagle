@@ -1,0 +1,1203 @@
+konya_navy_missions = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = KOY
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	konya_navy_mission = {
+		icon = testtt
+		required_missions = { konya_defeat_karaman }
+		position = 9
+		trigger = {
+			navy_size_percentage = 1
+		}
+		effect = {
+			add_country_modifier = { 
+				name = konya_navy
+				duration = 5475
+			}
+		}
+	}
+	konya_conquer_alexandria = {
+		icon = testtt
+		required_missions = { konya_conquer_syria }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = delta_area
+				area = cyrenaica_area
+			}
+			has_port = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			cyrenaica_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 150
+		}
+	}
+}
+
+konya_east_expansion = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = KOY
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	konya_defeat_karaman = {
+		icon = testtt
+		required_missions = { konya_end_of_disaster }
+		position = 8
+		provinces_to_highlight = {
+			area = karaman_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			karaman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = { exists = KAR }
+		}
+		effect = {
+			akdeniz_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	konya_conquer_cyprus = {
+		icon = testtt
+		required_missions = { konya_defeat_karaman }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				province_id = 321
+				province_id = 5091
+				province_id = 5003
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_or_non_sovereign_subject_of = 321
+			owns_or_non_sovereign_subject_of = 5091
+			owns_or_non_sovereign_subject_of = 5003
+		}
+		effect = {
+			aleppo_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			syria_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			antioch_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	konya_conquer_syria = {
+		icon = testtt
+		required_missions = { konya_conquer_cyprus }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = aleppo_area
+				area = syria_area
+				area = antioch_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			aleppo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			antioch_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			palestine_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			delta_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			cyrenaica_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	konya_conquer_palestine = {
+		icon = testtt
+		required_missions = { konya_conquer_syria }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = palestine_area
+				area = trans_jordan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			trans_jordan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			arabia_region = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	konya_conquer_holy_lands = {
+		icon = testtt
+		required_missions = { konya_conquer_palestine }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				province_id = 385
+				province_id = 384
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			385 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			384 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = { 
+				name = defender_of_holy_lands
+				duration = -1
+			}
+		}
+	}
+}
+
+konya_anatolia_expansion = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = KOY
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	konya_end_of_disaster = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		trigger = {
+			###has_disaster = time_of_troubles UNUTMA - Disaster
+		}
+		effect = {
+			karaman_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					exists = ANK
+					
+				}
+				add_casus_belli = {
+					target = BRA
+					type = cb_vassalize_mission
+				}
+			}
+			else = {
+				ankara_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	konya_defeat_ankara = {
+		icon = testtt
+		required_missions = { konya_end_of_disaster }
+		position = 8
+		provinces_to_highlight = {
+			area = ankara_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			ankara_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				NOT = { exists = ANK }
+				ANK = { is_subject_of = KOY }
+			}			
+		}
+		effect = {
+			kocaeli_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hudavendigar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					exists = KYS
+					
+				}
+				add_casus_belli = {
+					target = KYS
+					type = cb_vassalize_mission
+				}
+			}
+			else = {
+				ankara_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	konya_conquer_marmara = {
+		icon = testtt
+		required_missions = { konya_defeat_ankara }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = kocaeli_area
+				area = hudavendigar_area
+			}			
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			kocaeli_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			thrace_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			### UNUTMA - Byzantion yaşıyorsa vassal alabilirsin
+		}
+	}
+	konya_opinion_with_west_anatolia = {
+		icon = testtt
+		required_missions = { konya_conquer_marmara }
+		position = 10
+		provinces_to_highlight = {
+			NOT = {
+				ROOT = {
+					all_country = {
+						capital_scope = {
+							region = anatolia_region
+						}
+						has_opinion = { who = ROOT value = 10 }
+					}
+				}
+			}
+		}
+		trigger = {
+			all_country = {
+				capital_scope = {
+					region = anatolia_region
+				}
+				OR = {
+					has_opinion = {
+						who = ROOT
+						value = 10
+					}
+					is_subject_of = KOY
+				}	
+			}
+		}
+		effect = {
+			every_country = {
+				limit = {
+					capital_scope = {
+						region = anatolia_region
+					}
+				}
+				### UNUTMA - Batı Anadolu imparatorluk reformunu daha iyi destekliyor.
+			}
+		}
+	}
+}
+
+konya_eastanatolia_expansion = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = KOY
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	konya_defeat_kayseri = {
+		icon = testtt
+		required_missions = { konya_defeat_ankara }
+		position = 9
+		provinces_to_highlight = {
+			area = kayseri_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			kayseri_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				NOT = { exists = KYS }
+				KYS = { is_subject_of = KOY }
+			}			
+		}
+		effect = {
+			dulkadir_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			erzincan_area= {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					exists = SVS
+					
+				}
+				add_casus_belli = {
+					target = SVS
+					type = cb_vassalize_mission
+				}
+			}
+			else = {
+				rum_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	konya_defeat_sivas = {
+		icon = testtt
+		required_missions = { konya_defeat_kayseri }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = dulkadir_area
+				area = rum_area
+			}			
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			dulkadir_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			rum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			OR = {
+				NOT = { exists = SVS }
+				SVS = { is_subject_of = KOY }
+			}			
+		}
+		effect = {
+			east_anatolia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					exists = ERM
+					
+				}
+				add_casus_belli = {
+					target = ERM
+					type = cb_vassalize_mission
+				}
+			}
+		}
+	}
+	konya_opinion_with_east_anatolia = {
+		icon = testtt
+		required_missions = { konya_defeat_sivas }
+		position = 11
+		provinces_to_highlight = {
+			NOT = {
+				ROOT = {
+					all_country = {
+						capital_scope = {
+							region = east_anatolia_region
+						}
+						has_opinion = { who = ROOT value = 10 }
+					}
+				}
+			}
+		}
+		trigger = {
+			all_country = {
+				capital_scope = {
+					region = east_anatolia_region
+				}
+				OR = {
+					has_opinion = {
+						who = ROOT
+						value = 10
+					}
+					is_subject_of = KOY
+				}	
+			}
+		}
+		effect = {
+			every_country = {
+				limit = {
+					capital_scope = {
+						region = anatolia_region
+					}
+				}
+				### UNUTMA - Batı Anadolu imparatorluk reformunu daha iyi destekliyor.
+			}
+			al_jazira_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			iraq_arabi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+konya_black_sea_coast_expansion = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = KOY
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	konya_crownland_mission = {
+		icon = testtt
+		required_missions = { konya_complete_reform }
+		position = 9
+		trigger = {
+			average_unrest = 0
+			crown_land_share = 50
+			NOT = { num_of_rebel_armies = 1 }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "royal_lands"
+				duration = 7300
+			}
+		}
+	}
+	konya_conquer_blacksea_coast = {
+		icon = testtt
+		required_missions = { konya_defeat_sivas }
+		position = 11
+		provinces_to_highlight = {
+			area = sinop_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			sinop_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			crimea_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			imereti_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			trabzon_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	konya_conquer_crimea = {
+		icon = testtt
+		required_missions = { konya_conquer_blacksea_coast }
+		position = 12
+		provinces_to_highlight = {
+			area = crimea_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			crimea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			crimea_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+konya_imperial_missions = {
+	slot = 6
+	generic = no
+	ai = yes
+	potential = {
+		tag = KOY
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	konya_5_electors = {
+		icon = testtt
+		required_missions = { }
+		position = 7
+		trigger = {
+			if = {
+				limit = {
+					num_of_electors = 5
+				}
+				OR = {
+					calc_true_if = {
+						amount = 5
+						all_elector = {
+							preferred_emperor = ROOT
+						}
+					}
+					calc_true_if = {
+						amount = 5
+						all_elector = {
+							vassal_of = ROOT
+						}
+					}
+				}
+				else = {
+					NOT = { hre_size = 1 }
+					NOT = { exists = HLR }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ink_116"
+				duration = 5475
+			}
+		}
+	}
+	konya_complete_reform = {
+		icon = testtt
+		required_missions = { konya_5_electors }
+		position = 8
+		trigger = {
+			### UNUTMA - Reform Tamamlama
+		}
+		effect = {
+			#UNUTMA - Super Modifier - HRE'ye eklediğin her ülke oranlı sana random IA verecek
+		}
+	}
+	konya_complete_reform2 = {
+		icon = testtt
+		required_missions = { konya_complete_reform }
+		position = 9
+		trigger = {
+			### UNUTMA - Reform Tamamlama
+		}
+		effect = {
+			
+		}
+	}
+	konya_causcasia = {
+		icon = testtt
+		required_missions = { konya_conquer_blacksea_coast }
+		position = 12
+		provinces_to_highlight = {
+			area = crimea_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			OR = {
+				caucasia_region = {
+					is_part_of_hre = yes
+				}
+				all_country = {
+					capital_scope = {
+						region = caucasia_region
+					}
+					is_part_of_hre = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "konya_imperial_ambition"
+				duration = -1
+			}
+		}
+	}
+}
+
+konya_italy_expansion = {
+	slot = 7
+	generic = no
+	ai = yes
+	potential = {
+		tag = KOY
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	konya_have_every_culture = {
+		icon = testtt
+		required_missions = { konya_5_electors }
+		position = 8
+		trigger = {
+			any_owned_province = {
+				culture = turkish
+			}
+			any_owned_province = {
+				culture = greek
+			}
+			any_owned_province = {
+				culture = bulgarian
+			}
+			any_owned_province = {
+				culture = serbian
+			}
+			any_owned_province = {
+				culture = romanian
+			}
+			any_owned_province = {
+				culture = kurdish
+			}
+			any_owned_province = {
+				culture = armenian
+			}
+			any_owned_province = {
+				culture = crimean
+			}
+		}
+		effect = {
+			add_dip_power = 300
+		}
+	}
+	konya_south_italy_expansion = {
+		icon = testtt
+		required_missions = { konya_have_3_orthodox_province }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = calabria_area
+				area = naples_area
+				area = apulia_area
+			}
+			NOT = { is_part_of_hre = yes }
+		}
+		trigger = {
+			calabria_area = {
+				type = all
+				is_part_of_hre = yes
+			}
+			naples_area = {
+				type = all
+				is_part_of_hre = yes
+			}
+			apulia_area = {
+				type = all
+				is_part_of_hre = yes
+			}
+			is_emperor = yes
+		}
+		effect = {
+			every_province = {
+				limit = {
+					culture_group = latin
+				}
+				#İmparatorluk kültürüne dahil et
+			}
+			lazio_area = { 
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	konya_fall_of_roma = {
+		icon = testtt
+		required_missions = { konya_south_italy_expansion }
+		position = 11
+		provinces_to_highlight = {
+			province_id = 118
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			118 = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			##Papalığı yık - UNUTMA - Event ile opsiyonel seçenek sun
+			every_country = {
+				limit = {
+					capital_scope = {
+						region = italy_region
+					}
+					is_part_of_hre = no
+				}
+				add_country_modifier = {
+					name = "italy_has_fallen"
+					duration = 9125
+				}
+			}
+		}
+	}	
+}
+
+konya_balkan_expansion = {
+	slot = 8
+	generic = no
+	ai = yes
+	potential = {
+		tag = KOY
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	konya_have_3_orthodox_province = {
+		icon = testtt
+		required_missions = {  }
+		position = 9
+		trigger = {
+			OR = {
+				calc_true_if = {
+					all_owned_province = {
+						religion = orthodox
+					}
+					amount = 3
+				}
+				any_subject_country  = {
+					religion = orthodox
+				}
+			}			
+		}
+		effect = {
+			random_country = {
+				limit = {
+					capital_scope = {
+						region = balkan_region
+					}
+					is_part_of_hre = yes
+				}
+				add_casus_belli = {
+					target = PREV
+					type = cb_vassalize_mission
+				}
+			}
+			random_country = {
+				limit = {
+					capital_scope = {
+						region = south_balkan_region
+					}
+					is_part_of_hre = yes
+				}
+				add_casus_belli = {
+					target = ROOT
+					type = cb_vassalize_mission
+				}
+			}
+			random_country = {
+				limit = {
+					capital_scope = {
+						region = east_balkan_region
+					}
+					is_part_of_hre = yes
+				}
+				add_casus_belli = {
+					target = FROM
+					type = cb_vassalize_mission
+				}
+			}
+			calabria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			naples_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			apulia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	konya_carpathia_expansion = {
+		icon = testtt
+		required_missions = { konya_have_3_orthodox_province }
+		position = 10
+		provinces_to_highlight = {
+			region = carpathia_region
+			NOT = { is_part_of_hre = yes }
+		}
+		trigger = {
+			carpathia_region = {
+				type = all
+				is_part_of_hre = yes
+			}
+			is_emperor = yes
+		}
+		effect = {
+			every_province = {
+				limit = {
+					culture_group = carpathian
+					NOT = { culture = romanian }
+				}
+				#İmparatorluk kültürüne dahil et
+			}
+			add_country_modifier = {
+				name = "imperial_conquest"
+				duration = 5475
+			}
+		}
+	}
+	konya_expand_imperial_borders = {
+		icon = testtt
+		required_missions = { konya_carpathia_expansion }
+		position = 11
+		trigger = {
+			calc_true_if = {
+				all_province = {
+					is_part_of_hre = yes
+				}
+				amount = 300	#UNUTMA - Say
+			}
+			is_emperor = yes
+		}
+		effect = {
+			add_country_modifier = { 
+				name = konya_conqueror
+				duration = -1
+			}
+		}
+	}
+}
+
+konya_religion_missions = {
+	slot = 9
+	generic = no
+	ai = yes
+	potential = {
+		tag = KOY
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	konya_be_on_side_on_reformation = {
+		icon = testtt
+		required_missions = {  }
+		position = 8
+		trigger = {
+			OR = {
+				has_country_flag = joined_reformation
+				has_country_flag = joined_against_reformation
+			}
+			OR = {
+				has_country_flag = war_started
+				has_country_flag = war_ended
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = war_ended
+				}
+				if = {
+					limit = {
+						NOT = { stability = 3}
+					}
+					add_stabilty = 1
+				}
+				else = {
+					add_adm_power = 50
+				}
+			}
+			else_ = {
+				add_country_modifier = { 
+					name = reformation_war
+					duration = 3650
+				}
+			}
+		}
+	}
+	konya_fate_of_heretics = {
+		icon = testtt
+		required_missions = { konya_be_on_side_on_reformation }
+		position = 9
+		trigger = {
+			is_defender_of_faith = yes
+			stability = 2
+			religious_unity = 0.75
+		}
+		effect = {
+			#Unutma - Tölerans mı yoksa ezmek mi?
+		}
+	}
+	konya_spread_faith = {
+		icon = testtt
+		required_missions = { konya_fate_of_heretics }
+		position = 10
+		trigger = {
+			check_variable = {
+				which = converted_province
+				value = 25
+			}
+		}
+		effect = {
+			add_prestige = 25
+		}
+	}
+	konya_be_caliph = {
+		icon = testtt
+		required_missions = { konya_spread_faith }
+		position = 11
+		trigger = {
+			NOT = {
+				any_country = {
+					religion_group = ROOT
+					army_size = ROOT 
+					total_development = ROOT 
+				}
+			}
+			army_size = 300
+			great_power_rank = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "caliphate_modifier"
+				duration = -1
+			}
+		}
+	}
+}
+
+konya_trade_missions = {
+	slot = 10
+	generic = no
+	ai = yes
+	potential = {
+		tag = KOY
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	konya_control_kervansaray = {
+		icon = testtt
+		required_missions = { akdeniz_piracy_aleppo }
+		position = 8
+		trigger = {
+			###UNUTMA
+		}
+		effect = {
+			
+		}
+	}
+	konya_develop_provinces = {
+		icon = testtt
+		required_missions = { konya_control_kervansaray }
+		position = 9
+		trigger = {
+			check_variable = {
+				which = konya_developed_imperial_provinces
+				value = 50
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "developed_empire"
+				duration = -1
+			}
+		}
+	}
+	konya_turkish_mercantilism = {
+		icon = testtt
+		required_missions = {  }
+		position = 10
+		trigger = {
+			mercantilism = 25
+			num_of_centers_of_trade = 5
+		}
+		effect = {			
+			add_country_modifier = {
+				name = "turkish_mercantilism"
+				duration = 7300
+			}
+		}
+	}
+	konya_embargo_rival = {
+		icon = testtt
+		required_missions = { konya_turkish_mercantilism }
+		position = 11
+		trigger = {
+			all_rival_country = {
+				trade_embargo_by = KOY
+			}
+			has_embargo_rivals = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = "trade_terror_2"
+				duration = 7300
+			}
+		}
+	}
+	konya_trade_income = {
+		icon = testtt
+		required_missions = { konya_embargo_rival }
+		position = 12
+		trigger = {
+			trade_income_percentage = 0.35
+		}
+		effect = {
+			add_country_modifier = {
+				name = "advanced_trade"
+				duration = 3650
+			}
+			define_advisor = {
+				type = trader
+				skill = 3
+				discount = yes
+			}
+		}
+	}
+}

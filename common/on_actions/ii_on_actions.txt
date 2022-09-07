@@ -331,6 +331,18 @@ on_startup = {
 		}
 		if = {
 			limit = {
+				owner = {
+					tag = KOY
+				} 
+				is_part_of_hre = yes
+			}
+			change_variable = {
+				which = konya_developed_imperial_provinces
+				value = 1
+			}
+		}
+		if = {
+			limit = {
 				OR = {
 					tag = EGE
 					tag = AKN
@@ -380,6 +392,18 @@ on_startup = {
 		}
 		if = {
 			limit = {
+				owner = {
+					tag = KOY
+				} 
+				is_part_of_hre = yes
+			}
+			change_variable = {
+				which = konya_developed_imperial_provinces
+				value = 1
+			}
+		}
+		if = {
+			limit = {
 				OR = {
 					tag = EGE
 					tag = AKN
@@ -420,6 +444,18 @@ on_startup = {
 			}
 			change_variable = {
 				which = byzantine_developed_anatolia
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					tag = KOY
+				} 
+				is_part_of_hre = yes
+			}
+			change_variable = {
+				which = konya_developed_imperial_provinces
 				value = 1
 			}
 		}
