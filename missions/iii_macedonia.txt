@@ -1,23 +1,23 @@
-achaea_conquer_greece_missions_1 = {
+macedonia_west_expansion = {
 	slot = 1
 	generic = no
 	ai = yes
 	potential = {
-		tag = ACH
+		tag = MKD
 		NOT = { tag = GRE }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	achaea_conquer_north_epirus = {
+	macedonia_conquer_skopje = {
 		icon = testtt
-		required_missions = { }
-		position = 8
+		required_missions = { macedonia_rise_of_macedonia }
+		position = 9
 		provinces_to_highlight = {
-			area = northepirus_area
+			area = skopje_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			northepirus_area = {
+			skopje_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
@@ -37,17 +37,20 @@ achaea_conquer_greece_missions_1 = {
 				}
 				add_permanent_claim = ROOT
 			}
-			add_country_modifier = {
-				name = "latin_mercenaries"
-				duration = 3650
+			northepirus_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
 			}
 		}
 	}
 
-	achaea_conquer_albania = {
+	macedonia_conquer_albania = {
 		icon = testtt
-		required_missions = { achaea_conquer_north_epirus }
-		position = 9
+		required_missions = { macedonia_conquer_skopje }
+		position = 10
 		provinces_to_highlight = {
 			OR = {
 				area = berat_area
@@ -71,67 +74,32 @@ achaea_conquer_greece_missions_1 = {
 	}
 }
 
-achaea_conquer_greece_missions_2 = {
+macedonia_greece_expansion = {
 	slot = 2
 	generic = no
 	ai = yes
 	potential = {
-		tag = ACH
+		tag = MKD
 		NOT = { tag = GRE }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	achaea_conquer_middle_greeece = {
+	macedonia_rise_of_macedonia = {
 		icon = testtt
 		required_missions = { }
-		position = 7
-		provinces_to_highlight = {
-			OR = {
-				area = northern_greece_area
-				area = trikala_area
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
+		position = 8
 		trigger = {
-			northern_greece_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			trikala_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
+			army_size_percentage = 1
 		}
 		effect = {
-			macedonia_area = {
+			skopje_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_claim = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
-			add_country_modifier = {
-				name = "to_unite_the_culture"
-				duration = 3650
-			}
-		}
-	}
-	achaea_conquer_macedonia = {
-		icon = testtt
-		required_missions = { achaea_conquer_middle_greeece }
-		position = 8
-		provinces_to_highlight = {
-			area = macedonia_area
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		trigger = {
-			macedonia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		effect = {
-			thrace_area = {
+			trikala_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_claim = ROOT }
@@ -145,17 +113,76 @@ achaea_conquer_greece_missions_2 = {
 				}
 				add_permanent_claim = ROOT
 			}
+			add_country_modifier = {
+				name = "to_unite_the_culture"
+				duration = 3650
+			}
+		}
+	}
+	macedonia_conquer_middle_greeece = {
+		icon = testtt
+		required_missions = { macedonia_rise_of_macedonia }
+		position = 9
+		provinces_to_highlight = {
+			area = trikala_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			trikala_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			northern_greece_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	macedonia_conquer_epirus = {
+		icon = testtt
+		required_missions = { macedonia_conquer_middle_greeece }
+		position = 10
+		provinces_to_highlight = {
+			area = northern_greece_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			northern_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			athens_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			morea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			add_adm_power = 200
 		}
 	}
-	achaea_hellenic_kingdom = {
+	macedonia_hellenic_kingdom = {
 		icon = testtt
-		required_missions = {achaea_conquer_macedonia achaea_conquer_aegean_islands achaea_conquer_north_epirus }
+		required_missions = { macedonia_conquer_epirus macedonia_conquer_thrace }
 		position = 9
 		provinces_to_highlight = {
 			OR = {
-				area = thrace_area
-				area = gelibolu_area
+				area = athens_area
+				area = morea_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -176,20 +203,92 @@ achaea_conquer_greece_missions_2 = {
 	}
 }
 
-achaea_conquer_greece_missions_3 = {
+macedonia_thrace_expansion = {
 	slot = 3
 	generic = no
 	ai = yes
 	potential = {
-		tag = ACH
+		tag = MKD
 		NOT = { tag = GRE }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	achaea_conquer_aegean_islands = {
+	macedonia_conquer_gelibolu = {
 		icon = testtt
-		required_missions = { achaea_aegean_navy  }
+		required_missions = { macedonia_rise_of_macedonia }
+		position = 9
+		provinces_to_highlight = {
+			area = gelibolu_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			gelibolu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			thrace_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	macedonia_conquer_thrace = {
+		icon = testtt
+		required_missions = { macedonia_conquer_gelibolu }
+		position = 10
+		provinces_to_highlight = {
+			area = thrace_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_adm_power = 100
+		}
+	}
+}
+
+macedonia_aegean_missions = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = MKD
+		NOT = { tag = GRE }
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	macedonia_aegean_navy = {
+		icon = testtt
+		required_missions = { }
 		position = 8
+		trigger = {
+			navy_size = 25
+		}
+		effect = {
+			aegean_archipelago_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+	}
+	macedonia_conquer_aegean_islands = {
+		icon = testtt
+		required_missions = { macedonia_aegean_navy }
+		position = 9
 		provinces_to_highlight = {
 			area = aegean_archipelago_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -201,47 +300,13 @@ achaea_conquer_greece_missions_3 = {
 			}
 		}
 		effect = {
-			add_dip_power = 200
+			add_dip_power = 100
 		}
 	}
-}
-
-achaea_aegean_missions = {
-	slot = 4
-	generic = no
-	ai = yes
-	potential = {
-		tag = ACH
-		NOT = { tag = GRE }
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes
-	achaea_aegean_navy = {
+	macedonia_aegean_trade = {
 		icon = testtt
-		required_missions = { }
-		position = 7
-		trigger = {
-			navy_size = 25
-		}
-		effect = {
-			aegean_archipelago_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			calabria_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			apulia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-	}
-	achaea_aegean_trade = {
-		icon = testtt
-		required_missions = { achaea_aegean_navy }
-		position = 8
+		required_missions = { macedonia_conquer_aegean_islands }
+		position = 10
 		trigger = {
 			###UNUTMA - Egede ki trade center yerlere trade bina dik
 		}
@@ -259,115 +324,164 @@ achaea_aegean_missions = {
 	}
 }
 
-achaea_south_italy_mission = {
+macedonia_anatolia_expansion = {
 	slot = 5
 	generic = no
 	ai = yes
 	potential = {
-		tag = ACH
+		tag = MKD
 		NOT = { tag = GRE }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	achaea_south_italy = {
+	macedonia_conquer_hudavengidar = {
 		icon = testtt
-		required_missions = { }
-		position = 7
+		required_missions = { macedonia_aegean_navy }
+		position = 9
+		provinces_to_highlight = {
+			area = hudavendigar_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			saruhan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+	}
+	macedonia_conquer_west_anatolia = {
+		icon = testtt
+		required_missions = { macedonia_conquer_hudavengidar }
+		position = 10
 		provinces_to_highlight = {
 			OR = {
-				area = calabria_area
-				area = apulia_area
+				area = saruhan_area
+				area = aydin_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			calabria_area = {
+			saruhan_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
-			apulia_area = {
+			aydin_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
-			add_mil_power = 200
+			marmaris_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			karaman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+	}
+	macedonia_conquer_south_anatolia = {
+		icon = testtt
+		required_missions = { macedonia_conquer_west_anatolia }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				area = marmaris_area
+				area = karaman_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			marmaris_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			karaman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			akdeniz_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 	}
 }
 
-achaea_navy_missions = {
+macedonia_military_missions = {
 	slot = 6
 	generic = no
 	ai = yes
 	potential = {
-		tag = ACH
+		tag = MKD
 		NOT = { tag = GRE }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	achaea_greater_navy = {
+	macedonia_focus_on_military = {
 		icon = testtt
 		required_missions = { }
-		position = 7
+		position = 9
 		trigger = {
-			navy_size = 50
-			dip_tech = 5
-			capital_scope = {
-				has_coast_def_building_trigger = yes
+			employed_advisor = {
+				category = MIL
 			}
-		}
-		effect = {
-			every_owned_province = {
-				limit = {
-					region = south_balkan_region
-				}
-				add_province_modifier = {
-					name = "iii_block_slave_raid"
-					duration = 18250
-				}
-			}
-		}
-	}
-	achaea_defeat_tunis = {
-		icon = testtt
-		required_missions = { achaea_greater_navy }
-		position = 8
-		trigger = {
-			TUN = {
-				NOT = { navy_size = 10 }
-			}
-			OR = {
-				check_variable = {
-					which = achia_won_war_against_tunis
-					value = 1
-				}
-				NOT = { exists = TUN }
-			}			
+			monthly_mil = 8
 		}
 		effect = {
 			add_country_modifier = {
-				name = "the_pirates_were_defeated"
+				name = "focus_on_military"
+				duration = 5475
+			}
+		}
+	}
+	macedonia_macedonian_army = {
+		icon = testtt
+		required_missions = { macedonia_focus_on_military }
+		position = 10
+		trigger = {
+			check_variable = {
+				which = won_15_battles_as_macedonia
+				value = 30
+			}
+			mil_tech = 7		
+		}
+		effect = {
+			add_country_modifier = {
+				name = "macedonian_infantry"
 				duration = -1
 			}
 		}
 	}
 }
 
-achaea_religion_missions = {
+macedonia_religion_missions = {
 	slot = 7
 	generic = no
 	ai = yes
 	potential = {
-		tag = ACH
+		tag = MKD
 		NOT = { tag = GRE }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
-	achaea_clergy_relations = {
+	macedonia_clergy_relations = {
 		icon = testtt
 		required_missions = { }
-		position = 6
+		position = 9
 		trigger = {
 			estate_loyalty = {
 				estate = estate_church
@@ -385,10 +499,10 @@ achaea_religion_missions = {
 			}
 		}
 	}
-	achaea_hagia_sophia = {
+	macedonia_hagia_sophia = {
 		icon = testtt
-		required_missions = { achaea_clergy_relations }
-		position = 8
+		required_missions = { macedonia_clergy_relations }
+		position = 10
 		provinces_to_highlight = {
 			province_id = 151
 		}
@@ -424,20 +538,20 @@ achaea_religion_missions = {
 	}
 }
 
-achaea_production_missions = {
+macedonia_production_missions = {
 	slot = 8
 	generic = no
 	ai = yes
 	potential = {
-		tag = ACH
+		tag = MKD
 		NOT = { tag = GRE }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
-	achea_production_income = {
+	macedonia_production_income = {
 		icon = testtt
 		required_missions = { }
-		position = 7
+		position = 9
 		trigger = {
 			production_income_percentage = 0.33
 		}
@@ -455,20 +569,20 @@ achaea_production_missions = {
 	}
 }
 
-achaea_trade_missions = {
+macedonia_trade_missions = {
 	slot = 9
 	generic = no
 	ai = yes
 	potential = {
-		tag = ACH
+		tag = MKD
 		NOT = { tag = GRE }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
-	achaea_burghers_relations = {
+	macedonia_burghers_relations = {
 		icon = testtt
 		required_missions = { }
-		position = 6
+		position = 8
 		trigger = {
 			estate_loyalty = {
 				estate = estate_burghers
@@ -486,10 +600,10 @@ achaea_trade_missions = {
 			}
 		}
 	}
-	achaea_trade_piracy = {
+	macedonia_trade_piracy = {
 		icon = testtt
-		required_missions = { achaea_burghers_relations }
-		position = 7
+		required_missions = { macedonia_burghers_relations }
+		position = 9
 		trigger = {
 			any_rival_country = {
 				capital_scope = {
@@ -507,10 +621,10 @@ achaea_trade_missions = {
 			}
 		}
 	}
-	achaea_trade_income = {
+	macedonia_trade_income = {
 		icon = testtt
-		required_missions = { achaea_trade_piracy }
-		position = 8
+		required_missions = { macedonia_trade_piracy }
+		position = 10
 		trigger = {
 			trade_income_percentage = 0.4
 		}
@@ -528,20 +642,20 @@ achaea_trade_missions = {
 	}
 }
 
-achaea_piracy_mission = {
+macedonia_piracy_mission = {
 	slot = 10
 	generic = no
 	ai = yes
 	potential = {
-		tag = ACH
+		tag = MKD
 		NOT = { tag = GRE }
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
-	achaea_piracy_aleppo = {
+	macedonia_piracy_aleppo = {
 		icon = testtt
 		required_missions = { }
-		position = 7
+		position = 9
 		trigger = {
 			377 = {
 				has_privateer_share_in_trade_node = {

@@ -552,12 +552,13 @@ kurdish_union = {
 	devotion = 1
 }
 
-11111111111111111 = {
-	
+focus_on_military = {
+	mil_tech_cost_modifier = -0.1
 }
 
-11111111111111111 = {
-	
+macedonian_infantry = {
+	shock_damage_received = -0.10
+	infantry_power = 0.10
 }
 
 11111111111111111 = {
