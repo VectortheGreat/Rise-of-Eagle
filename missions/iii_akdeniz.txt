@@ -116,7 +116,7 @@ akdeniz_conquer_eastern_mediterrenian_missions = {
 				area = cyrenaica_area
 			}
 			has_port = yes
-			NOT = {owned_by = ROOT }
+			NOT = { owned_by = ROOT }
 		}
 		trigger = {
 			owns_all_provinces = {
@@ -701,7 +701,7 @@ akdeniz_power_mission = {
 		trigger = {
 			OR = {
 				check_variable = {
-					which = achaea_won_war_against_tunis
+					which = won_war_against_emperor
 					value = 1
 				}
 				is_emperor = yes

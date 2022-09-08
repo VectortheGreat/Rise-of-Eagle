@@ -630,7 +630,7 @@ byzantine_balkan_mediterrenian_missions = {
 				area = imereti_area
 			}
 			has_port = yes
-			NOT = {owned_by = ROOT }
+			NOT = { owned_by = ROOT }
 		}
 		trigger = {
 			owns_all_provinces = {
@@ -2050,7 +2050,7 @@ byzantine_crimea_military_missions = {
 				area = trabzon_area
 			}
 			has_port = yes
-			NOT = {owned_by = ROOT }
+			NOT = { owned_by = ROOT }
 		}
 		trigger = {
 			owns_all_provinces = {

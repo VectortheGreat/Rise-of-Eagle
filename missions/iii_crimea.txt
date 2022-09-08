@@ -43,7 +43,7 @@ crimea_navy_missions = {
 				area = trabzon_area
 			}
 			has_port = yes
-			NOT = {owned_by = ROOT }
+			NOT = { owned_by = ROOT }
 		}
 		trigger = {
 			all_province = {

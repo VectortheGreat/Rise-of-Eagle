@@ -86,7 +86,6 @@ strengthened_the_governorships = {
 akdeniz_pamuk_sanayileri = {
 	potential = {
 		has_country_flag = iii_mission_akdeniz_pamuk
-		trade_goods = wool
 	}
 
 	trigger = {
@@ -104,10 +103,9 @@ akdeniz_pamuk_sanayileri = {
 	}	
 }
 
-crimea_pamuk_sanayileri = {
+crimea_fur_sanayileri = {
 	potential = {
 		has_country_flag = iii_mission_crimea_fur
-		trade_goods = fur
 	}
 
 	trigger = {
@@ -117,6 +115,26 @@ crimea_pamuk_sanayileri = {
 	}
 
 	trade_goods_size_modifier = 0.1
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}
+
+kurdistan_livestock_production = {
+	potential = {
+		has_country_flag = iii_mission_kurdistan_livestock
+	}
+
+	trigger = {
+		production_leader = {
+			trade_goods = livestock
+		}
+	}
+
+	trade_goods_size_modifier = 0.15
 	
 	#Province scope
 	on_activation = {	

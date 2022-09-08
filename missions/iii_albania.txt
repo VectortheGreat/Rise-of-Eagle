@@ -206,7 +206,7 @@ albania_conquer_south_missions = {
 				area = northepirus_area
 				area = northern_greece_area
 			}
-			NOT = {owned_by = ROOT }
+			NOT = { owned_by = ROOT }
 		}
 		trigger = {
 			owns_all_provinces = {
@@ -256,7 +256,7 @@ albania_conquer_south_missions = {
 				area = athens_area
 				area = morea_area
 			}
-			NOT = {owned_by = ROOT }
+			NOT = { owned_by = ROOT }
 		}
 		trigger = {
 			owns_all_provinces = {
