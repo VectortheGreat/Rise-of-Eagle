@@ -142,3 +142,42 @@ kurdistan_livestock_production = {
 	on_deactivation = {	
 	}	
 }
+
+oghuz_gold_mining = {
+	potential = {
+		has_country_flag = oghuz_gold_mining_modifier
+		culture = ROOT
+	}
+
+	trigger = {
+		production_leader = {
+			trade_goods = gold
+		}
+	}
+
+	local_gold_depletion_chance_modifier = -0.5
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}
+
+oghuz_non_muslim_taxes = {
+	potential = {
+		has_country_flag = oghuz_non_muslim_taxes_modifier		
+	}
+
+	trigger = {
+		NOT = { religion_group = ROOT }
+	}
+
+	local_tax_modifier = 0.25
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}

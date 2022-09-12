@@ -561,28 +561,36 @@ macedonian_infantry = {
 	infantry_power = 0.10
 }
 
-11111111111111111 = {
-	
+sons_of_oghuz_khan = {
+	local_manpower_modifier = 0.2
 }
 
-11111111111111111 = {
-	
+turkification = {
+	local_culture_conversion_cost = -0.35
 }
 
-11111111111111111 = {
-	
+turkish_cannons = {
+	artillery_power = 0.10
+	artillery_cost = -0.10
 }
 
-11111111111111111 = {
-	
+oghuz_absolutism_modifier = {
+	yearly_absolutism = 0.1
 }
 
-11111111111111111 = {
-	
+military_state = {
+	army_tradition = 1
+	yearly_army_professionalism = 0.01
 }
 
-11111111111111111 = {
-	
+professional_army = {
+	global_regiment_recruit_speed = -0.3
+	drill_decay_modifier = -0.3
+}
+
+gold_mines = {
+	gold_depletion_chance_modifier = -0.25
+	monthly_gold_inflation_modifier = 0.25
 }
 
 11111111111111111 = {

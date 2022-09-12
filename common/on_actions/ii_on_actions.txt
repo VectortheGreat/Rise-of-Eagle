@@ -559,3 +559,21 @@ on_flagship_captured = {
 		value = 1
 	}
 }
+
+on_province_culture_converted = {
+	on_province_culture_converted_estate_privilges_effect = yes
+	judaism_on_province_culture_converted_effect = yes
+	kongo_on_province_change_culture_or_change_owner_effect = yes
+	change_variable = {
+		which = culture_converted_to_turkish
+		value = 1
+	}
+	if = {
+		limit = {
+			has_country_flag = ofc_super_modifier
+		}
+		add_base_tax = 1
+		add_base_production = 1
+		add_base_manpower = 1
+	}
+}
