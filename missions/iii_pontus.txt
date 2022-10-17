@@ -1,0 +1,853 @@
+pontus_blacksea_expansion = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = PNT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	pontus_conquer_west_blacksea_coast = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = sinop_area
+				area = kastamonu_area
+			}
+			has_port = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_all_provinces = {
+				OR = {
+					area = sinop_area
+					area = kastamonu_area
+				}
+				has_port = yes
+			}
+		}
+		effect = {		
+			kocaeli_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			every_owned_province = {
+				limit = {
+					area = trabzon_area
+					area = sinop_area
+					area = kastamonu_area
+					NOT = { culture_group = ROOT }
+				}
+				add_country_modifier = {
+					name = "hellenization"
+					duration = 18250
+				}
+			}
+		}
+	}
+	
+	pontus_culture_convert_blacksea_mission = {
+		icon = testtt
+		required_missions = { pontus_conquer_west_blacksea_coast }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = trabzon_area
+				area = sinop_area
+				area = kastamonu_area
+			}
+		}
+		trigger = {
+			trabzon_area = {
+				type = all
+				dominant_culture = ROOT
+			}
+			sinop_area = {
+				type = all
+				dominant_culture = ROOT
+			}
+			kastamonu_area = {
+				type = all
+				dominant_culture = ROOT
+			}
+			kocaeli_area = {
+				type = all
+				dominant_culture = ROOT
+			}
+			crimea_area = {
+				type = all
+				dominant_culture = ROOT
+			}
+			kerch_area = {
+				type = all
+				dominant_culture = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 300
+			every_owned_province = {
+				limit = {
+					area = trabzon_area
+					area = sinop_area
+					area = kastamonu_area
+					area = kocaeli_area
+					area = crimea_area
+					area = kerch_area
+				}
+				add_country_modifier = {
+					name = "land_of_ancient_peoples"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+pontus_armenian_missions = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = PNT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	pontus_defeat_erzurum = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			area = erzurum_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			erzurum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = { exists = ERM }
+		}
+		effect = {
+			every_province = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					culture = armenian
+					capital_scope = {
+						region = east_anatolia_region
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	pontus_armenaians = {
+		icon = testtt
+		required_missions = { pontus_defeat_erzurum }
+		position = 8
+		provinces_to_highlight = {
+			region = east_anatolia_region
+			culture = armenian
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_all_provinces = {
+				region = east_anatolia_region
+				culture = armenian
+			}
+		}
+		effect = {
+			### UNUTMA - Event ile ermenileri ortodokslaştırma veya özgür bırakma
+		}
+	}
+}
+
+pontus_anatolia_expansion = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = PNT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	pontus_defeat_sivas = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			area = rum_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			rum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			NOT = { exists = SVS }
+		}
+		effect = {
+			chorum_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kayseri_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ankara_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			konya_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	pontus_conquer_central_anatolia = {
+		icon = testtt
+		required_missions = { pontus_defeat_sivas }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = chorum_area
+				area = kayseri_area
+				area = ankara_area
+				area = konya_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			chorum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kayseri_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ankara_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			konya_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}	
+		effect = {			
+			anatolia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	pontus_conquer_anatolia = {
+		icon = testtt
+		required_missions = { pontus_conquer_central_anatolia }
+		position = 9
+		provinces_to_highlight = {
+			region = anatolia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			anatolia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			every_province = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					culture_group = byzantine
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+pontus_caucasia_expansion = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = PNT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	pontus_defeat_georgia = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = imereti_area
+				area = samtskhe_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			imereti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			samtskhe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = blabla
+				NOT = {
+					GEO = {
+						army_size = ROOT 
+						total_development = ROOT 
+					}
+				}
+			}
+		}
+		effect = {
+			caucasia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	pontus_conquer_caucasia = {
+		icon = testtt
+		required_missions = { pontus_defeat_georgia }
+		position = 8
+		provinces_to_highlight = {
+			region = caucasia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			caucasia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			delta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	pontus_convert_caucasia = {
+		icon = testtt
+		required_missions = { pontus_conquer_caucasia }
+		position = 9
+		provinces_to_highlight = {
+			region = caucasia_region
+			NOT = { religion_group = ROOT }
+		}
+		trigger = {
+			caucasia_region = {
+				type = all
+				religion_group = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "christianized_caucasia"
+				duration = -1
+			}
+			add_patriarch_authority = 0.10
+		}
+	}
+}
+
+pontus_navy_blakcsea_missions = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = PNT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	pontus_trebizond_navy = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 330
+			has_dock_building_trigger = no
+		}
+		trigger = {
+			330 = {
+				has_dock_building_trigger = yes
+				development = 16
+			}
+			navy_size_percentage = 1
+		}
+		effect = {
+			crimea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			every_province = {
+				limit = {
+					has_port = yes
+					region = crimea_region
+					region = caucasia_region
+					area = moldavia_area
+					area = silistria_area
+					area = varna_area
+					area = edirne_area
+					area = thrace_area
+					area = kocaeli_area
+					area = kastamonu_area
+					area = sinop_area
+					area = trabzon_area
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	pontus_conquer_crimea = {
+		icon = testtt
+		required_missions = { pontus_trebizond_navy }
+		position = 8
+		provinces_to_highlight = {
+			area = crimea_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			crimea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			crimea_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	pontus_blacksea_mare_nostrum = {
+		icon = testtt
+		required_missions = { pontus_conquer_crimea pontus_conquer_blacksea_west_ports }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				region = crimea_region
+				region = caucasia_region
+				area = moldavia_area
+				area = silistria_area
+				area = varna_area
+				area = edirne_area
+				area = thrace_area
+				area = kocaeli_area
+				area = kastamonu_area
+				area = sinop_area
+				area = trabzon_area
+			}
+			has_port = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_all_provinces = {
+				OR = {
+					region = crimea_region
+					region = caucasia_region
+					area = moldavia_area
+					area = silistria_area
+					area = varna_area
+					area = edirne_area
+					area = thrace_area
+					area = kocaeli_area
+					area = kastamonu_area
+					area = sinop_area
+					area = trabzon_area					
+				}
+				has_port = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "pontus_black_leak"
+				duration = 7300
+			}
+			
+		}
+	}
+}
+
+pontus_balkan_expansion = {
+	slot = 6
+	generic = no
+	ai = yes
+	potential = {
+		tag = PNT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	pontus_conquer_blacksea_west_norh_ports = {
+		icon = testtt
+		required_missions = { pontus_trebizond_navy }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = moldavia_area
+				area = silistria_area
+			}
+			has_port = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_all_provinces = {
+				OR = {
+					area = moldavia_area
+					area = silistria_area				
+				}
+				has_port = yes
+			}
+		}
+		effect = {
+			add_adm_power = 200
+			add_years_of_income = 1
+		}
+	}
+	pontus_conquer_blacksea_west_ports = {
+		icon = testtt
+		required_missions = { pontus_conquer_blacksea_west_norh_ports }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = varna_area
+				area = edirne_area
+				area = thrace_area
+			}
+			has_port = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_all_provinces = {
+				OR = {
+					area = varna_area
+					area = edirne_area
+					area = thrace_area				
+				}
+				has_port = yes
+			}
+		}
+		effect = {
+			add_mil_power = 200
+			add_yearly_manpower = 1
+		}
+	}
+}
+
+pontus_religion_missions = {
+	slot = 7
+	generic = no
+	ai = yes
+	potential = {
+		tag = PNT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	pontus_upgrade_soumela_monastery = {
+		icon = testtt
+		required_missions = { pontus_clergy_relationship }
+		position = 8
+		provinces_to_highlight = {
+			province_id = 151
+		}
+		trigger = {		
+			if = {
+				limit = {
+					has_dlc = "Leviathan"
+				}
+				330 = {
+					has_great_project = {
+						type = hagia_sophia #UNUTMA - değiştir
+						tier = 3
+					}
+				}
+			}
+			else = {
+				330 = {
+					religion = ROOT
+					has_tax_building_trigger = yes
+					development = 40
+				}
+			}
+			owns_or_non_sovereign_subject_of = 330
+		}
+		effect = {
+			add_patriarch_authority = 0.1
+			add_country_modifier = {
+				name = "balkan_empire"
+				duration = -1
+			}
+		}
+	}
+	pontus_spread_orthodox = {
+		icon = testtt
+		required_missions = { pontus_upgrade_soumela_monastery }
+		position = 9
+		trigger = {
+			check_variable = {
+				which = converted_province_to_orthodox
+				value = 20
+			}
+		}
+		effect = {
+			add_country_modifier = { 
+				name = almighty_religion
+				duration = -1
+			}
+		}
+	}
+}
+
+pontus_religion_missions_2 = {
+	slot = 8
+	generic = no
+	ai = yes
+	potential = {
+		tag = PNT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	pontus_clergy_relationship = {
+		icon = testtt
+		required_missions = { armenia_east_anatolia }
+		position = 7
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+			num_of_estate_privileges = {
+				estate = estate_church
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "clergy_increase_local_taxes"
+				duration = 5475
+			}
+		}
+	}
+	pontus_convert_anatolia = {
+		icon = testtt
+		required_missions = { pontus_upgrade_soumela_monastery }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = anatolia_region
+				region = east_anatolia_region
+			}
+			NOT = { religion = ROOT }
+		}
+		trigger = {
+			anatolia_region = {
+				religion_group = ROOT
+			}
+			east_anatolia_region = {
+				religion_group = ROOT
+			}
+		}
+		effect = {
+			add_patriarch_authority = 0.10
+			add_country_modifier = {
+				name = "christian_anatolia_back"
+				duration = 7300
+			}
+		}
+	}
+	pontus_hagia_sophia = {
+		icon = testtt
+		required_missions = { pontus_convert_anatolia }
+		position = 10
+		provinces_to_highlight = {
+			province_id = 151
+		}
+		trigger = {		
+			if = {
+				limit = {
+					has_dlc = "Leviathan"
+				}
+				151 = {
+					has_great_project = {
+						type = hagia_sophia
+						tier = 3
+					}
+				}
+			}
+			else = {
+				151 = {
+					religion = ROOT
+					has_tax_building_trigger = yes
+					development = 40
+				}
+			}
+			owns_or_non_sovereign_subject_of = 151
+		}
+		effect = {
+			add_patriarch_authority = 0.1
+		}
+	}
+}
+
+pontus_production_missions = {
+	slot = 9
+	generic = no
+	ai = yes
+	potential = {
+		tag = PNT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	pontus_production_income = {
+		icon = testtt
+		required_missions = { }
+		position = 8
+		trigger = {
+			production_income_percentage = 0.33
+		}
+		effect = {
+			add_country_modifier = {
+				name = "advanced_production"
+				duration = 3650
+			}
+			define_advisor = {
+				type = natural_scientist
+				skill = 3
+				discount = yes
+			}
+		}
+	}
+	pontus_build_5_monuments = {
+		icon = testtt
+		required_missions = { pontus_production_income }
+		position = 9
+		trigger = {
+			check_variable = {
+				which = builded_great_project
+				value = 5
+			}
+		}
+		effect = {
+			add_country_modifier = { 
+				name = long_live_our_ruler
+				duration = 14600
+			}
+		}
+	}
+}
+
+pontus_trade_missions = {
+	slot = 10
+	generic = no
+	ai = yes
+	potential = {
+		tag = PNT
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	pontus_burgher_relationship = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		trigger = {
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 60
+			}
+			num_of_estate_privileges = {
+				estate = estate_burghers
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "burghers_increase_local_trades"
+				duration = 5475
+			}
+		}
+	}
+	pontus_trade_piracy = {
+		icon = testtt
+		required_missions = { pontus_burgher_relationship }
+		position = 8
+		trigger = {
+			any_rival_country = {
+				capital_scope = {
+					has_privateer_share_in_trade_node = {
+						who = ROOT
+						share = 33
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "trade_terror"
+				duration = 7300
+			}
+		}
+	}
+	pontus_trade_income = {
+		icon = testtt
+		required_missions = { pontus_trade_piracy }
+		position = 9
+		trigger = {
+			trade_income_percentage = 0.4
+		}
+		effect = {
+			add_country_modifier = {
+				name = "advanced_trade"
+				duration = 3650
+			}
+			define_advisor = {
+				type = trader
+				skill = 3
+				discount = yes
+			}
+		}
+	}
+}

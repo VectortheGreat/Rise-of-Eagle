@@ -688,16 +688,22 @@ timar_siphais = {
 	cavalry_power = 0.10
 }
 
-11111111111111111 = {
-	
+pontus_black_leak = {
+	own_coast_naval_combat_bonus = 1.0
+	prestige_from_naval = 0.1
 }
 
-11111111111111111 = {
-	
+land_of_ancient_peoples = {
+	local_manpower_modifier = 0.25
+	local_unrest = -3
 }
 
-11111111111111111 = {
-	
+hellenization = {
+	local_culture_conversion_cost = -0.5
+}
+
+christianized_caucasia = {
+	prestige = 0.5
 }
 
 11111111111111111 = {
