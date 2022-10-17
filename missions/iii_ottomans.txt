@@ -948,7 +948,7 @@ ottomans_aegean_levant_expansion = {
 				limit = {
 					OR = {
 						capital_scope = { region = southeast_america_region }
-						capital_scope = { region = northeast_america_region}
+						capital_scope = { region =northeast_america_region}
 					}	
 				}
 				add_country_modifier = {
@@ -1338,43 +1338,40 @@ ottomans_anatolia_akdeniz_expansion = {
 		position = 16
 		provinces_to_highlight = {
 			OR = {
-				owns_core_province = 221			# Murcia
-				owns_core_province = 223			# Granada
-				owns_core_province = 224			# Andalucia
-				owns_core_province = 226			# Gibraltar
-				owns_core_province = 1748			# Jaen
-				owns_core_province = 1749			# Cadiz
-				owns_core_province = 222			# Almeria
-				owns_core_province = 4547
-				owns_core_province = 4548
-				owns_core_province = 225			# Cordoba	
-				owns_core_province = 230			# Algarve
-				owns_core_province = 229
-				owns_core_province = 1750			# Alicante
-				owns_core_province = 4549		
+				province_id = 221			# Murcia
+				province_id = 223			# Granada
+				province_id = 224			# Andalucia
+				province_id = 226			# Gibraltar
+				province_id = 1748			# Jaen
+				province_id = 1749			# Cadiz
+				province_id = 222			# Almeria
+				province_id = 4547
+				province_id = 4548
+				province_id = 225			# Cordoba	
+				province_id = 230			# Algarve
+				province_id = 229
+				province_id = 1750			# Alicante
+				province_id = 4549		
 			}
-			OR = {
-				NOT = { owns_core_province = ROOT }
-				NOT = { owns_core_province = GRA }
-			}			
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }			
 		}
 		trigger = {
 			owns_all_provinces = {
 				OR = {
-					owns_core_province = 221			# Murcia
-					owns_core_province = 223			# Granada
-					owns_core_province = 224			# Andalucia
-					owns_core_province = 226			# Gibraltar
-					owns_core_province = 1748			# Jaen
-					owns_core_province = 1749			# Cadiz
-					owns_core_province = 222			# Almeria
-					owns_core_province = 4547
-					owns_core_province = 4548
-					owns_core_province = 225			# Cordoba	
-					owns_core_province = 230			# Algarve
-					owns_core_province = 229
-					owns_core_province = 1750			# Alicante
-					owns_core_province = 4549		
+					province_id = 221			# Murcia
+					province_id = 223			# Granada
+					province_id = 224			# Andalucia
+					province_id = 226			# Gibraltar
+					province_id = 1748			# Jaen
+					province_id = 1749			# Cadiz
+					province_id = 222			# Almeria
+					province_id = 4547
+					province_id = 4548
+					province_id = 225			# Cordoba	
+					province_id = 230			# Algarve
+					province_id = 229
+					province_id = 1750			# Alicante
+					province_id = 4549		
 				}
 			}
 		}
@@ -2200,7 +2197,7 @@ ottomans_balkan_german_expansion = {
 	ottomans_defeat_of_catholics = {
 		icon = testtt
 		required_missions = { ottomans_conquer_austria ottomans_conquer_baltic }
-		position = 16
+		position = 15
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = blabla
@@ -2751,7 +2748,7 @@ ottomans_military_russia_missions = {
 	ottomans_defeat_of_orthodox = {
 		icon = testtt
 		required_missions = { ottomans_conquer_russia ottomans_conquer_baltic }
-		position = 16
+		position = 15
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = blabla
