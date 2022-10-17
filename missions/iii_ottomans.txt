@@ -95,8 +95,8 @@ ottomans_aegean_arabia_expansion = {
 	}
 	ottomans_conquer_north_iraq = {
 		icon = testtt
-		required_missions = {  }
-		position = 13
+		required_missions = { ottomans_klasik_cag }
+		position = 12
 		provinces_to_highlight = {
 			OR = {
 				area = al_jazira_area
@@ -126,7 +126,7 @@ ottomans_aegean_arabia_expansion = {
 	}
 	ottomans_conquer_basra = {
 		icon = testtt
-		required_missions = {  }
+		required_missions = { ottomans_conquer_north_iraq }
 		position = 13
 		provinces_to_highlight = {
 			area = basra_area
@@ -140,31 +140,122 @@ ottomans_aegean_arabia_expansion = {
 		}
 		effect = {
 			#UNUTMA - Bağdat Kütüphanesi restore et
+			tabuk_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nafud_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			medina_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			qasim_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bahrain_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
-	ottomans_conquer_north_iraq = {
+	ottomans_conquer_north_arabia = {
 		icon = testtt
-		required_missions = {  }
-		position = 13
+		required_missions = { ottomans_the_great_mamluk_war }
+		position = 14
 		provinces_to_highlight = {
-			OR = {
-				area = al_jazira_area
-				area = iraq_arabi_area
+			region = arabia_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			al_jazira_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			iraq_arabi_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 15
+				region = arabia_region
 			}
 		}
 		effect = {
-			basra_area = {
+			###UNUTMA - Arabian Coffe Modifier ve yerel bonuslar
+		}
+	}
+	ottomans_conquer_kabe = {
+		icon = testtt
+		required_missions = { ottomans_conquer_north_arabia }
+		position = 15
+		provinces_to_highlight = {
+			province_id = 385
+		}
+		trigger = {		
+			if = {
+				limit = {
+					has_dlc = "Leviathan"
+				}
+				385 = {
+					has_great_project = {
+						type = kaaba
+						tier = 3
+					}
+				}
+			}
+			else = {
+				385 = {
+					religion = ROOT
+					has_tax_building_trigger = yes
+					development = 40
+				}
+			}
+			owns_or_non_sovereign_subject_of = 385
+		}
+		effect = {
+			add_piety = 0.8
+			add_prestige = 25
+		}
+	}
+	ottomans_conquer_south_america = {
+		icon = testtt
+		required_missions = { ottomans_conquer_caribbean }
+		position = 19
+		provinces_to_highlight = {
+			region = colombia_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 45
+				region = colombia_region
+				is_city = yes
+			}
+		}
+		effect = {
+			brazil_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			peru_region = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_claim = ROOT }
@@ -175,7 +266,7 @@ ottomans_aegean_arabia_expansion = {
 	}
 }
 
-oghuz_akdeniz_expansion = {
+ottomans_balkan_levant_expansion = {
 	slot = 2
 	generic = no
 	ai = yes
@@ -184,29 +275,31 @@ oghuz_akdeniz_expansion = {
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	oghuz_conquer_antioch = {
+	ottomans_cross_over = {
 		icon = testtt
-		required_missions = { oghuz_conquer_east_anatolia }
+		required_missions = { ottomans_conquer_sogut }
 		position = 8
 		provinces_to_highlight = {
-			OR = {
-				area = dulkadir_area
-				area = antioch_area
+			region = east_balkan_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			dulkadir_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 2
+				region = east_balkan_region
 			}
-			antioch_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}			
 		}
 		effect = {
-			cukurova_area = {
+			gelibolu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			thrace_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_claim = ROOT }
@@ -215,21 +308,449 @@ oghuz_akdeniz_expansion = {
 			}
 		}
 	}
-	oghuz_conquer_cukurova = {
+	ottomans_conquer_thrace = {
 		icon = testtt
-		required_missions = { oghuz_conquer_antioch }
+		required_missions = { ottomans_cross_over }
 		position = 9
 		provinces_to_highlight = {
-			area = cukurova_area
+			area = thrace_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			cukurova_area = {
+			thrace_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}			
 		}
 		effect = {
+			macedonia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			trikala_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northepirus_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bulgaria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			nigbolu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			edirne_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			varna_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			silistria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_north_greece = {
+		icon = testtt
+		required_missions = { ottomans_conquer_thrace }
+		position = 10
+		provinces_to_highlight = {
+			OR = {
+				area = macedonia_area
+				area = trikala_area
+				area = northepirus_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			trikala_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			northepirus_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			skopje_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			albania_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			berat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_syria = {
+		icon = testtt
+		required_missions = { ottomans_klasik_cag }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				area = antioch_area
+				area = aleppo_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			antioch_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aleppo_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			syria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			palestine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			trans_jordan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_the_great_mamluk_war = {
+		icon = testtt
+		required_missions = { ottomans_conquer_syria }
+		position = 13
+		trigger = {
+			OR = {
+				war_score_against = {
+					who = MAM
+					value = 90
+				}
+				AND = {
+					MAM = {
+						NOT = { army_size = 10 }
+						is_great_power = no
+						NOT = { num_of_cities = 15 }
+					}
+				}
+			}			
+		}
+		effect = {
+			###UNUTMA - Custom Tooltip ekle
+			if = {
+				limit = {
+					war_with = MAM
+				}
+				###UNUTMA - Event
+			}
+			else = {
+				add_adm_power = 200
+			}
+		}
+	}
+	ottomans_conquer_egypt = {
+		icon = testtt
+		required_missions = { ottomans_the_great_mamluk_war }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				area = delta_area
+				area = bahari_area
+				area = vostani_area
+				area = said_area
+				area = gulf_of_arabia_area
+				area = al_wahat_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			delta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bahari_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			vostani_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			said_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			gulf_of_arabia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			al_wahat_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_dip_power = 200
+			egypt_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			horn_of_africa_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_east_africa = {
+		icon = testtt
+		required_missions = { ottomans_conquer_egypt }
+		position = 15
+		provinces_to_highlight = {
+			region = horn_of_africa_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 40	#UNUTMA - Say
+				region = horn_of_africa_region
+				is_city = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ottoman_african_colonist"
+				duration = 27375
+			}
+		}
+	}
+	ottomans_conquer_caribbean = {
+		icon = testtt
+		required_missions = { ottomans_colony_quest }
+		position = 18
+		provinces_to_highlight = {
+			region = caribbean_sea_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				region = caribbean_sea_region
+				is_city = yes
+			}
+		}
+		effect = {			
+			every_province = {
+				limit = {
+					region = caribbean_sea_region
+					province_has_center_of_trade_of_level = 1
+				}
+				add_province_modifier = {
+					name = "carribean_trade"
+					duration = -1
+				}
+			}
+		}
+	}
+	ottomans_colonial_trade = {
+		icon = testtt
+		required_missions = { ottomans_conquer_caribbean }
+		position = 19
+		trigger = {
+			mercantilism = 50
+			colony = 5
+		}
+		effect = {			
+			add_country_modifier = {
+				name = "ottomans_colonial_trade"
+				duration = -1
+			}
+		}
+	}
+}
+
+ottomans_aegean_levant_expansion = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = TUR
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	ottomans_conquer_sogut = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		provinces_to_highlight = {
+			province_id = 4967
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			4967 = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			kocaeli_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hudavendigar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ankara_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_marmara = {
+		icon = testtt
+		required_missions = { ottomans_conquer_sogut }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				region = kocaeli_area
+				region = hudavendigar_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			kocaeli_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			saruhan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}			
+			aydin_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_aegean_coast = {
+		icon = testtt
+		required_missions = { ottomans_conquer_marmara }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = saruhan_area
+				area = aydin_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			saruhan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			marmaris_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			karaman_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -237,23 +758,56 @@ oghuz_akdeniz_expansion = {
 				}
 				add_permanent_claim = ROOT
 			}
+			cukurova_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
-	oghuz_conquer_karaman = {
+	ottomans_conquer_akdeniz = {
 		icon = testtt
-		required_missions = { oghuz_conquer_cukurova }
+		required_missions = { ottomans_conquer_aegean_coast }
 		position = 10
 		provinces_to_highlight = {
-			area = cukurova_area
+			OR = {
+				area = marmaris_area
+				area = karaman_area
+				area = cukurova_area
+			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
+			marmaris_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			karaman_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 			cukurova_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
-			}			
+			}
 		}
 		effect = {
+			antioch_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			aleppo_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			akdeniz_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -263,49 +817,46 @@ oghuz_akdeniz_expansion = {
 			}
 		}
 	}
-}
-
-oghuz_east_expansion = {
-	slot = 3
-	generic = no
-	ai = yes
-	potential = {
-		tag = TUR
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes
-	oghuz_conquer_east_anatolia = {
+	ottomans_klasik_cag = {
 		icon = testtt
-		required_missions = {  }
-		position = 7
+		required_missions = { ottomans_conquer_akdeniz }
+		position = 11
+		trigger = {
+			great_power_rank = 1
+			stability = 3
+			prestige = 70
+		}
+		effect = {
+			###UNUTMA - Event
+		}
+	}
+	ottomans_conquer_levant = {
+		icon = testtt
+		required_missions = { ottomans_klasik_cag ottomans_conquer_syria }
+		position = 13
 		provinces_to_highlight = {
-			region = east_anatolia_region
-			owner = {
-				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			OR = {
+				area = syria_area
+				area = palestine_area
+				area = trans_jordan_area
 			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 20
-				region = east_anatolia_region
-				is_city = yes
+			syria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			palestine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			trans_jordan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
-			east_anatolia_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			kayseri_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
 			antioch_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -313,21 +864,7 @@ oghuz_east_expansion = {
 				}
 				add_permanent_claim = ROOT
 			}
-			dulkadir_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			armenia_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			samtskhe_area = {
+			aleppo_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_claim = ROOT }
@@ -336,145 +873,112 @@ oghuz_east_expansion = {
 			}
 		}
 	}
-	oghuz_conquer_east_anatolia_2 = {
+	ottomans_jerusalem = {
 		icon = testtt
-		required_missions = { oghuz_conquer_east_anatolia }
-		position = 8
+		required_missions = { ottomans_conquer_levant }
+		position = 13
 		provinces_to_highlight = {
-			region = east_anatolia_region
-			owner = {
-				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			province_id = 379
+		}
+		trigger = {		
+			if = {
+				limit = {
+					has_dlc = "Leviathan"
+				}
+				379 = {
+					has_great_project = {
+						type = holy_city_jerusalem
+						tier = 3
+					}
+				}
 			}
+			else = {
+				379 = {
+					religion = ROOT
+					has_tax_building_trigger = yes
+					development = 40
+				}
+			}
+			owns_or_non_sovereign_subject_of = 379
+		}
+		effect = {
+			### UNUTMA - Super Modifier: Her sahip olunan hristiyan şehir başına tax, Her Müslüman şehir başına manpower. Yahudi şehirler pasif bonus olarak borç faiz ve enflasyon indirimi.
+		}
+	}
+	ottomans_colony_quest = {
+		icon = testtt
+		required_missions = {  }
+		position = 17
+		trigger = {		
+			colony = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ottoman_colonists"
+				duration = -1
+			}
+		}
+	}
+	ottomans_13_colonies = {
+		icon = testtt
+		required_missions = { ottomans_colony_quest }
+		position = 18
+		provinces_to_highlight = {
+			OR = {
+				region = southeast_america_region
+				region = northeast_america_region
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			has_discovered = ROOT
 		}
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 50 #UNUTMA - SAY
-				region = east_anatolia_region
+				value = 20
+				region = southeast_america_region
 				is_city = yes
 			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				region = northeast_america_region
+				is_city = yes
+			}			
 		}
 		effect = {
-			shahrizor_area = {
+			every_subject_country = {
 				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			tabriz_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-		}
-	}
-	oghuz_conquer_west_iran = {
-		icon = testtt
-		required_missions = { oghuz_conquer_east_anatolia_2 }
-		position = 9
-		provinces_to_highlight = {
-			OR = {
-				area = shahrizor_area
-				area = tabriz_area
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		trigger = {
-			shahrizor_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			tabriz_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		effect = {
-			persia_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			#UNUTMA - tüm azeri ve türkmen şehirlere core ver
-		}
-	}
-	oghuz_conquer_azeris = {
-		icon = testtt
-		required_missions = { oghuz_conquer_west_iran }
-		position = 10
-		provinces_to_highlight = {
-			culture = azerbaijani
-			OR = {
-				NOT = { country_or_non_sovereign_subject_holds = ROOT }
-				NOT = { culture = azerbaijani }
-			}
-		}
-		trigger = {
-			primary_culture = azerbaijani
-			all_province = {
-				OR = {
-					country_or_non_sovereign_subject_holds = ROOT
-					NOT = { culture = azerbaijani }
-				}
-			}
-		}
-		effect = {
-			every_owned_province = {
-				limit = {
-					culture = azerbaijani
-				}
-				add_province_modifier = {
-					name = "sons_of_oghuz_khan"
-					duration = -1
-				}
-			}
-		}
-	}
-	oghuz_legacy_of_oghuz_khan = {
-		icon = testtt
-		required_missions = { oghuz_conquer_azeris }
-		position = 11
-		provinces_to_highlight = {
-			OR = {
-				culture = azerbaijani
-				culture = turkmeni
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		trigger = {
-			NOT = {
-				any_province = {
 					OR = {
-						culture = azerbaijani
-						culture = turkmeni
-					}
-					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						capital_scope = { region = southeast_america_region }
+						capital_scope = { region = northeast_america_region}
+					}	
 				}
-			}
-		}
-		effect = {
-			every_owned_province = {
-				limit = {
-					culture = turkmeni
-				}
-				add_province_modifier = {
-					name = "sons_of_oghuz_khan"
+				add_country_modifier = {
+					name = "colonial_development"
 					duration = -1
 				}
 			}
-			add_power_projection = {
-				type = mission_rewards_power_projection
-				amount = 25
+			add_mercantilism = 5
+		}
+	}
+	ottomans_colonial_empire = {
+		icon = testtt
+		required_missions = { ottomans_13_colonies }
+		position = 19
+		trigger = {
+			colony = 10
+			all_subject_country = { 
+				NOT = { liberty_desire = 50 }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ottoman_colonial_empire_modifier"
+				duration = -1
 			}
 		}
 	}
 }
 
-oghuz_blacksea_expansion = {
+ottomans_anatolia_akdeniz_expansion = {
 	slot = 4
 	generic = no
 	ai = yes
@@ -483,23 +987,35 @@ oghuz_blacksea_expansion = {
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	oghuz_conquer_trabzon = {
+	ottomans_conquer_ankara = {
 		icon = testtt
-		required_missions = { oghuz_conquer_east_anatolia }
+		required_missions = { ottomans_conquer_sogut }
 		position = 8
 		provinces_to_highlight = {
-			area = trabzon_area
+			area = ankara_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-			NOT = { has_dock_building_trigger = yes }
 		}
 		trigger = {
-			trabzon_area = {
+			ankara_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
-				has_dock_building_trigger = yes
 			}
 		}
 		effect = {
+			denizli_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			germiyan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 			sinop_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -514,40 +1030,444 @@ oghuz_blacksea_expansion = {
 				}
 				add_permanent_claim = ROOT
 			}
-			kocaeli_area = {
+		}
+	}
+	ottomans_conquer_west_anatolia = {
+		icon = testtt
+		required_missions = { ottomans_conquer_ankara }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = denizli_area
+				area = germiyan_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			denizli_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			germiyan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			anatolia_region = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_claim = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
-			330 = {
-				add_province_modifier = {
-					name = "naval_base"
-					duration = -1
-				}
+		}
+	}
+	ottomans_conquer_anatolia = {
+		icon = testtt
+		required_missions = { ottomans_conquer_west_anatolia }
+		position = 10
+		provinces_to_highlight = {
+			region = anatolia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			anatolia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
+		}
+		effect = {
 			every_owned_province = {
 				limit = {
-					area = trabzon_area
-					NOT = { culture = ROOT }
+					region = anatolia_region
 				}
 				add_province_modifier = {
-					name = "turkification"
-					duration = 18250
+					name = "ottoman_anatolian_homeland"
+					duration = 9125
 				}
 			}
 		}
 	}
-	oghuz_conquer_west_blacksea_coast = {
+	ottomans_conquer_cyprus_rhodos = {
 		icon = testtt
-		required_missions = { oghuz_conquer_trabzon }
+		required_missions = { ottomans_klasik_cag }
+		position = 12
+		provinces_to_highlight = {
+			area = akdeniz_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			akdeniz_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ottoman_navy"
+				duration = 5475
+			}
+			add_yearly_sailors = 10
+			naples_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			calabria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			apulia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_great_navy = {
+		icon = testtt
+		required_missions = { ottomans_conquer_cyprus_rhodos }
+		position = 13
+		trigger = {
+			navy_size = 50
+			num_of_owned_provinces_with = { 
+				has_dock_building_trigger = yes
+				value = 5  
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ottoman_navy"
+				duration = 5475
+			}
+			add_yearly_sailors = 10
+			if = {
+				limit = {
+					exists = TUN
+				}
+				add_casus_belli = {
+					target = TUN
+					type = cb_vassalize_mission
+				}
+			}
+			tunisia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			djerba_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tripolitania_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_tunis = {
+		icon = testtt
+		required_missions = { ottomans_great_navy }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				area = tunisia_area
+				area = djerba_area
+				area = tripolitania_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			tunisia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			djerba_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tripolitania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			maghreb_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_algeria = {
+		icon = testtt
+		required_missions = { ottomans_conquer_tunis }
+		position = 15
+		provinces_to_highlight = {
+			OR = {
+				area = kabylia_area
+				area = barbary_coast_area
+				area = hautes_plaines_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			kabylia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			barbary_coast_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hautes_plaines_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			### UNUTMA - Magrepteki müslüman devletleri vassal alma
+			upper_andalucia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_granada = {
+		icon = testtt
+		required_missions = { ottomans_conquer_tunis }
+		position = 16
+		provinces_to_highlight = {
+			area = upper_andalucia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			upper_andalucia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {	
+			### UNUTMA - Bunu event yap		
+			if = {
+				limit = {
+					NOT = { exists = GRA }
+				}
+				### UNUTMA - Granada Restore etme
+			}
+			else_if = {
+				###Granada var ise vassalla
+			}
+			else = {
+				lower_andalucia_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				229 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				230 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				221 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				4547 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				1750 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+				4549 = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	ottomans_restore_endulus = {
+		icon = testtt
+		required_missions = { ottomans_conquer_granada }
+		position = 16
+		provinces_to_highlight = {
+			OR = {
+				owns_core_province = 221			# Murcia
+				owns_core_province = 223			# Granada
+				owns_core_province = 224			# Andalucia
+				owns_core_province = 226			# Gibraltar
+				owns_core_province = 1748			# Jaen
+				owns_core_province = 1749			# Cadiz
+				owns_core_province = 222			# Almeria
+				owns_core_province = 4547
+				owns_core_province = 4548
+				owns_core_province = 225			# Cordoba	
+				owns_core_province = 230			# Algarve
+				owns_core_province = 229
+				owns_core_province = 1750			# Alicante
+				owns_core_province = 4549		
+			}
+			OR = {
+				NOT = { owns_core_province = ROOT }
+				NOT = { owns_core_province = GRA }
+			}			
+		}
+		trigger = {
+			owns_all_provinces = {
+				OR = {
+					owns_core_province = 221			# Murcia
+					owns_core_province = 223			# Granada
+					owns_core_province = 224			# Andalucia
+					owns_core_province = 226			# Gibraltar
+					owns_core_province = 1748			# Jaen
+					owns_core_province = 1749			# Cadiz
+					owns_core_province = 222			# Almeria
+					owns_core_province = 4547
+					owns_core_province = 4548
+					owns_core_province = 225			# Cordoba	
+					owns_core_province = 230			# Algarve
+					owns_core_province = 229
+					owns_core_province = 1750			# Alicante
+					owns_core_province = 4549		
+				}
+			}
+		}
+		effect = {	
+			every_province = {
+				limit = {
+					region = iberia__region
+					NOT = { owned_by = TUR }
+					NOT = { owned_by = GRA }
+					NOT = { owned_by = ADU }
+				}
+				add_province_modifier = {
+					name = "iberian_invasion"
+					duration = 18250
+				}
+			}
+			#UNUTMA - Endülüs eventi
+		}
+	}
+	ottomans_colonize_africa = {
+		icon = testtt
+		required_missions = { ottomans_colony_quest }
+		position = 18
+		provinces_to_highlight = {
+			region = east_africa_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 40
+				region = east_africa_region
+				is_city = yes
+			}
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "africa_gold_mine"
+				duration = -1
+			}
+		}
+	}
+	ottomans_colonize_south_africa = {
+		icon = testtt
+		required_missions = { ottomans_colonize_africa }
+		position = 19
+		provinces_to_highlight = {
+			region = south_africa_region
+			has_port = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_all_provinces = {
+				region = south_africa_region
+				has_port = yes
+			}
+		}
+		effect = {	
+			every_country = {
+				limit = {
+					capital_scope = {
+						continent = europe
+						religion_group = christian
+					}
+				}
+				set_country_flag = blockade_from_africa
+					add_country_modifier = {
+					name = "ottomans_blockade_from_africa"
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+ottomans_east_anatolia_italy_expansion = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = TUR
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	ottomans_conquer_west_blacksea_coast = {
+		icon = testtt
+		required_missions = { ottomans_conquer_ankara }
 		position = 9
 		provinces_to_highlight = {
 			OR = {
 				area = sinop_area
 				area = kastamonu_area
-				area = kocaeli_area
 			}
 			has_port = yes
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -557,17 +1477,19 @@ oghuz_blacksea_expansion = {
 				OR = {
 					area = sinop_area
 					area = kastamonu_area
-					area = kocaeli_area
 				}
 				has_port = yes
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = "break_nationalism"
-				duration = 5475
+			east_anatolia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
 			}
-			thrace_area = {
+			crimea_area = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_claim = ROOT }
@@ -576,72 +1498,213 @@ oghuz_blacksea_expansion = {
 			}
 		}
 	}
-}
-
-oghuz_caucasia_expansion = {
-	slot = 5
-	generic = no
-	ai = yes
-	potential = {
-		tag = TUR
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes
-	oghuz_conquer_armenia = {
+	ottomans_conquer_east_blacksea_coast = {
 		icon = testtt
-		required_missions = { oghuz_conquer_east_anatolia }
-		position = 8
-		provinces_to_highlight = {
-			OR = {
-				area = armenia_area
-				area = samtskhe_area
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		trigger = {
-			armenia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			samtskhe_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		effect = {
-			caucasia_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-		}
-	}
-	oghuz_conquer_caucasia = {
-		icon = testtt
-		required_missions = { oghuz_conquer_armenia }
+		required_missions = { ottomans_conquer_west_blacksea_coast }
 		position = 10
 		provinces_to_highlight = {
-			region = caucasia_region
+			area = trabzon_area
 			owner = {
 				NOT = { country_or_non_sovereign_subject_holds = ROOT }
 			}
 		}
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 25
-				region = caucasia_region
-				is_city = yes
+			trabzon_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			add_dip_power = 150
+		}
+	}
+	ottomans_conquer_naples = {
+		icon = testtt
+		required_missions = { ottomans_conquer_cyprus_rhodos }
+		position = 13
+		provinces_to_highlight = {
+			OR = {
+				area = calabria_area
+				area = naples_area
+				area = apulia_area
+			}
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			calabria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			naples_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			apulia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			western_sicily_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			corsica_sardinia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_sicily_sardinia = {
+		icon = testtt
+		required_missions = { ottomans_conquer_naples }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				area = sicily_area
+				area = western_sicily_area
+				area = corsica_sardinia_area
+			}
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			corsica_sardinia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {			
 			add_mil_power = 150
 		}
 	}
+	ottomans_mare_nastrum = {
+		icon = testtt
+		required_missions = { ottomans_conquer_sicily_sardinia ottomans_conquer_algeria ottomans_conquer_italy }
+		position = 16
+		provinces_to_highlight = {
+			OR = {
+				region = italy_region
+				region = anatolia_region
+				region = crimea_region
+				region = balkan_region
+				area = aleppo_area
+				area = syria_area
+				area = palestine_area
+				area = delta_area
+				area = cyrenaica_area
+				area = tripolitania_area
+				area = djerba_area
+				area = tunisia_area
+				area = kabylia_area
+				area = northern_morocco_area
+				area = upper_andalucia_area
+				area = valencia_area
+				area = catalonia_area
+				area = languedoc_area
+				area = provence_area
+				area = moldavia_area
+				area = samtskhe_area
+				area = circassia_area
+				area = imereti_area
+			}
+			has_port = yes
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns_all_provinces = {
+				OR = {
+					region = italy_region
+					region = anatolia_region
+					region = crimea_region
+					region = balkan_region
+					area = aleppo_area
+					area = syria_area
+					area = palestine_area
+					area = delta_area
+					area = cyrenaica_area
+					area = tripolitania_area
+					area = djerba_area
+					area = tunisia_area
+					area = kabylia_area
+					area = northern_morocco_area
+					area = upper_andalucia_area
+					area = valencia_area
+					area = catalonia_area
+					area = languedoc_area
+					area = provence_area
+					area = moldavia_area
+					area = samtskhe_area
+					area = circassia_area
+					area = imereti_area					
+				}
+				has_port = yes
+			}
+		}
+		effect = {
+			every_province = {
+				limit = {
+					OR = {
+						region = italy_region
+						region = anatolia_region
+						region = crimea_region
+						region = balkan_region
+						area = aleppo_area
+						area = syria_area
+						area = palestine_area
+						area = delta_area
+						area = cyrenaica_area
+						area = tripolitania_area
+						area = djerba_area
+						area = tunisia_area
+						area = kabylia_area
+						area = northern_morocco_area
+						area = upper_andalucia_area
+						area = valencia_area
+						area = catalonia_area
+						area = languedoc_area
+						area = provence_area
+						area = moldavia_area
+						area = samtskhe_area
+						area = circassia_area
+						area = imereti_area						
+					}
+					has_port = yes
+				}
+				add_province_modifier = {
+					name = "our_sea"
+					duration = -1
+				}
+			}
+		}
+	}
 }
 
-oghuz_power_missions = {
+ottomans_government_italy_missions = {
 	slot = 6
 	generic = no
 	ai = yes
@@ -650,10 +1713,44 @@ oghuz_power_missions = {
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	oghuz_better_than_emperor = {
+	ottomans_pashas = {
 		icon = testtt
-		required_missions = { }
-		position = 7
+		required_missions = { ottomans_ottoman_government }
+		position = 8
+		trigger = {
+			stability = 2
+			is_at_war = no
+			num_of_cities = 15	
+		}
+		effect = {
+			###UNUTMA - Reformlarda paşa mekaniği aktif eder
+		}
+	}
+	ottomans_umera = {
+		icon = testtt
+		required_missions = { ottomans_pashas }
+		position = 9
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+			num_of_estate_privileges = {
+				estate = estate_church
+				value = 4
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "clergy_increase_local_taxes"
+				duration = 5475
+			}
+		}
+	}
+	ottomans_better_emperor = {
+		icon = testtt
+		required_missions = { ottomans_umera }
+		position = 10
 		trigger = {
 			OR = {
 				NOT = {
@@ -664,159 +1761,156 @@ oghuz_power_missions = {
 					}
 				}
 				is_emperor = yes
+				NOT = { hre_size = 1 }
 			}			
 		}
 		effect = {
 			add_prestige = 20
 		}
 	}
-	oghuz_mercenary_mission = {
+	ottomans_conquer_serbia = {
 		icon = testtt
-		required_missions = { oghuz_army_and_state }
-		position = 8
-		trigger = {
-			OR = {
-				AND = {	#NO MERCENARY
-					NOT = { num_of_mercenaries = 1 }
-					if = {
-						limit = {
-							has_dlc = "Cradle of Civilization"
-						}
-						army_professionalism = 0.20
-					}
-					else = {
-						army_tradition = 25
-					}
-				}
-				AND = {
-					num_of_mercenaries = 25
-					NOT = { num_of_loans = 1 }
-				}
-			}
-		}
-		effect = {
-			###UNUTMA - Event ile düzenli ordu veya paralı askere bonus
-		}
-	}
-	oghuz_erzurum_topcu_ocagi = {
-		icon = testtt
-		required_missions = { oghuz_mercenary_mission }
-		position = 9
+		required_missions = { ottomans_to_balkan_empire }
+		position = 12
 		provinces_to_highlight = {
-			province_id = 331
-			has_forcelimit_building_trigger = no
+			OR = {
+				area = rascia_area
+				area = serbia_area
+			}			
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			331 = {
-				country_or_non_sovereign_subject_holds = ROOT 
-				has_forcelimit_building_trigger = yes
+			rascia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
-			mil_tech = 15
+			serbia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			add_accepted_culture = serbian
+			every_owned_province = {
+				limit = {
+					culture = serbian
+				}
+				hidden_effect = {
+					random_list = {
+						33.33 = { add_base_tax = 1}
+						33.33 = { add_base_production = 1 }
+						33.33 = { add_base_manpower = 1 }	
+					}
+				}
+			}
+		}
+	}
+	ottomans_conquer_bosnia = {
+		icon = testtt
+		required_missions = { ottomans_conquer_serbia }
+		position = 13
+		provinces_to_highlight = {
+			area = bosnia_area		
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			bosnia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			add_accepted_culture = bosnian
+			every_owned_province = {
+				limit = {
+					culture = bosnian
+				}
+				hidden_effect = {
+					random_list = {
+						33.33 = { add_base_tax = 1}
+						33.33 = { add_base_production = 1 }
+						33.33 = { add_base_manpower = 1 }	
+					}
+				}
+			}
+		}
+	}
+	ottomans_kaiseri_rum = {
+		icon = testtt
+		required_missions = { ottomans_conquer_naples }
+		position = 14
+		provinces_to_highlight = {
+			area = lazio_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			lazio_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = "turkish_cannons"
-				duration = -1
+			##Papalığı yık veya dhimmiye devret - UNUTMA
+			italy_region = { 
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
 			}
 		}
 	}
-	oghuz_absolutism = {
+	ottomans_conquer_italy = {
 		icon = testtt
-		required_missions = { oghuz_erzurum_topcu_ocagi }
-		position = 10
-		trigger = {
-			current_age = age_of_absolutism
-			has_regency = no
-			has_any_disaster = no
-		}
-		effect = {
-			add_country_modifier = {
-				name = "oghuz_absolutism_modifier"
-				duration = 5475
+		required_missions = { ottomans_kaiseri_rum }
+		position = 15
+		provinces_to_highlight = {
+			OR = {
+				area = liguria_area
+				area = lombardy_area
+				area = western_sicily_area
 			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
-	}
-}
-
-oghuz_military_missions = {
-	slot = 7
-	generic = no
-	ai = yes
-	potential = {
-		tag = TUR
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes	
-	oghuz_army_and_state = {
-		icon = testtt
-		required_missions = { }
-		position = 7
 		trigger = {
-			estate_loyalty = {
-				estate = estate_nobles
-				loyalty = 60
+			liguria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
-			num_of_estate_privileges = {
-				estate = estate_nobles
-				value = 4
+			lombardy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			western_sicily_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
-			add_country_modifier = {
-				name = "military_state"
-				duration = 7300
-			}
-		}
-	}
-	oghuz_military_quests = {
-		icon = testtt
-		required_missions = { oghuz_army_and_state }
-		position = 8
-		trigger = {
-			mil_tech = 12
-			is_bankrupt = no
-		}
-		effect = {
-			### UNUTMA - Decisionlar ile 5 Adet askeri görevler projesi ekle
-		}
-	}
-	oghuz_professional_army = {
-		icon = testtt
-		required_missions = { oghuz_military_quests }
-		position = 9
-		trigger = {
+			add_accepted_culture = lombard
+			add_accepted_culture = tuscan
+			add_accepted_culture = romagnan
+			add_accepted_culture = ligurian
+			add_accepted_culture = venetian
+			add_accepted_culture = dalmatian
+			add_accepted_culture = neapolitan
+			add_accepted_culture = piedmontese
+			add_accepted_culture = umbrian
 			if = {
 				limit = {
-					has_dlc = "Cradle of Civilization"
+					NOT = { has_country_modifier = accept_latin_cultures }
 				}
-				army_professionalism = 80
-			}
-			else = {
-				army_tradition = 80
-			}
-		}
-		effect = {
-			add_country_modifier = {
-				name = "professional_army"
-				duration = -1
-			}
+				add_country_modifier = { 
+					name = accept_latin_cultures
+					duration = -1
+				}
+			}			
 		}
 	}
-}
-
-oghuz_religion_missions = {
-	slot = 8
-	generic = no
-	ai = yes
-	potential = {
-		tag = TUR
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes	
-	oghuz_be_on_side_on_reformation = {
+	ottomans_be_on_side_on_reformation = {
 		icon = testtt
 		required_missions = {  }
-		position = 7
+		position = 17
 		trigger = {
 			OR = {
 				has_country_flag = joined_reformation
@@ -850,10 +1944,10 @@ oghuz_religion_missions = {
 			}
 		}
 	}
-	oghuz_convert_30_provinces = {
+	ottomans_convert_30_provinces = {
 		icon = testtt
-		required_missions = { oghuz_be_on_side_on_reformation }
-		position = 8
+		required_missions = { ottomans_be_on_side_on_reformation }
+		position = 18
 		trigger = {
 			check_variable = {
 				which = converted_province_to_muslim
@@ -867,52 +1961,534 @@ oghuz_religion_missions = {
 			}
 		}
 	}
-	oghuz_turkification = {
+}
+
+ottomans_balkan_german_expansion = {
+	slot = 7
+	generic = no
+	ai = yes
+	potential = {
+		tag = TUR
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	ottomans_dhimmi_policies = {
 		icon = testtt
-		required_missions = {  }
-		position = 9
+		required_missions = { ottomans_ottoman_government }
+		position = 8
 		trigger = {
-			check_variable = {
-				which = culture_converted_to_turkish
-				value = 10
+			num_of_estate_privileges = {
+				estate = estate_dhimmi
+				value = 2
+			}
+			num_of_owned_provinces_with = { 
+				religion_group = christian
+				value = 5  
+			}
+			custom_trigger_tooltip = {  
+				tooltip = blabla
+				has_global_modifier_value = { 
+					which = tolerance_heathen 
+					value = 3 
+				}
 			}
 		}
 		effect = {
-			### SUPER MODIFIER - UNUTMA: Her kültür değiştirdiğin o bölgeye 3 dev ekle
-			set_country_flag = ofc_super_modifier
+			#UNUTMA - Event ile Hristiyanlarla birlik mi yoksa tam tersi mi?
 		}
 	}
-	oghuz_convert_culture_anatolia = {
+	ottomans_devshirme_system = {
 		icon = testtt
-		required_missions = { oghuz_turkification }
+		required_missions = { ottomans_dhimmi_policies }
+		position = 9
+		trigger = {
+			num_of_owned_provinces_with = { 
+				NOT  = { religion_group = muslim }
+				value = 15
+			}
+		}
+		effect = {
+			set_country_flag = ottomans_devshirme_system_flag
+		}
+	}
+	ottomans_develop_balkans = {
+		icon = testtt
+		required_missions = { ottomans_devshirme_system }
 		position = 10
 		provinces_to_highlight = {
 			OR = {
-				region = east_anatolia_region
-				region = anatolia_region
+				region = balkan_region
+				region = south_balkan_region
+				region = east_balkan_region
 			}
-			NOT = { culture = ROOT }
 		}
 		trigger = {
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 55	###UNUTMA- SAY
-				region = east_anatolia_region
-				culture = ROOT
-			}
-			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 55
-				region = anatolia_region
-				culture = ROOT
+			check_variable = {
+				which = byzantine_developed_balkans
+				value = 50
 			}
 		}
 		effect = {
-			### SUPER MODIFIER - UNUTMA: Her kültür değiştirdiğin o bölgeye 3 dev ekle
-			set_country_flag = ofc_super_modifier
+			### UNUTMA - Tüm balkan şehirlerine özel bonus, eventle.
+		}
+	}
+	ottomans_to_balkan_empire = {
+		icon = testtt
+		required_missions = {  }
+		position = 11
+		provinces_to_highlight = {
+			OR = {
+				region = balkan_region
+				region = south_balkan_region
+				region = east_balkan_region
+			}
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				OR = {
+					region = balkan_region
+					region = south_balkan_region
+					region = east_balkan_region
+				}
+			}
+		}
+		effect = {			
+			balkan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_balkan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_balkan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_wallachia = {
+		icon = testtt
+		required_missions = { ottomans_to_balkan_empire }
+		position = 11
+		provinces_to_highlight = {
+			region = east_balkan_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 30
+				region = east_balkan_region
+			}
+		}
+		effect = {			
+			carpathia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_hungary = {
+		icon = testtt
+		required_missions = { ottomans_conquer_wallachia }
+		position = 13
+		provinces_to_highlight = {
+			region = carpathia_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			exists = HAB
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				region = carpathia_region
+				is_city = yes
+			}
+		}
+		effect = {
+			tirol_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			austria_proper_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			inner_austria_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			carinthia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_austria = {
+		icon = testtt
+		required_missions = { ottomans_conquer_hungary }
+		position = 14
+		provinces_to_highlight = {
+			OR = {
+				area = austria_proper_area
+				area = tirol_area
+				area = inner_austria_area
+				area = carinthia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			austria_proper_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			tirol_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			inner_austria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			carinthia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			south_german_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			#UNUTMA - Katoliklere ve protestanlara karşı özel genişleme
+		}
+	}
+	ottomans_defeat_of_catholics = {
+		icon = testtt
+		required_missions = { ottomans_conquer_austria ottomans_conquer_baltic }
+		position = 16
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = blabla
+				NOT = {
+					any_country = {
+						religion = catholic
+						capital_scope = {
+							continent = europe
+						}
+						NOT = { total_development = 1000 }
+						NOT = { is_great_power = yes }
+					}
+				}
+			}
+		}
+		effect = {
+			#UNUTMA - Katoliklere özel debuff
+		}
+	}
+	ottomans_parlamento = {
+		icon = testtt
+		required_missions = {  }
+		position = 19
+		trigger = {
+			#UNUTMA - Buraları sonra doldur
+		}
+		effect = {
 		}
 	}
 }
 
-oghuz_production_missions = {
+ottomans_military_east_europe_missions = {
+	slot = 8
+	generic = no
+	ai = yes
+	potential = {
+		tag = TUR
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes	
+	ottomans_ottoman_government = {
+		icon = testtt
+		required_missions = {  }
+		position = 7
+		trigger = {
+			adm_tech = 5
+			is_at_war = no
+		}
+		effect = {
+			#UNUTMA - Osmanlı hükümeti
+		}
+	}
+	ottomans_rumeli_beylerbeyi = {
+		icon = testtt
+		required_missions = { ottomans_ottoman_government }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				region = balkan_region
+				region = east_balkan_region
+				region = south_balkan_region
+			}
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				OR = {
+					region = balkan_region
+					region = east_balkan_region
+					region = south_balkan_region
+				}				
+			}			
+		}
+		effect = {
+			set_country_flag = rumeli_beylerbeyi
+		}
+	}
+	ottomans_janisarries = {
+		icon = testtt
+		required_missions = { ottomans_rumeli_beylerbeyi }
+		position = 9
+		trigger = {			
+			army_size = 30
+			custom_trigger_tooltip = {
+				tooltip = blabla
+				NOT = {
+					any_country = {
+						capital_scope = {
+							region = balkan_region
+							region = east_balkan_region
+							region = south_balkan_region
+						}
+						army_size = ROOT 
+						total_development = ROOT 
+					}
+				}
+			}
+		}
+		effect = {
+			### UNUTMA - Yeniçeriler
+		}
+	}
+	ottoman_cannons = {
+		icon = testtt
+		required_missions = { ottomans_janisarries }
+		position = 10
+		trigger = {
+			mil_tech = 7
+			num_of_artillery = 10
+			army_tradition = 40
+			capital_scope = {
+				has_forcelimit_building_trigger = yes
+				development = 20
+			}	
+		}
+		effect = {
+			add_country_modifier = {
+				name = "dardanelles_gun"
+				duration = 54750
+			}
+		}
+	}
+	ottomans_conquer_moldavia = {
+		icon = testtt
+		required_missions = { ottomans_to_balkan_empire }
+		position = 12
+		provinces_to_highlight = {
+			area = moldavia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			moldavia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			poland_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_poland = {
+		icon = testtt
+		required_missions = { ottomans_conquer_moldavia }
+		position = 13
+		provinces_to_highlight = {
+			area = poland_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			poland_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			baltic_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_baltic = {
+		icon = testtt
+		required_missions = { ottomans_conquer_poland }
+		position = 14
+		provinces_to_highlight = {
+			area = baltic_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			baltic_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			every_owned_province = {
+				limit = {
+					region = baltic_region
+				}
+				add_country_modifier = {
+					name = "baltic_trade"
+					duration = -1
+				}
+			}
+		}
+	}
+	ottomans_centralization = {
+		icon = testtt
+		required_missions = {  }
+		position = 17
+		trigger = {
+			absolutism = 90
+			average_unrest = 0
+			crown_land_share = 50
+			NOT = { num_of_rebel_armies = 1 }
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+		}
+	}
+	ottomans_jon_turks = {
+		icon = testtt
+		required_missions = { ottomans_centralization }
+		position = 18
+		provinces_to_highlight = {
+			owner = {
+				capital_scope = {
+					region = italy_region
+				}
+			}
+		}
+		trigger = {
+			any_known_country = {
+				capital_scope = {
+					continent = europe
+				}
+				technology_group = western
+				has_opinion = {
+					who = ROOT
+					value = 200
+				}
+			}
+		}
+		effect = {
+			###UNUTMA - Jön türklerle alakalı event
+			#Batılılaşma mekaniği ekle
+		}
+	}
+	ottomans_mesrutiyet = {
+		icon = testtt
+		required_missions = { ottomans_jon_turks }
+		position = 19
+		trigger = {
+			OR = {
+				OR = {
+					has_reform = revolutionary_empire_reform
+					has_reform = revolutionary_republic_reform
+				}
+				AND = {
+					government = monarchy
+					legitimacy = 90
+					#UNUTMA - Batılılaşma - 90
+				}
+			}
+		}
+		effect = {
+			###UNUTMA - Meşrutiyet Mekaniği ekle ve burayı evente çevir
+			if = {
+				limit = {
+					NOT = { 
+						OR = {
+							has_reform = revolutionary_empire_reform
+							has_reform = revolutionary_republic_reform
+						}
+					}
+				}
+				add_country_modifier = {
+					name = "hab_reactionary_zeal"
+					duration = 7300
+				}
+				change_technology_group = western
+				change_unit_type = western
+				change_graphical_culture = westerngfx
+			}
+			else = {
+				add_mil_power = 300
+			}
+		}
+	}
+}
+
+ottomans_military_russia_missions = {
 	slot = 9
 	generic = no
 	ai = yes
@@ -921,63 +2497,325 @@ oghuz_production_missions = {
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
-	oghuz_gold_mining = {
+	ottomans_anadolu_beylerbeyi = {
 		icon = testtt
-		required_missions = { }
+		required_missions = { ottomans_ottoman_government }
 		position = 8
 		provinces_to_highlight = {
-			region = east_anatolia_region
-			trade_goods = gold
+			OR = {
+				region = anatolia_region
+				region = east_anatolia_region
+			}
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 20
+				OR = {
+					region = anatolia_region
+					region = east_anatolia_region
+				}			
+			}			
+		}
+		effect = {
+			set_country_flag = anadolu_beylerbeyi
+		}
+	}
+	ottomans_anadolu_ocaklari = {
+		icon = testtt
+		required_missions = { ottomans_anadolu_beylerbeyi }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = anatolia_region
+				region = east_anatolia_region
+			}
+			has_manpower_building_trigger = no
+		}
+		trigger = {
+			calc_true_if = {
+				all_owned_province = {
+					OR = {
+						has_manpower_building_trigger = yes
+					}
+					OR = {
+						region = anatolia_region
+						region = east_anatolia_region
+					}
+				}
+				amount = 20
+			}
+		}
+		effect = {
+			set_country_flag = anatolian_homeland
+		}
+	}
+	ottomans_akinjis = {
+		icon = testtt
+		required_missions = { ottomans_anadolu_ocaklari }
+		position = 10
+		trigger = {
+			cavalry_fraction = 0.2
+			has_global_modifier_value = {
+				which = cavalry_power
+				value = 0.2 #UNUTMA - Test et
+			}
+		}
+		effect = {
+			add_province_modifier = {
+				name = "ottoman_akinjis"
+				duration = -1
+			}
+		}
+	}
+	ottomans_conquer_crimea = {
+		icon = testtt
+		required_missions = {  }
+		position = 11
+		provinces_to_highlight = {
+			area = crimea_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			crimea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			kerch_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			azov_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			zaporizhia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yedisan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_blacksea_ports = {
+		icon = testtt
+		required_missions = { ottomans_conquer_crimea }
+		position = 12
+		provinces_to_highlight = {
+			OR = {
+				region = crimea_region
+				region = caucasia_region
+				area = moldavia_area
+				area = silistria_area
+				area = varna_area
+				area = edirne_area
+				area = thrace_area
+				area = kocaeli_area
+				area = kastamonu_area
+				area = sinop_area
+				area = trabzon_area
+			}
+			has_port = yes
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
 			owns_all_provinces = {
-				region = east_anatolia_region
-				trade_goods = gold
+				OR = {
+					region = crimea_region
+					region = caucasia_region
+					area = moldavia_area
+					area = silistria_area
+					area = varna_area
+					area = edirne_area
+					area = thrace_area
+					area = kocaeli_area
+					area = kastamonu_area
+					area = sinop_area
+					area = trabzon_area					
+				}
+				has_port = yes
 			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ottoman_black_leak"
+				duration = 7300
+			}
+			ruthenia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	ottomans_conquer_ruthenia = {
+		icon = testtt
+		required_missions = { ottomans_blacksea_ports }
+		position = 13
+		provinces_to_highlight = {
+			area = ruthenia_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			ruthenia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			russia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			if = {
+				limit = {
+					OR = { 
+						is_rival = MOS
+						is_rival = RUS
+					}
+				}
+				#UNUTMA - Debuff ekle
+			}
+		}
+	}
+	ottomans_conquer_russia = {
+		icon = testtt
+		required_missions = { ottomans_conquer_ruthenia }
+		position = 14
+		provinces_to_highlight = {
+			region = russia_region
+			owner = {
+				NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			}
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 35
+				region = russia_region
+				is_city = yes
+			}
+			OR =  {
+				NOT = {
+					MOS = {
+						army_size = ROOT 
+						total_development = ROOT 
+					}
+				}
+				NOT = {
+					RUS = {
+						army_size = ROOT 
+						total_development = ROOT 
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "colonize_siberia"
+				duration = -1
+			}
+			if = {
+				limit = {
+					OR = { 
+						exists = MOS
+						exists = RUS
+					}
+				}
+				#UNUTMA - Bitirici darbe
+			}
+		}
+	}
+	ottomans_defeat_of_orthodox = {
+		icon = testtt
+		required_missions = { ottomans_conquer_russia ottomans_conquer_baltic }
+		position = 16
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = blabla
+				NOT = {
+					any_country = {
+						religion = orthodox
+						capital_scope = {
+							continent = europe
+						}
+						NOT = { total_development = 1000 }
+						NOT = { is_great_power = yes }
+					}
+				}
+			}
+		}
+		effect = {
+			#UNUTMA - Ortodokslara özel debuff
+		}
+	}
+	ottomans_public_reforms = {
+		icon = testtt
+		required_missions = { ottomans_centralization }
+		position = 18
+		trigger = {
+			NOT = { unrest = 0 }
+			stability = 3
+			government_reform_progress = 50
+		}
+		effect = {
+			#UNUTMA - Bir şey ekle
+			change_government_reform_progress = -100
+		}
+	}
+	ottomans_millet_ve_devlet = {
+		icon = testtt
+		required_missions = { ottomans_public_reforms }
+		position = 19
+		trigger = {
+			if = {
+				limit = {
+					has_dlc = "Emperor"
+				}
+				is_hegemon = yes 
+			}
+			total_development = 2000
+			num_accepted_cultures = 8 #UNUTMA - Say
+			religious_unity = 1
+			NOT = { average_unrest = 0 }
 		}
 		effect = {			
-			add_country_modifier = {
-				name = "gold_mines"
-				duration = 10950
-			}
-		}
-	}
-	oghuz_develop_gold_mines = {
-		icon = testtt
-		required_missions = { oghuz_turkification oghuz_gold_mining }
-		position = 10
-		trigger = {
-			gold_income_percentage = 0.25
-			NOT = { inflation = 5 }
-			production_leader = {
-				trade_goods = gold
-			}
-		}
-		effect = {
-			set_country_flag = oghuz_gold_mining_modifier
-		}
-	}
-	oghuz_non_muslim_taxes = {
-		icon = testtt
-		required_missions = { oghuz_develop_gold_mines }
-		position = 11
-		trigger = {
-			adm_tech = 15
-			calc_true_if = {
-				all_owned_province = {
-					NOT = { religion_group = ROOT }
+			every_owned_province = {
+				limit = {
+					has_owner_accepted_culture = yes
 				}
-				amount = 10
+				add_country_modifier = {
+					name = "ottoman_nationalism"
+					duration = -1
+				}
 			}
-		}
-		effect = {
-			set_country_flag = oghuz_non_muslim_taxes_modifier
 		}
 	}
 }
 
-oghuz_development_missions = {
+ottomans_military_missions = {
 	slot = 10
 	generic = no
 	ai = yes
@@ -986,32 +2824,158 @@ oghuz_development_missions = {
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	oghuz_control_kervansaray = {
+	ottomans_timar_system = {
 		icon = testtt
-		required_missions = {  }
+		required_missions = { ottomans_ottoman_government }
 		position = 8
 		trigger = {
-			###UNUTMA
+			num_of_owned_provinces_with = {
+				value = 10
+				OR = {
+					has_terrain = grasslands
+					has_terrain = farmlands
+				}
+			}
 		}
 		effect = {
-			
+			set_country_flag = timar_system
 		}
 	}
-	oghuz_develop_provinces = {
+	ottomans_timar_siphais = {
 		icon = testtt
-		required_missions = { oghuz_control_kervansaray }
-		position = 10
+		required_missions = { ottomans_timar_system }
+		position = 9
 		trigger = {
-			check_variable = {
-				which = mission_developed
+			num_of_owned_provinces_with = {
 				value = 50
+				OR = {
+					has_terrain = grasslands
+					has_terrain = farmlands
+				}
 			}
 		}
 		effect = {
 			add_country_modifier = {
-				name = "developed_country"
+				name = "expanded_timar_system"
+				duration = 7300
+			}
+			add_country_modifier = {
+				name = "timar_siphais"
 				duration = -1
 			}
+		}
+	}
+	ottomans_tatar_mercenaries = {
+		icon = testtt
+		required_missions = {  }
+		position = 9
+		trigger = {
+			OR = {
+				any_country = {
+					culture = crimean
+					has_opinion = {
+						who = ROOT
+						value = 100
+					}
+				}
+				num_of_owned_provinces_with = {
+					value = 5
+					culture = crimean
+				}
+			}			
+		}
+		effect = {
+			### UNUTMA - Özel Paralı asker
+		}
+	}
+	ottomans_defeat_cossacks = {
+		icon = testtt
+		required_missions = { ottomans_tatar_mercenaries }
+		position = 9
+		trigger = {	
+			owns_all_provinces = {
+				continent = europe
+				has_terrain = steppe
+			}		
+		}
+		effect = {
+			add_mil_power = 100
+			add_yearly_manpower = 0.5
+		}
+	}
+	ottomans_expand_janissaries = {
+		icon = testtt
+		required_missions = {  }
+		position = 17
+		trigger = {	
+			if = { 
+				limit = { 
+					has_dlc = "Cradle of Civilization" 
+					has_reform = ottoman_government #UNUTMA - Kontrol et
+				} 
+				janissary_percentage = 0.3
+				employed_advisor = {
+					category = MIL 
+				}
+			}
+			else = { 
+				employed_advisor = {
+					type = mil
+				}
+			}
+			army_size_percentage = 0.8
+		}
+		effect = {
+			add_mil_power = 100
+			add_yearly_manpower = 0.5
+		}
+	}
+	ottomans_fate_of_janissaries = {
+		icon = testtt
+		required_missions = { ottomans_expand_janissaries }
+		position = 18
+		trigger = {	
+			#UNUTMA - Disasteri bitir
+		}
+		effect = {
+			#UNUTMA - Yeniçerileri daha da güçlendir veya kaldır
+		}
+	}
+	ottomans_modern_army = {
+		icon = testtt
+		required_missions = { ottomans_fate_of_janissaries }
+		position = 19
+		trigger = {			
+			num_of_owned_provinces_with = { 
+				has_manpower_building_trigger = yes
+				value = 50
+			}
+			num_of_owned_provinces_with = { 
+				has_forcelimit_building_trigger = yes
+				value = 50
+			}
+			OR = {
+				if = {
+					limit = {
+						has_dlc = "Emperor"
+					}
+					is_hegemon_of_type = military_hegemon
+				}
+				else = {
+					if = {
+						limit = {
+							has_dlc = "Cradle of Civilization"
+						}
+						army_professionalism = 1
+					}
+					else = {
+						army_tradition = 95
+					}
+				}
+			}
+		}
+		effect = {
+			#UNUTMA - Yeniçerileri daha da güçlendir veya kaldır
 		}
 	}
 }

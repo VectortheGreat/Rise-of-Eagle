@@ -620,6 +620,7 @@ oghuz_power_missions = {
 					}
 				}
 				is_emperor = yes
+				NOT = { hre_size = 1 }
 			}			
 		}
 		effect = {

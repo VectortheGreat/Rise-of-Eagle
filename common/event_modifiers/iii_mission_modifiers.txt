@@ -593,76 +593,99 @@ gold_mines = {
 	monthly_gold_inflation_modifier = 0.25
 }
 
-11111111111111111 = {
-	
+ottoman_african_colonist = {
+	colonists = 1
+	global_colonial_growth = 10
 }
 
-11111111111111111 = {
-	
+carribean_trade = {
+	trade_value_modifier = 0.2
+	trade_goods_size = 1
 }
 
-11111111111111111 = {
-	
+ottomans_colonial_trade = {
+	global_tariffs = 0.5
+	trade_steering = 0.2
 }
 
-11111111111111111 = {
-	
+ottoman_colonists = {
+	colonists = 1
+	can_colony_boost_development = yes
 }
 
-11111111111111111 = {
-	
+colonial_development = {
+	colonist_placement_chance = 0.2
+	global_colonial_growth = 30
+	native_assimilation = 0.75
+	can_colony_boost_development = yes
+	free_maintenance_on_expl_conq = yes
 }
 
-11111111111111111 = {
-	
+ottoman_colonial_empire_modifier = {
+	global_tariffs = 0.25
+	cb_on_overseas = yes
+	merchants = 2
+	trade_efficiency = 0.25
 }
 
-11111111111111111 = {
-	
+ottoman_anatolian_homeland = {
+	local_autonomy = 0.1
+	local_unrest = -3
 }
 
-11111111111111111 = {
-	
+ottoman_navy = {
+	galley_power = 0.1
+	galley_cost = -0.1
 }
 
-11111111111111111 = {
-	
+iberian_invasion = {
+	local_warscore_cost_modifier = -0.3
 }
 
-11111111111111111 = {
-	
+africa_gold_mine = {
+	gold_depletion_chance_modifier = -0.25
+	monthly_gold_inflation_modifier = 0.25
 }
 
-11111111111111111 = {
-	
+ottomans_blockade_from_africa = {
+	trade_steering = -0.3
+	global_trade_power = -0.2
 }
 
-11111111111111111 = {
-	
+dardanelles_gun = {
+	siege_ability = 0.2
+	artillery_levels_available_vs_fort = 1
 }
 
-11111111111111111 = {
-	
+baltic_trade = {
+	province_trade_power_modifier = 0.25
 }
 
-11111111111111111 = {
-	
+ottoman_akinjis = {
+	morale_damage = 0.025
+	cavalry_shock = 1
 }
 
-11111111111111111 = {
-	
+ottoman_black_leak = {
+	own_coast_naval_combat_bonus = 1.0
+	prestige_from_naval = 0.1
 }
 
-11111111111111111 = {
-	
+colonize_siberia = {
+	may_establish_frontier = yes
 }
 
-11111111111111111 = {
-	
+ottoman_nationalism = {
+	local_tax_modifier = 0.1
+	local_manpower_modifier = 0.25
 }
 
-11111111111111111 = {
-	
+expanded_timar_system = {
+	production_efficiency = 0.25
+}
+
+timar_siphais = {
+	cavalry_power = 0.10
 }
 
 11111111111111111 = {

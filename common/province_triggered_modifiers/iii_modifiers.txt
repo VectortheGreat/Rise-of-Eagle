@@ -181,3 +181,113 @@ oghuz_non_muslim_taxes = {
 	on_deactivation = {	
 	}	
 }
+ottomans_devshirme_system_modifier = {
+	potential = {
+		has_country_flag = ottomans_devshirme_system_flag		
+	}
+
+	trigger = {
+		NOT = { religion_group = ROOT }
+	}
+
+	local_manpower_modifier = 0.2
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}
+
+ottomans_rumeli_beylerbeyi_modifier = {
+	potential = {
+		has_country_flag = rumeli_beylerbeyi		
+	}
+
+	trigger = {
+		has_owner_accepted_culture = yes
+		capital_scope = {
+			region = balkan_region
+			region = east_balkan_region
+			region = south_balkan_region
+		}
+	}
+
+	local_manpower_modifier = 0.1
+	local_unrest = -2
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}
+
+ottomans_anadolu_beylerbeyi_modifier = {
+	potential = {
+		has_country_flag = rumeli_beylerbeyi		
+	}
+
+	trigger = {
+		culture = turkish
+		capital_scope = {
+			region = anatolia_region
+			region = east_anatolia_region
+		}
+	}
+
+	local_manpower_modifier = 0.2
+	local_tax_modifier = 0.2
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}
+
+ottomans_anatolian_homeland = {
+	potential = {
+		has_country_flag = anatolian_homeland	
+		controlled_by = TUR	
+	}
+
+	trigger = {
+		controlled_by = TUR
+		capital_scope = {
+			region = anatolia_region
+			region = east_anatolia_region
+		}		
+	}
+
+	local_defender_dice_roll_bonus = 2
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}
+
+ottomans_timar_system_modifier = {
+	potential = {
+		has_country_flag = timar_system	
+	}
+
+	trigger = {
+		OR = {
+			has_terrain = grasslands
+			has_terrain = farmlands
+		}		
+	}
+
+	tax_income = -0.5
+	local_manpower = 0.5
+	local_production_efficiency = 0.25
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}

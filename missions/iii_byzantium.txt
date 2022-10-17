@@ -630,7 +630,7 @@ byzantine_balkan_mediterrenian_missions = {
 				area = imereti_area
 			}
 			has_port = yes
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
 			owns_all_provinces = {
@@ -1165,10 +1165,6 @@ byzantine_expansion_asia = {
 		position = 10
 		trigger = {
 			navy_size = 50
-			num_of_owned_provinces_with = { 
-				has_dock_building_trigger = yes
-				value = 5  
-			}
 			num_of_owned_provinces_with = { 
 				has_dock_building_trigger = yes
 				value = 5  
@@ -1782,6 +1778,7 @@ byzantine_east_missions = {
 				region = anatolia_region
 				region = east_anatolia_region
 			}
+			has_fort_building_trigger = no
 		}
 		trigger = {
 			calc_true_if = {
@@ -2050,7 +2047,7 @@ byzantine_crimea_military_missions = {
 				area = trabzon_area
 			}
 			has_port = yes
-			NOT = { owned_by = ROOT }
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
 			owns_all_provinces = {
