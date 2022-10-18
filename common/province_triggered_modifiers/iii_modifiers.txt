@@ -249,7 +249,10 @@ ottomans_anadolu_beylerbeyi_modifier = {
 ottomans_anatolian_homeland = {
 	potential = {
 		has_country_flag = anatolian_homeland	
-		controlled_by = TUR	
+		OR = {
+			controlled_by = TUR
+			owned_by = TUR
+		}
 	}
 
 	trigger = {
@@ -284,6 +287,32 @@ ottomans_timar_system_modifier = {
 	tax_income = -0.5
 	local_manpower = 0.5
 	local_production_efficiency = 0.25
+	
+	#Province scope
+	on_activation = {	
+	}	
+	on_deactivation = {	
+	}	
+}
+
+romanian_homeland_modifier = {
+	potential = {
+		has_country_flag = romanian_homeland
+		OR = {
+			controlled_by = RMN
+			owned_by = RMN	
+		}		
+	}
+
+	trigger = {
+		controlled_by = TUR
+		capital_scope = {
+			region = anatolia_region
+			region = east_anatolia_region
+		}		
+	}
+
+	local_defender_dice_roll_bonus = 2
 	
 	#Province scope
 	on_activation = {	

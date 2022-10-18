@@ -1,73 +1,33 @@
-bulgaria_balkan_expansion_missions = {
+romania_navy_missions = {
 	slot = 1
 	generic = no
 	ai = yes
 	potential = {
-		tag = BUL
+		tag = RMN
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	bulgaria_conquer_rascia = {
+	romania_polish_provnices = {
 		icon = testtt
-		required_missions = {  }
-		position = 7
-		provinces_to_highlight = {
-			area = rascia_area
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
+		required_missions = { romania_defeat_poland }
+		position = 10
 		trigger = {
-			rascia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		effect = {
-			serbia_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-		}
-	}
-	bulgaria_conquer_serbia = {
-		icon = testtt
-		required_missions = { bulgaria_conquer_rascia }
-		position = 8
-		provinces_to_highlight = {
-			area = serbia_area
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		trigger = {
-			serbia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		effect = {
-			every_owned_province = {
-				limit = {
-					culture = serbian
-				}
-				add_province_modifier = {
-					name = "integrating_serbians"
-					duration = 3650
-				}
-			}
-			add_adm_power = 50
-		}
-	}
-	bulgaria_navy_mission = {
-		icon = testtt
-		required_missions = { bulgaria_conquer_adriatic_coast }
-		position = 11
-		trigger = {
-			navy_size = 50
+			cavalry_fraction = 0.2	
 			num_of_owned_provinces_with = { 
-				has_dock_building_trigger = yes
-				value = 5  
+				culture = polish
+				value = 10	#UNUTMA - Say
 			}
+		}
+		effect = {
+			#UNUTMA - Hüssar Paralı askerleri
+		}
+	}
+	romania_improve_navy = {
+		icon = testtt
+		required_missions = { romania_conquer_adriatic_coast }
+		position = 12
+		trigger = {
+			navy_size = 50			
 			num_of_owned_provinces_with = { 
 				has_dock_building_trigger = yes
 				value = 5  
@@ -75,135 +35,108 @@ bulgaria_balkan_expansion_missions = {
 		}
 		effect = {
 			add_country_modifier = {
-				name = "great_bulgarian_fleet"
-				duration = 7300
+				name = "adriatic_navy"
+				duration = 5475
 			}
+			add_yearly_sailors = 10
 		}
 	}
-
-	bulgaria_venice_trade = {
+	romania_trade_ships = {
 		icon = testtt
-		required_missions = { bulgaria_navy_mission bulgaria_conquer_venice }
-		position = 12
+		required_missions = { romania_improve_navy }
+		position = 13
 		provinces_to_highlight = {
-			province_id = 112
-			has_trade_building_trigger = no
+			area = serbia_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
+			num_of_light_ship = 25
 			112 = {
-				province_has_center_of_trade_of_level = 3
-				has_trade_building_trigger = yes 
-				has_most_province_trade_power = ROOT
+				trade_share = {
+					country = ROOT
+					share = 55
+				}
 			}
 		}
 		effect = {
-			add_mercantilism = 3
-			112 = {
-				add_province_modifier = {
-					name = "bulgarian_eastern_caravan"
-					duration = -1
-				}
+			add_country_modifier = {
+				name = "ship_propagation"
+				duration = -1
 			}
 		}
 	}
 }
 
-bulgaria_romania_venice_expansion = {
+romania_polish_venice_expansion = {
 	slot = 2
 	generic = no
 	ai = yes
 	potential = {
-		tag = BUL
+		tag = RMN
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	bulgaria_conquer_silistra = {
+	romania_conquer_moldavia = {
 		icon = testtt
-		required_missions = { }
-		position = 7
-		provinces_to_highlight = {
-			area = silistria_area
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		trigger = {
-			silistria_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		effect = {
-			buzau_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			wallachia_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			oltenia_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-		}
-	}
-	bulgaria_conquer_romania = {
-		icon = testtt
-		required_missions = { bulgaria_conquer_silistra }
+		required_missions = { romania_to_greater_romania }
 		position = 8
 		provinces_to_highlight = {
-			OR = {
-				area = buzau_area
-				area = wallachia_area
-				area = oltenia_area
-			}
+			area = moldavia_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			buzau_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			wallachia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			oltenia_area = {
+			moldavia_area = {
 				type = all
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
 			moldavia_area = {
+				add_nationalism = -100				
+			}
+			poland_region = {
 				limit = {
 					NOT = { is_core = ROOT }
 					NOT = { is_claim = ROOT }
 				}
 				add_permanent_claim = ROOT
 			}
-			every_owned_province = {
-				limit = {
-					culture = romanian
-				}
-				add_province_modifier = {
-					name = "integrating_serbians"
-					duration = 3650
+		}
+	}
+	romania_defeat_poland = {
+		icon = testtt
+		required_missions = { romania_conquer_moldavia }
+		position = 9
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = blabla
+				OR = {
+					POL = {
+						NOT = { total_development = ROOT }
+						NOT = { army_size = ROOT }
+					}
+					PLC = {
+						NOT = { total_development = ROOT }
+						NOT = { army_size = ROOT }
+					}
 				}
 			}
 		}
+		effect = {
+			poland_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
 	}
-	bulgaria_conquer_adriatic_coast = {
+	
+	romania_conquer_adriatic_coast = {
 		icon = testtt
-		required_missions = {  }
-		position = 10
+		required_missions = { romania_greater_romania }
+		position = 11
 		provinces_to_highlight = {
 			area = east_adriatic_coast_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -224,10 +157,10 @@ bulgaria_romania_venice_expansion = {
 			}
 		}
 	}
-	bulgaria_conquer_venice = {
+	romania_conquer_venice = {
 		icon = testtt
-		required_missions = { bulgaria_conquer_adriatic_coast }
-		position = 11
+		required_missions = { romania_conquer_adriatic_coast }
+		position = 12
 		provinces_to_highlight = {
 			OR = {
 				area = venetia_area
@@ -251,16 +184,16 @@ bulgaria_romania_venice_expansion = {
 	}
 }
 
-bulgaria_thrace_west_balkans_expansion = {
+romania_balkan_expansion = {
 	slot = 3
 	generic = no
 	ai = yes
 	potential = {
-		tag = BUL
+		tag = RMN
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	bulgaria_conquer_east_thrace = {
+	romania_to_greater_romania = {
 		icon = testtt
 		required_missions = {  }
 		position = 7
@@ -269,79 +202,10 @@ bulgaria_thrace_west_balkans_expansion = {
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
-			thrace_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
+			army_size_percentage = 1
+			stability = 1
 		}
 		effect = {			
-			gelibolu_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			if = {
-				limit = {
-					NOT = { capital = 151 }
-				}
-				#UNUTMA - Başkent taşınsın mı?
-			}
-		}
-	}
-	bulgaria_conquer_gallipoli = {
-		icon = testtt
-		required_missions = { bulgaria_conquer_east_thrace }
-		position = 8
-		provinces_to_highlight = {
-			area = gelibolu_area
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		trigger = {
-			gelibolu_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		effect = {			
-			add_prestige = 15
-			add_legitimacy = 20
-			add_republican_tradition = 15
-		}
-	}
-	bulgaria_greater_bulgaria = {
-		icon = testtt
-		required_missions = { bulgaria_conquer_gallipoli bulgaria_conquer_romania bulgaria_conquer_serbia bulgaria_macedonian_bulgars }
-		position = 9
-		provinces_to_highlight = {
-			culture = bulgarian
-			NOT = { owned_by = ROOT }
-		}
-		trigger = {
-			owns_all_provinces = {
-				culture = bulgarian
-			}
-		}
-		effect = {
-			add_country_modifier = {
-				name = "greater_bulgaria"
-				duration = -1
-			}
-			bosnia_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			alfold_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
 			transylvania_area = {
 				limit = {
 					NOT = { is_core = ROOT }
@@ -358,10 +222,129 @@ bulgaria_thrace_west_balkans_expansion = {
 			}
 		}
 	}
-	bulgaria_conquer_bosnia = {
+	romania_conquer_transylvania = {
 		icon = testtt
-		required_missions = { bulgaria_greater_bulgaria }
+		required_missions = { romania_to_greater_romania }
+		position = 8
+		provinces_to_highlight = {
+			OR = {
+				area = transylvania_area
+				area = southern_transylvania_area
+			}			
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			transylvania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			southern_transylvania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {			
+			every_owned_province = {
+				limit = {
+					area = transylvania_area
+					area = southern_transylvania_area
+					NOT = { culture = ROOT }
+				}
+				add_province_modifier = {
+					name = "cultural_conversion"
+					duration = 18250
+				}
+			}
+		}
+	}
+	romania_romanian_homeland = {
+		icon = testtt
+		required_missions = { romania_conquer_transylvania }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				area = transylvania_area
+				area = southern_transylvania_area
+				area = oltenia_area
+				area = wallachia_area
+				area = buzau_area
+				area = moldavia_area
+			}			
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			transylvania_area = {
+				type = all
+				culture = ROOT
+			}
+			southern_transylvania_area = {
+				type = all
+				culture = ROOT
+			}
+			oltenia_area = {
+				type = all
+				culture = ROOT
+			}
+			wallachia_area = {
+				type = all
+				culture = ROOT
+			}
+			buzau_area = {
+				type = all
+				culture = ROOT
+			}
+			moldavia_area = {
+				type = all
+				culture = ROOT
+			}
+		}
+		effect = {
+			set_country_flag = romanian_homeland
+		}
+	}
+	romania_greater_romania = {
+		icon = testtt
+		required_missions = { romania_romanian_homeland romania_defeat_poland romania_conquer_carpathia }
 		position = 10
+		provinces_to_highlight = {
+			culture = romanian
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			owns_all_provinces = {
+				culture = romanian
+			}
+			stability = 3
+			is_great_power = yes
+		}
+		effect = {
+			balkan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			east_balkan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			south_balkan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	romania_conquer_bosnia = {
+		icon = testtt
+		required_missions = { romania_greater_romania }
+		position = 11
 		provinces_to_highlight = {
 			area = bosnia_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -382,10 +365,10 @@ bulgaria_thrace_west_balkans_expansion = {
 			}
 		}
 	}
-	bulgaria_conquer_croatia = {
+	romania_conquer_croatia = {
 		icon = testtt
-		required_missions = { bulgaria_conquer_bosnia }
-		position = 11
+		required_missions = { romania_conquer_bosnia }
+		position = 12
 		provinces_to_highlight = {
 			area = croatia_area
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -401,10 +384,10 @@ bulgaria_thrace_west_balkans_expansion = {
 		}
 	}
 
-	bulgaria_balkan_empire = {
+	romania_balkan_empire = {
 		icon = testtt
-		required_missions = { bulgaria_conquer_croatia bulgaria_conquer_hungary bulgaria_conquer_venice }
-		position = 12
+		required_missions = { romania_conquer_croatia romania_conquer_venice romania_adm_mission }
+		position = 13
 		provinces_to_highlight = {
 			OR = {
 				region = balkan_region
@@ -436,73 +419,32 @@ bulgaria_thrace_west_balkans_expansion = {
 	}
 }
 
-bulgaria_north_balkans_expansion = {
+romania_hungary_missions = {
 	slot = 4
 	generic = no
 	ai = yes
 	potential = {
-		tag = BUL
+		tag = RMN
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	bulgaria_macedonian_bulgars = {
+	romania_defeat_hungary = {
 		icon = testtt
-		required_missions = {  }
+		required_missions = { romania_to_greater_romania }
 		position = 8
-		provinces_to_highlight = {
+		trigger = {			
 			OR = {
-				area = skopje_area
-				area = macedonia_area
-			}			
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		trigger = {
-			skopje_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			macedonia_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		effect = {
-			every_owned_province = {
-				limit = {
-					NOT = { culture = bulgarian }
+				custom_trigger_tooltip = {
+				tooltip = blabla
+				HUN = {
+						NOT = { total_development = ROOT }
+						NOT = { army_size = ROOT }
+					}
 				}
-				add_province_modifier = {
-					name = "bulgarianization"
-					duration = -1
+				OR = {
+					HUN = { humiliated_by = ROOT }
+					NOT = { exists = HUN }
 				}
-			}
-			add_dip_power = 100
-		}
-	}
-	bulgaria_conquer_transilvanya = {
-		icon = testtt
-		required_missions = { bulgaria_greater_bulgaria }
-		position = 10
-		provinces_to_highlight = {
-			OR = {
-				area = alfold_area
-				area = transylvania_area
-				area = southern_transylvania_area
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		trigger = {
-			alfold_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			transylvania_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			southern_transylvania_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
 		effect = {
@@ -515,10 +457,10 @@ bulgaria_north_balkans_expansion = {
 			}
 		}
 	}
-	bulgaria_conquer_hungary = {
+	romania_conquer_carpathia = {
 		icon = testtt
-		required_missions = { bulgaria_conquer_transilvanya }
-		position = 11
+		required_missions = { romania_defeat_hungary }
+		position = 9
 		provinces_to_highlight = {
 			region = carpathia_region
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
@@ -530,62 +472,13 @@ bulgaria_north_balkans_expansion = {
 			}
 		}
 		effect = {
-			### UNUTMA - Macar paralı askerleri
+			#UNUTMA - Event ile doğu karpatyayı kültür değiştirme veya serbest bırakma
 		}
 	}
-}
-
-bulgaria_greece_expansion = {
-	slot = 5
-	generic = no
-	ai = yes
-	potential = {
-		tag = BUL
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes
-	bulgaria_conquer_north_epirus = {
+	romania_army_reform = {
 		icon = testtt
-		required_missions = {  }
-		position = 8
-		provinces_to_highlight = {
-			area = northepirus_area
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
-		trigger = {
-			northepirus_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-		}
-		effect = {
-			berat_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			albania_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-			south_balkan_region = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
-			}
-		}
-	}
-	bulgaria_army_reform = {
-		icon = testtt
-		required_missions = {  }
-		position = 10
+		required_missions = { romania_greater_romania }
+		position = 11
 		trigger = {
 			mil_tech = 12
 			OR = {
@@ -605,10 +498,10 @@ bulgaria_greece_expansion = {
 			### UNUTMA - Düzennli ordu vs Paralı asker ordusu seçim eventi
 		}
 	}
-	bulgaria_adm_mission = {
+	romania_adm_mission = {
 		icon = testtt
-		required_missions = { bulgaria_army_reform }
-		position = 11
+		required_missions = { romania_army_reform }
+		position = 12
 		trigger = {
 			government_rank = 3
 			adm_tech = 18
@@ -620,7 +513,7 @@ bulgaria_greece_expansion = {
 					development = 30
 				}
 				add_province_modifier = {
-					name = "bulgarian_bureaucracy"
+					name = "bureaucratic_development"
 					duration = -1
 				}
 				add_building = state_house
@@ -629,66 +522,48 @@ bulgaria_greece_expansion = {
 	}
 }
 
-bulgaria_greece_expansion2 = {
-	slot = 6
+romania_monument_mission = {
+	slot = 5
 	generic = no
 	ai = yes
 	potential = {
-		tag = BUL
+		tag = RMN
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	
-	bulggaria_conquer_south_greece = {
+	romania_build_5_monuments = {
 		icon = testtt
-		required_missions = {  }
-		position = 8
-		provinces_to_highlight = {
-			OR = {
-				area = trikala_area
-				area = northern_greece_area
-				area = athens_area
-				area = morea_area
-			}
-			NOT = { country_or_non_sovereign_subject_holds = ROOT }
-		}
+		required_missions = { romania_greater_romania }
+		position = 11
 		trigger = {
-			trikala_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			northern_greece_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			athens_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-			morea_area = {
-				type = all
-				country_or_non_sovereign_subject_holds = ROOT
+			check_variable = {
+				which = builded_great_project
+				value = 5
 			}
 		}
 		effect = {
-			add_prestige = 15			
+			add_country_modifier = { 
+				name = long_live_our_ruler
+				duration = 14600
+			}
 		}
 	}
 }
 
-bulgaria_army_missions = {
-	slot = 7
+romania_military_missions = {
+	slot = 6
 	generic = no
 	ai = yes
 	potential = {
-		tag = BUL
+		tag = RMN
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
-	bulgaria_barracks = {
+	
+	romania_barracks = {
 		icon = testtt
-		required_missions = { bulgaria_own_all_balkan_slavs }
-		position = 8
+		required_missions = { romania_libarete_balkans }
+		position = 10
 		trigger = {
 			num_of_owned_provinces_with = {
 				has_manpower_building_trigger = yes
@@ -702,36 +577,9 @@ bulgaria_army_missions = {
 			}
 		}
 	}
-	bulgaria_balkan_army = {
+	romania_balkan_forts = {
 		icon = testtt
-		required_missions = { bulgaria_barracks }
-		position = 9
-		provinces_to_highlight = {
-			owner = {
-				OR = {
-					region = balkan_region
-					region = south_balkan_region
-					region = east_balkan_region
-				}
-			}
-		}
-		trigger = {
-			all_owned_province = {
-				OR = {
-					region = balkan_region
-					region = south_balkan_region
-					region = east_balkan_region
-				}
-				pure_unrest = 0
-			}		
-		}
-		effect = {
-			### SUPER MODIFIER - UNUTMA - Her 20 yıl balkan toprakları oranı kadar asker alabilme
-		}
-	}
-	bulgaria_balkan_forts = {
-		icon = testtt
-		required_missions = { bulgaria_balkan_army }
+		required_missions = { romania_barracks }
 		position = 11
 		provinces_to_highlight = {
 			OR = {
@@ -769,11 +617,112 @@ bulgaria_army_missions = {
 			}
 		}
 	}
-	
-	bulgaria_military_monument = {
+}
+
+romania_military_missions_2 = {
+	slot = 7
+	generic = no
+	ai = yes
+	potential = {
+		tag = RMN
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+	romania_libarete_balkans = {
 		icon = testtt
-		required_missions = { bulgaria_balkan_forts }
-		position = 12
+		required_missions = { romania_clergy_relations }
+		position = 9
+		provinces_to_highlight = {
+			OR = {
+				region = balkan_region
+				region = south_balkan_region
+				region = east_balkan_region
+			}
+			NOT = { owner = { religion = ROOT } }
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = blabla
+				NOT = {
+					any_country = {
+						capital_scope = { 
+							OR = {
+								region = balkan_region
+								region = south_balkan_region
+								region = east_balkan_region
+							}
+						}
+						army_size = ROOT 
+						total_development = ROOT 
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = blabla
+				NOT = {
+					any_country = {
+						NOT = { religion = ROOT }
+						num_of_owned_provinces_with = { 
+							OR = {
+								region = balkan_region
+								region = south_balkan_region
+								region = east_balkan_region
+							}
+							value = 0
+						}
+					}
+				}
+			}
+		}
+		effect = {			
+			every_province = {
+				limit = {
+					NOT  = { 
+						owner = {
+							is_subject_of = RMN
+						}
+						owned_by = ROOT
+					}
+				}
+				add_country_modifier = {
+					name = "balkan_conquest"
+					duration = 9125
+				}
+			}
+		}
+	}
+	romania_balkan_army = {
+		icon = testtt
+		required_missions = { romania_libarete_balkans }
+		position = 10
+		provinces_to_highlight = {
+			owner = {
+				OR = {
+					region = balkan_region
+					region = south_balkan_region
+					region = east_balkan_region
+				}
+				NOT = { pure_unrest = 0 }
+			}
+		}
+		trigger = {
+			all_owned_province = {
+				OR = {
+					region = balkan_region
+					region = south_balkan_region
+					region = east_balkan_region
+				}
+				pure_unrest = 0
+			}		
+		}
+		effect = {
+			### SUPER MODIFIER - UNUTMA - Her 20 yıl balkan toprakları oranı kadar asker alabilme
+		}
+	}	
+	romania_military_monument = {
+		icon = testtt
+		required_missions = { romania_balkan_army }
+		position = 11
 		trigger = {
 			mil_tech = 20
 			is_at_war = no
@@ -784,16 +733,16 @@ bulgaria_army_missions = {
 	}
 }
 
-bulgaria_religion_government_missions = {
+romania_religion_government_missions = {
 	slot = 8
 	generic = no
 	ai = yes
 	potential = {
-		tag = BUL
+		tag = RMN
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
-	bulgaria_own_all_balkan_slavs = {
+	romania_own_all_romanians = {
 		icon = testtt
 		required_missions = {  }
 		position = 7
@@ -803,7 +752,7 @@ bulgaria_religion_government_missions = {
 				region = south_balkan_region
 				region = east_balkan_region
 			}
-			culture_group = south_slavic
+			culture = romanian
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
 		trigger = {
@@ -813,16 +762,16 @@ bulgaria_religion_government_missions = {
 					region = south_balkan_region
 					region = east_balkan_region				
 				}
-				culture_group = south_slavic
+				culture = romanian
 			}
 		}
 		effect = {			
 			add_prestige = 25
 		}
 	}
-	bulgaria_clergy_relations = {
+	romania_clergy_relations = {
 		icon = testtt
-		required_missions = { bulgaria_own_all_balkan_slavs }
+		required_missions = { romania_own_all_romanians }
 		position = 8
 		trigger = {
 			estate_loyalty = {
@@ -841,7 +790,7 @@ bulgaria_religion_government_missions = {
 			}
 		}
 	}
-	bulgaria_absolutism = {
+	romania_absolutism = {
 		icon = testtt
 		required_missions = {  }
 		position = 10
@@ -857,9 +806,9 @@ bulgaria_religion_government_missions = {
 			}
 		}
 	}
-	bulgaria_centralization = {
+	romania_centralization = {
 		icon = testtt
-		required_missions = { bulgaria_absolutism }
+		required_missions = { romania_absolutism }
 		position = 11
 		trigger = {
 			absolutism = 90
@@ -877,9 +826,9 @@ bulgaria_religion_government_missions = {
 			}
 		}
 	}
-	bulgaria_adm_monument = {
+	romania_adm_monument = {
 		icon = testtt
-		required_missions = { bulgaria_centralization  }
+		required_missions = { romania_centralization  }
 		position = 12
 		trigger = {
 			adm_tech = 20
@@ -891,18 +840,18 @@ bulgaria_religion_government_missions = {
 	}
 }
 
-bulgaria_empire_production_missions = {
+romania_empire_production_missions = {
 	slot = 9
 	generic = no
 	ai = yes
 	potential = {
-		tag = BUL
+		tag = RMN
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
-	bulgaria_defeat_emperor = {
+	romania_defeat_emperor = {
 		icon = testtt
-		required_missions = { bulgaria_own_all_balkan_slavs }
+		required_missions = { romania_own_all_romanians }
 		position = 8
 		trigger = {
 			OR = {
@@ -925,9 +874,9 @@ bulgaria_empire_production_missions = {
 			}
 		}
 	}
-	bulgaria_dismantle_empire = {
+	romania_dismantle_empire = {
 		icon = testtt
-		required_missions = { bulgaria_defeat_emperor }
+		required_missions = { romania_defeat_emperor }
 		position = 9
 		trigger = {
 			NOT = { hre_size = 1 }
@@ -939,7 +888,7 @@ bulgaria_empire_production_missions = {
 			}
 		}
 	}
-	bulgaria_develop_capital = {
+	romania_develop_capital = {
 		icon = testtt
 		required_missions = {  }
 		position = 10
@@ -966,9 +915,9 @@ bulgaria_empire_production_missions = {
 			}
 		}
 	}
-	bulgaria_production = {
+	romania_production = {
 		icon = testtt
-		required_missions = { bulgaria_develop_capital }
+		required_missions = { romania_develop_capital }
 		position = 11
 		trigger = {
 			production_income_percentage = 0.33
@@ -986,9 +935,9 @@ bulgaria_empire_production_missions = {
 			}
 		}
 	}
-	bulgaria_coal = {
+	romania_coal = {
 		icon = testtt
-		required_missions = { bulgaria_production }
+		required_missions = { romania_production }
 		position = 12
 		trigger = {
 			calc_true_if = {
@@ -1007,16 +956,16 @@ bulgaria_empire_production_missions = {
 	}
 }
 
-bulgaria_trade_missions = {
+romania_trade_missions = {
 	slot = 10
 	generic = no
 	ai = yes
 	potential = {
-		tag = BUL
+		tag = RMN
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes	
-	bulgaria_burghers_relations = {
+	romania_burghers_relations = {
 		icon = testtt
 		required_missions = {  }
 		position = 8
@@ -1037,7 +986,7 @@ bulgaria_trade_missions = {
 			}
 		}
 	}
-	bulgaria_develop_nis = {
+	romania_develop_nis = {
 		icon = testtt
 		required_missions = { bulgaria_burghers_relations }
 		position = 9
@@ -1063,7 +1012,7 @@ bulgaria_trade_missions = {
 			}
 		}
 	}
-	bulgaria_dominate_ragusa = {
+	romania_dominate_ragusa = {
 		icon = testtt
 		required_missions = {  bulgaria_develop_nis }
 		position = 10

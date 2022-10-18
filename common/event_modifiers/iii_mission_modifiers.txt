@@ -345,7 +345,7 @@ bulgarianization = {
 	local_culture_conversion_cost = -0.25
 }
 
-bulgarian_bureaucracy = {
+bureaucratic_development = {
 	allowed_num_of_manufactories = 1
 }
 
@@ -358,7 +358,7 @@ bulgarian_forts = {
 	garrison_growth = 0.2
 }
 
-bulgaria_absolutism_modifier = {
+iii_absolutism_modifier = {
 	yearly_absolutism = 0.01
 }
 
@@ -706,20 +706,20 @@ christianized_caucasia = {
 	prestige = 0.5
 }
 
-11111111111111111 = {
-	
+adriatic_navy = {
+	ship_durability = 0.2
 }
 
-11111111111111111 = {
-	
+ship_propagation = {
+	ship_power_propagation = 0.2
 }
 
-11111111111111111 = {
-	
+cultural_conversion = {
+	local_culture_conversion_cost = -0.25
 }
 
-11111111111111111 = {
-	
+balkan_conquest = {
+	local_warscore_cost_modifier = 0.1
 }
 
 11111111111111111 = {
