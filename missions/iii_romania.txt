@@ -817,12 +817,9 @@ romania_religion_government_missions = {
 			NOT = { num_of_rebel_armies = 1 }
 		}
 		effect = {
-			moldavia_area = {
-				limit = {
-					NOT = { is_core = ROOT }
-					NOT = { is_claim = ROOT }
-				}
-				add_permanent_claim = ROOT
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
 			}
 		}
 	}

@@ -1091,6 +1091,9 @@ akdeniz_development_missions = {
 		icon = testtt
 		required_missions = { akdeniz_build_light_ship }
 		position = 7
+		provinces_to_highlight = {
+			province_id = 377
+		}
 		trigger = {
 			377 = {
 				has_privateer_share_in_trade_node = {

@@ -722,24 +722,26 @@ balkan_conquest = {
 	local_warscore_cost_modifier = 0.1
 }
 
-11111111111111111 = {
-	
+serbian_navy = {
+	naval_morale = 0.1
 }
 
-11111111111111111 = {
-	
+slav_lands = {
+	local_manpower_modifier = 0.25
 }
 
-11111111111111111 = {
-	
+pan_slavizm = {
+	administrative_efficiency = 0.05
 }
 
-11111111111111111 = {
-	
+train_the_army = {
+	drill_gain_modifier = 0.10
+	yearly_army_professionalism = 0.1
 }
 
-11111111111111111 = {
-	
+kosovo_gold_mine = {
+	local_gold_depletion_chance_modifier = -0.5
+	trade_goods_size_modifier = 0.50
 }
 
 11111111111111111 = {
