@@ -739,117 +739,147 @@ train_the_army = {
 	yearly_army_professionalism = 0.1
 }
 
+train_the_army_no_dlc = {
+	army_tradition_decay = -0.01
+	global_regiment_recruit_speed = -0.10
+}
+
 kosovo_gold_mine = {
 	local_gold_depletion_chance_modifier = -0.5
 	trade_goods_size_modifier = 0.50
 }
 
-11111111111111111 = {
-	
+mediterranean_base = {
+	hostile_fleet_attrition = 5
+	local_naval_engagement_modifier = 0.2
 }
 
-11111111111111111 = {
-	
+italy_conquered = {
+	monthly_splendor = 3
+	prestige_decay = -0.01
 }
 
-11111111111111111 = {
-	
+spain_conquered = {
+	colonists = 1
+	heavy_ship_power = 0.1
 }
 
-11111111111111111 = {
-	
+mexico_golds = {
+	treasure_fleet_income = 0.25
 }
 
-11111111111111111 = {
-	
+panama_trade = {
+	trade_range_modifier = 0.5
+	trade_steering = 0.25
 }
 
-11111111111111111 = {
-	
+the_crown_colonies = {
+	envoy_travel_time = -0.2
+	global_tariffs = 0.25
 }
 
-11111111111111111 = {
-	
+balkans_conquered = {
+	global_manpower_modifier = 0.1
+	global_unrest = -1
 }
 
-11111111111111111 = {
-	
+germany_conquered = {
+	administrative_efficiency = 0.05
+	discipline = 0.05
 }
 
-11111111111111111 = {
-	
+france_conquered = {
+	land_morale = 0.1
+	global_autonomy = -0.05
 }
 
-11111111111111111 = {
-	
+portugal_conquered = {
+	global_naval_barrage_cost = -0.25
+	range = 0.5
 }
 
-11111111111111111 = {
-	
+carribean_trade = {
+	merchants = 1
+	global_trade_power = 0.1
 }
 
-11111111111111111 = {
-	
+turkish_colonial_empire = {
+	liberty_desire_from_subject_development = -0.25
+	colonial_type_change_cost_modifier = -0.5
+	colonial_subject_type_upgrade_cost_modifier = -0.5
 }
 
-11111111111111111 = {
-	
+hungary_conquered = {
+	mercenary_discipline = 0.10
+	religious_unity = 0.25
 }
 
-11111111111111111 = {
-	
+poland_conquered = {
+	cavalry_power = 0.1
+	num_accepted_cultures = 2
 }
 
-11111111111111111 = {
-	
+canada_colonized = {
+	trade_efficiency = 0.25
+	placed_merchant_power = 3
 }
 
-11111111111111111 = {
-	
+north_africa_conquered = {
+	land_attrition = -0.25
 }
 
-11111111111111111 = {
-	
+russia_conquered = {
+	may_establish_frontier = yes
+	land_forcelimit_modifier = 0.10
 }
 
-11111111111111111 = {
-	
+siberian_natural_resources = {
+	global_trade_goods_size_modifier = 0.05
 }
 
-11111111111111111 = {
-	
+turkish_african_colonist = {
+	colonists = 1
+	global_colonial_growth = 10
 }
 
-11111111111111111 = {
-	
+colonized_horn_of_africa = {
+	monthly_gold_inflation_modifier = 0.25
 }
 
-11111111111111111 = {
-	
+caucasian_forts = {
+	local_fort_maintenance_modifier = -0.35
+	local_garrison_size = 0.25
 }
 
-11111111111111111 = {
-	
+turkish_artillery_barracks = {
+	backrow_artillery_damage = 0.10
+	artillery_power = 0.10
 }
 
-11111111111111111 = {
-	
+united_the_culture = {
+	manpower_in_own_culture_provinces = 0.25
 }
 
-11111111111111111 = {
-	
+turkish_nobles = {
+	nobles_loyalty_modifier = 0.1
 }
 
-11111111111111111 = {
-	
+anatolian_industry = {
+	production_efficiency = 0.25
 }
 
-11111111111111111 = {
-	
+mega_production = {
+	trade_goods_size = 1
 }
 
-11111111111111111 = {
-	
+trade_empire = {
+	trade_company_governing_cost = 0.1
+	trade_company_investment_cost = -0.25
+}
+
+public_administration = {
+	advisor_pool = 1
+	yearly_corruption = -0.1
 }
 
 11111111111111111 = {

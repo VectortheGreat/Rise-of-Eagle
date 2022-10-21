@@ -645,9 +645,20 @@ serbia_military_missions = {
 			army_size = 25
 		}
 		effect = {			
-			add_country_modifier = {
-				name = "train_the_army"
-				duration = 9125
+			if = {
+				limit = {
+					has_dlc = "Cradle of Civilization"
+				}
+				add_country_modifier = {
+					name = "train_the_army"
+					duration = 9125
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = "train_the_army_no_dlc"
+					duration = 9125
+				}
 			}
 		}
 	}

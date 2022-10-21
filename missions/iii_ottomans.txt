@@ -690,8 +690,8 @@ ottomans_aegean_levant_expansion = {
 		position = 8
 		provinces_to_highlight = {
 			OR = {
-				region = kocaeli_area
-				region = hudavendigar_area
+				area = kocaeli_area
+				area = hudavendigar_area
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
@@ -1378,7 +1378,7 @@ ottomans_anatolia_akdeniz_expansion = {
 		effect = {	
 			every_province = {
 				limit = {
-					region = iberia__region
+					region = iberia_region
 					NOT = { owned_by = TUR }
 					NOT = { owned_by = GRA }
 					NOT = { owned_by = ADU }
@@ -2421,7 +2421,7 @@ ottomans_military_east_europe_missions = {
 		provinces_to_highlight = {
 			owner = {
 				capital_scope = {
-					region = italy_region
+					continent = europe
 				}
 			}
 		}

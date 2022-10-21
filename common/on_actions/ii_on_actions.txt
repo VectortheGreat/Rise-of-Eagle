@@ -504,6 +504,30 @@ on_adm_development = {
 			value = 1
 		}
 	}
+	if = {	#MOD
+		limit = {
+			owner = {
+				tag = TRK
+			} 
+			area = akdeniz_area
+		}
+		change_variable = {
+			which = developed_akdeniz_area
+			value = 1
+		}
+	}
+	if = {	#MOD
+		limit = {
+			owner = {
+				tag = TRK
+			} 
+			area = aegean_archipelago_area
+		}
+		change_variable = {
+			which = developed_aegean_islands_area
+			value = 1
+		}
+	}
 }
 on_dip_development = {
 	if = {
@@ -578,6 +602,30 @@ on_dip_development = {
 			value = 1
 		}
 	}
+	if = {	#MOD
+		limit = {
+			owner = {
+				tag = TRK
+			} 
+			area = akdeniz_area
+		}
+		change_variable = {
+			which = developed_akdeniz_area
+			value = 1
+		}
+	}
+	if = {	#MOD
+		limit = {
+			owner = {
+				tag = TRK
+			} 
+			area = aegean_archipelago_area
+		}
+		change_variable = {
+			which = developed_aegean_islands_area
+			value = 1
+		}
+	}
 }
 on_mil_development = {
 	if = {
@@ -645,6 +693,30 @@ on_mil_development = {
 		}
 		change_variable = {
 			which = mission_developed
+			value = 1
+		}
+	}
+	if = {	#MOD
+		limit = {
+			owner = {
+				tag = TRK
+			} 
+			area = akdeniz_area
+		}
+		change_variable = {
+			which = developed_akdeniz_area
+			value = 1
+		}
+	}
+	if = {	#MOD
+		limit = {
+			owner = {
+				tag = TRK
+			} 
+			area = aegean_archipelago_area
+		}
+		change_variable = {
+			which = developed_aegean_islands_area
 			value = 1
 		}
 	}
